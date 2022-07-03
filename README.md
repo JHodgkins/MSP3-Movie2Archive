@@ -22,4 +22,4 @@ The application will provide a safe and secure area for cataloguing their collec
 The application will use external resources to inform the end user about interesting information relating to their media whilst allowing the user to edit and add their own information to create their own unique media catalogue.  
 
 ## Research  
-Please view the [research](docs/research/RESEARCH.md) document for details of user research carried out through the planning phase for Med2Archive.  
+Please view the [research](docs/research/RESEARCH.md) document for details of user research carried out through the planning phase for Media2Archive.  
