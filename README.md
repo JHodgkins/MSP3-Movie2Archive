@@ -12,7 +12,9 @@ Movie2Archive helps users gather insight about their collection whilst giving th
     4.2 [User goals](#user-goals)  
     4.3 [Site owners goals](#site-owners-goals)  
     4.4 [Target audience](#target-audience)  
-
+5. [User experiance (UX)](#user-experiance-ux)  
+    [User stories](#user-stories)  
+    5.1 
 ## Overview  
 The Media2Archive application is a database application which catalogues media collections into an easy-to-understand interface which can be use by all ages.  
 The Media2Archive application has been developed with a main goal to help organise, catalogue and provide an intrusive way to educate the end user about their or their families current media collection.  
@@ -53,3 +55,12 @@ Please view the [research](docs/research/RESEARCH.md) document for details of us
 - Relatives or a user who has acquired a collection and wishing to understand what the collection contains.  
 - Movie enthusiasts who want to discover information about a movie whilst also creating a catalogue of their items.  
 - Charities or small establishments wising to keep a record of media held in stock.  
+
+## User experiance (UX)  
+During project planning, it was set out that the user interface should be easily understood to provide an overall good user experience and provide a positive feeling when navigating and interacting with the application.  
+As the application is aimed at all ages, logical placement of buttons and understandable form fields will all be clearly tagged to ensure no barriers are present or experienced whilst using the application.  
+Keyboard and screen reader navigation has also been considered and all elements can be reached using a keyboard to ensure the application is as accessible as possible to all users of the application.  
+
+### User storues  
+#### First time user  
+
