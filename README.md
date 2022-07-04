@@ -46,3 +46,10 @@ Please view the [research](docs/research/RESEARCH.md) document for details of us
 - The Media2Archive site owner would like to promote the pick-up and use approach of the application.  
 - It is also important that users can see if duplicate copies are in their collection and promote recycling or donating.  
 - Bild trust with its users so recommendations help grow the platform as a useful resource.  
+
+### Target audience  
+- The application will be able to be usable by all ages.  
+- Those looking for an application to catalogue their movie collection.  
+- Relatives or a user who has acquired a collection and wishing to understand what the collection contains.  
+- Movie enthusiasts who want to discover information about a movie whilst also creating a catalogue of their items.  
+- Charities or small establishments wising to keep a record of media held in stock.  
