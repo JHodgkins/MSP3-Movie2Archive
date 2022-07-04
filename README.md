@@ -34,3 +34,10 @@ Please view the [research](docs/research/RESEARCH.md) document for details of us
 - The application will enable users to learn new details about their media collection through the application.  
 - The project will help users organise their collection and decide what to keep or donate back to the community.  
 - The users collection will be viewable and editable able using any browser.  
+
+### User Goals
+- Find information about what Media2Archive is all about.  
+- Find information about how to use Media2Archive.  
+- Easily register and catalogue their items.  
+- Find information about a movie that is catalogued.   
+- View their complete collection and their complete collection size.  
