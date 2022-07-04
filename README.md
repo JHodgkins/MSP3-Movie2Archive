@@ -41,3 +41,8 @@ Please view the [research](docs/research/RESEARCH.md) document for details of us
 - Easily register and catalogue their items.  
 - Find information about a movie that is catalogued.   
 - View their complete collection and their complete collection size.  
+
+### Site owners goals  
+- The Media2Archive site owner would like to promote the pick-up and use approach of the application.  
+- It is also important that users can see if duplicate copies are in their collection and promote recycling or donating.  
+- Bild trust with its users so recommendations help grow the platform as a useful resource.  
