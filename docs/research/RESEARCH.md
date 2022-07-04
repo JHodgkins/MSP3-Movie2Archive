@@ -23,7 +23,6 @@ I asked my family and friends, my family because we have all lost multiple peopl
 Responses have been condensed for consistency  
 
 ### Initial questions asked  
-
 **Question.** Have you had to catalogue media or something else before?  
 **User.** _‘Yes, many years ago I was left loads if books and had to go through one by one just to know what was there.’_  
 **User.** _‘Mo but we do have a large amount of books and media which to be honest we are not too sure what exactly is there.’_  
@@ -43,7 +42,6 @@ Responses have been condensed for consistency
 Focusing on the user interface, features, ease of use people were asked:  
 
 ### Additional questions aked  
-
 **Question.** Is ease of use or features important to you?
 **User.** _‘Easy to use and gets the job done quickly without complicated stuff getting in the way.’_  
 **User.** _‘I like having features, but they need to be easy to get too and understandable.’_  
@@ -52,13 +50,13 @@ Focusing on the user interface, features, ease of use people were asked:
 **User.** _‘Would be a great feature, when we have a family movie night it would be great to get an idea about the film before starting to watch it.’_  
 **User.** _‘Yes, that would be good to know, but only if it was layed out in the interface so it was easy to read.’_  
 
-## Summary  
+## Summary
 The research proved interesting and raised some points surrounding features which outlined the importance of an easy-to-use interface can to some outweigh a heavy feature set.  
 The area around recycling was also pleasing to see that users do not always know what they own and often want to give back to the community, friends or family.  
 It also became clear also that those with a large collection were completely unaware of the extent of their collection and this may mean that if lost they would not be able to gain back their collection in full.  
 Looking at the proposed application, research showed that other offerings can indeed offer more features, but the projects strengths are that it can offer a positive and pleasing offering which meets the business and target audience goals and aligns with feedback.  
 
-## Conclusion  
+## Conclusion
 The project meets its goals and can help by offering a suitable resource when managing media to archive and a catalogue.  
 The application will provide a simple to use accessible application, provide a positive experience throughout using a clean and clear user interface which will allow it to be used independently by the target audience of varying ages and align with the business goals to recycle and donate if they wish.  
 
