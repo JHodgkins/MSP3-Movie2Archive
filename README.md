@@ -7,7 +7,11 @@ Movie2Archive helps users gather insight about their collection whilst giving th
 1. [Overview](#overview)
 2. [Design brief](#design-brief)
 3. [Research](#research)  
-
+4. [Goals and Target audience](#goals-and-target-audience)  
+    4.1 [Project goals](#project-goals)  
+    4.2 [User goals](#user-goals)  
+    4.3 [Site owners goals](#site-owners-goals)  
+    4.4 [Target audience](#target-audience)  
 
 ## Overview  
 The Media2Archive application is a database application which catalogues media collections into an easy-to-understand interface which can be use by all ages.  
@@ -23,3 +27,10 @@ The application will use external resources to inform the end user about interes
 
 ## Research  
 Please view the [research](docs/research/RESEARCH.md) document for details of user research carried out through the planning phase for Media2Archive.  
+
+## Goals and Target audience  
+### Project goals  
+- The project will provide a platform where anyone interested in cataloguing and archiving their personal film media collection can done so with minimal effort.  
+- The application will enable users to learn new details about their media collection through the application.  
+- The project will help users organise their collection and decide what to keep or donate back to the community.  
+- The users collection will be viewable and editable able using any browser.  
