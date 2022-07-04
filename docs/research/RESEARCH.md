@@ -40,4 +40,16 @@ Responses have been condensed for consistency
 **User.** _‘I think it would, they are material things but would not want to lose them, so knowing what exactly is there means I could ask my insurer about these things.’_  
 **User.** _‘Not sure about insurance but would help me find those films I tell my kids about but seems such an effory to dig around in the boxes just for one film.’_  
 
+Focusing on the user interface, features, ease of use people were asked:  
+
+### Additional questions aked  
+
+**Question.** Is ease of use or features important to you?
+**User.** _‘Easy to use and gets the job done quickly without complicated stuff getting in the way.’_  
+**User.** _‘I like having features, but they need to be easy to get too and understandable.’_  
+
+**Question.** Would knowing details about the media, e.g. plot, storyline be useful to you if it was easy to find in the interface?  
+**User.** _‘Would be a great feature, when we have a family movie night it would be great to get an idea about the film before starting to watch it.’_  
+**User.** _‘Yes, that would be good to know, but only if it was layed out in the interface so it was easy to read.’_
+
 
