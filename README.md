@@ -19,7 +19,9 @@ Movie2Archive helps users gather insight about their collection whilst giving th
     5.3 [Site owner](#site-owner)  
 6. [Design](#design)  
     6.1 [Structure of pages](#structure-of-pages)  
-
+    - [Nain content area](#main-content-area)  
+    - [Footer section](#footer-section)  
+    6.2 [Wireframes](#wireframes)  
 
 ## Overview  
 The Media2Archive application is a database application which catalogues media collections into an easy-to-understand interface which can be use by all ages.  
@@ -99,7 +101,15 @@ As a person with a visual impairment, the website has been designed with screen 
 ### Structure of pages  
 The website application uses a mobile first approach with the page having a maximum width of 1140px which centre aligns at higher resolutions these constraints were used to maintain the user’s focus, attention and aid sight lines.  
 
-### Header section  
+#### Header section  
 The application follows a universal approach which comprises of a left aligned logo for Mobile through to Desktop.  
 To the right is the applications main navigation, which is responsive, and full text links remain right aligned until tablet size and below where it will collapse to a right aligned Hamburger menu (toggle button).  
 On devices tablet and below the user will be able to expand/collapse this menu using the menu toggle button to access all available menu items dependant on logged in status.  
+
+#### Main content area  
+
+#### Footer section  
+The footer section was designed to be useful and useable; the footer is divided into two half page sections at tablet and above screen sizes.  
+The left side will shows Media2Archive social media links and the right side displays a copyright notice when on the landing page and when within the application.  
+
+### Wireframes  
