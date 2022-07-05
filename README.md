@@ -82,4 +82,9 @@ As a first-time user, I want to know how to log out of Media2Archive.
 - As a returning user, I want to be able to move my collection to another room location.  
 - As a returning user, I want to be able to delete my account.  
 
+#### Site owner  
+- As the site owner, I want visitors to find Movie2Archive approachable and know its purpose from the outset.  
+- As the site owner, I want visitors to gain more information and learn new facts about the movies they own.  
+- As the site owner, I want visitors to be able to easily add their movies.  
+- As the site owner, I want the site visitors to be able to see what they own and see their collection by type to promote recycling.  
 
