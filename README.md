@@ -113,3 +113,5 @@ The footer section was designed to be useful and useable; the footer is divided 
 The left side will shows Media2Archive social media links and the right side displays a copyright notice when on the landing page and when within the application.  
 
 ### Wireframes  
+Wireframe designs show Mobile, Tablet and Desktop views of the main concept and parts of the application.  
+The application follows best practice and was developed using a mobile first approach.  
