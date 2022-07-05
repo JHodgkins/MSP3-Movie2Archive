@@ -18,6 +18,8 @@ Movie2Archive helps users gather insight about their collection whilst giving th
     5.2 [Returning user](#returning-user)  
     5.3 [Site owner](#site-owner)  
 6. [Design](#design)  
+    6.1 [Structure of pages](#structure-of-pages)  
+
 
 ## Overview  
 The Media2Archive application is a database application which catalogues media collections into an easy-to-understand interface which can be use by all ages.  
@@ -94,3 +96,5 @@ Media2Archive was designed to be clean, clear and easily understood by all audie
 The application uses mainly solid colours which contrast each other, for example a darker grey against a orange giving the feeling of hard edges to reflect DVD, Blue Ray boxes and the boxy appearance of a media collection.  
 As a person with a visual impairment, the website has been designed with screen magnification and screen readers in mind.  
 
+### Structure of pages  
+The website application uses a mobile first approach with the page having a maximum width of 1140px which centre aligns at higher resolutions these constraints were used to maintain the user’s focus, attention and aid sight lines.  
