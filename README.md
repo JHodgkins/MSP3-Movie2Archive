@@ -14,7 +14,10 @@ Movie2Archive helps users gather insight about their collection whilst giving th
     4.4 [Target audience](#target-audience)  
 5. [User experiance (UX)](#user-experiance-ux)  
     [User stories](#user-stories)  
-    5.1 
+    5.1 [First time user](#first-time-user)  
+    5.2 [Returning user](#returning-user)  
+    5.3 [Site owner](#site-owner)  
+
 ## Overview  
 The Media2Archive application is a database application which catalogues media collections into an easy-to-understand interface which can be use by all ages.  
 The Media2Archive application has been developed with a main goal to help organise, catalogue and provide an intrusive way to educate the end user about their or their families current media collection.  
@@ -70,5 +73,13 @@ As a first-time user, I want to view my collection.
 As a first-time user, I want to find out more information about a movie I have added.  
 As a first-time user, I want to find out how to remove a movie in case I make a mistake.  
 As a first-time user, I want to know how to log out of Media2Archive.  
+
+#### Returning user  
+- As a returning user, I want to be able to easily navigate to the login page.  
+- As a returning user, I want to be able to edit a movie entry I have in my collection.  
+- As a returning user, I want to be able to see how many movies are in my collection.  
+- As a returning user, I want to be able to change my password.  
+- As a returning user, I want to be able to move my collection to another room location.  
+- As a returning user, I want to be able to delete my account.  
 
 
