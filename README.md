@@ -63,4 +63,12 @@ Keyboard and screen reader navigation has also been considered and all elements 
 
 ### User storues  
 #### First time user  
+As a first-time user, I want to understand what the applications purpose is so that I can decide if it meets my needs.  
+As a first-time user, I want to be able to easily navigate to the registration page.  
+As a first-time user, I want to find out how to add a movie to my collection.  
+As a first-time user, I want to view my collection.   
+As a first-time user, I want to find out more information about a movie I have added.  
+As a first-time user, I want to find out how to remove a movie in case I make a mistake.  
+As a first-time user, I want to know how to log out of Media2Archive.  
+
 
