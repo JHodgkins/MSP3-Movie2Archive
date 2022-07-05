@@ -17,6 +17,7 @@ Movie2Archive helps users gather insight about their collection whilst giving th
     5.1 [First time user](#first-time-user)  
     5.2 [Returning user](#returning-user)  
     5.3 [Site owner](#site-owner)  
+6. [Design](#design)  
 
 ## Overview  
 The Media2Archive application is a database application which catalogues media collections into an easy-to-understand interface which can be use by all ages.  
@@ -87,4 +88,9 @@ As a first-time user, I want to know how to log out of Media2Archive.
 - As the site owner, I want visitors to gain more information and learn new facts about the movies they own.  
 - As the site owner, I want visitors to be able to easily add their movies.  
 - As the site owner, I want the site visitors to be able to see what they own and see their collection by type to promote recycling.  
+
+## Design  
+Media2Archive was designed to be clean, clear and easily understood by all audiences using the application, header and footer sections persist throughout the web application to ensure navigation is kept consistent to provide easy navigation and a pleasant user experience (UX).  
+The application uses mainly solid colours which contrast each other, for example a darker grey against a orange giving the feeling of hard edges to reflect DVD, Blue Ray boxes and the boxy appearance of a media collection.  
+As a person with a visual impairment, the website has been designed with screen magnification and screen readers in mind.  
 
