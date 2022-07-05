@@ -98,3 +98,8 @@ As a person with a visual impairment, the website has been designed with screen 
 
 ### Structure of pages  
 The website application uses a mobile first approach with the page having a maximum width of 1140px which centre aligns at higher resolutions these constraints were used to maintain the user’s focus, attention and aid sight lines.  
+
+### Header section  
+The application follows a universal approach which comprises of a left aligned logo for Mobile through to Desktop.  
+To the right is the applications main navigation, which is responsive, and full text links remain right aligned until tablet size and below where it will collapse to a right aligned Hamburger menu (toggle button).  
+On devices tablet and below the user will be able to expand/collapse this menu using the menu toggle button to access all available menu items dependant on logged in status.  
