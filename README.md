@@ -20,8 +20,17 @@ Movie2Archive helps users gather insight about their collection whilst giving th
 6. [Design](#design)  
     6.1 [Structure of pages](#structure-of-pages)  
     - [Nain content area](#main-content-area)  
-    - [Footer section](#footer-section)  
+    - [Footer section](#footer-section)   
+    
     6.2 [Wireframes](#wireframes)  
+    - [Homepage](#homepage)  
+    - [Login page](#login-page)  
+    - [Register page](#register-page)  
+    - [Profile page](#profile-page)  
+    - [Collections page](#collections-page)  
+    - [Add movie page](#add-movie-page)  
+    - [Edit movie page](#edit-movie-page)  
+
 
 ## Overview  
 The Media2Archive application is a database application which catalogues media collections into an easy-to-understand interface which can be use by all ages.  
@@ -115,3 +124,72 @@ The left side will shows Media2Archive social media links and the right side dis
 ### Wireframes  
 Wireframe designs show Mobile, Tablet and Desktop views of the main concept and parts of the application.  
 The application follows best practice and was developed using a mobile first approach.  
+#### Homepage  
+<details><summary>Mobile</summary>
+<img src="docs/wireframes/mobile/mobile_homepage.png" alt="wireframe screenshot of Media2Archive Homepage on mobile"></details>
+
+<details><summary>Tablet</summary>
+<img src="docs/wireframes/tablet/tablet_homepage.png" alt="wireframe screenshot of Media2Archive Homepage on tablet"></details>
+
+<details><summary>Desktop</summary>
+<img src="docs/wireframes/desktop/desktop_homepage.png" alt="wireframe screenshot of Media2Archive Homepage on desktop"></details>  
+
+#### Login page  
+<details><summary>Mobile</summary>
+<img src="docs/wireframes/mobile/mobile_login.png" alt="wireframe screenshot of Media2Archive Login page on mobile"></details>
+
+<details><summary>Tablet</summary>
+<img src="docs/wireframes/tablet/tablet_login.png" alt="wireframe screenshot of Media2Archive Login page on tablet"></details>
+
+<details><summary>Desktop</summary>
+<img src="docs/wireframes/desktop/desktop_login.png" alt="wireframe screenshot of Media2Archive Login page on desktop"></details>  
+  
+#### Register page  
+<details><summary>Mobile</summary>
+<img src="docs/wireframes/mobile/mobile_register.png" alt="wireframe screenshot of Media2Archive Register page on mobile"></details>
+
+<details><summary>Tablet</summary>
+<img src="docs/wireframes/tablet/tablet_register.png" alt="wireframe screenshot of Media2Archive Register page on tablet"></details>
+
+<details><summary>Desktop</summary>
+<img src="docs/wireframes/desktop/desktop_register.png" alt="wireframe screenshot of Media2Archive Register page on desktop"></details>  
+
+#### Profile page  
+<details><summary>Mobile</summary>
+<img src="docs/wireframes/mobile/mobile_profile_page.png" alt="wireframe screenshot of Media2Archive Profile page on mobile"></details>
+
+<details><summary>Tablet</summary>
+<img src="docs/wireframes/tablet/tablet_profile_page.png" alt="wireframe screenshot of Media2Archive Profile page on tablet"></details>
+
+<details><summary>Desktop</summary>
+<img src="docs/wireframes/desktop/desktop_profile_page.png" alt="wireframe screenshot of Media2Archive Profile page on desktop"></details>  
+
+#### Collections page  
+<details><summary>Mobile</summary>
+<img src="docs/wireframes/mobile/mobile_collections.png" alt="wireframe screenshot of Media2Archive Collections page on mobile"></details>
+
+<details><summary>Tablet</summary>
+<img src="docs/wireframes/tablet/tablet_collections.png" alt="wireframe screenshot of Media2Archive Collections page on tablet"></details>
+
+<details><summary>Desktop</summary>
+<img src="docs/wireframes/desktop/desktop_collections.png" alt="wireframe screenshot of Media2Archive Collections page on desktop"></details>  
+
+#### Add movie page  
+<details><summary>Mobile</summary>
+<img src="docs/wireframes/mobile/mobile_add_movie.png" alt="wireframe screenshot of Media2Archive Add movie page on mobile"></details>
+
+<details><summary>Tablet</summary>
+<img src="docs/wireframes/tablet/tablet_add_movie.png" alt="wireframe screenshot of Media2Archive Add movie page on tablet"></details>
+
+<details><summary>Desktop</summary>
+<img src="docs/wireframes/desktop/desktop_add_movie.png" alt="wireframe screenshot of Media2Archive Add movie page on desktop"></details>  
+
+#### Edit movie page  
+<details><summary>Mobile</summary>
+<img src="docs/wireframes/mobile/mobile_edit_movie.png" alt="wireframe screenshot of Media2Archive Edit movie page on mobile"></details>
+
+<details><summary>Tablet</summary>
+<img src="docs/wireframes/tablet/tablet_edit_movie.png" alt="wireframe screenshot of Media2Archive Edit movie page on tablet"></details>
+
+<details><summary>Desktop</summary>
+<img src="docs/wireframes/desktop/desktop_edit_movie.png" alt="wireframe screenshot of Media2Archive Edit movie page on desktop"></details>  
