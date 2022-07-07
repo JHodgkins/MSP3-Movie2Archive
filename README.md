@@ -30,7 +30,9 @@ Movie2Archive helps users gather insight about their collection whilst giving th
     - [Collections page](#collections-page)  
     - [Add movie page](#add-movie-page)  
     - [Edit movie page](#edit-movie-page)  
-
+    
+    6.3 [Colour palette](#colour-palette)  
+    6.4 [Typography](#typography)  
 
 ## Overview  
 The Media2Archive application is a database application which catalogues media collections into an easy-to-understand interface which can be use by all ages.  
@@ -207,3 +209,8 @@ I used a tool called Contrast Grid (colour palette) to determine the foreground 
 
 I used a tool called Contrast Grid [view live colour palette](https://contrast-grid.eightshapes.com/?version=1.1.0&background-colors=&foreground-colors=%23ffffff%0D%0A%23000000%0D%0A%23565555%0D%0A%23FFB341%0D%0A%23FCF7FF%0D%0A%23C4CAD0%0D%0A%23ED254E&es-color-form__tile-size=regular&es-color-form__show-contrast=aaa&es-color-form__show-contrast=aa) to determine the foreground and background combinations to ensure a minimum contrast ratio of 4.5:1 was maintained.  
 ![Accessible colour palette](docs/colours/accessible_colour_scheme_wcag_grid.png) 
+
+### Typography
+Fonts used across the application were provided by Google fonts and were used in certain areas as to maintain readability.  
+The two font families used were, Big Shoulders Display and Poppins, the fonts have a default fall-back of Sans-Serif.  
+Heading elements of the application use: Big Shoulders Display, which gives a movie poster style to match the applications theme with Poppins being used across the remainder of the application elements, to ensure readability for users, the base font size was also set to 18px from the browser default 16px to aid magnification and all audience users.  
