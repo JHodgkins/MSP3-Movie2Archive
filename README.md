@@ -193,3 +193,17 @@ The application follows best practice and was developed using a mobile first app
 
 <details><summary>Desktop</summary>
 <img src="docs/wireframes/desktop/desktop_edit_movie.png" alt="wireframe screenshot of Media2Archive Edit movie page on desktop"></details>  
+
+### Colour palette  
+![colour palette](docs/colours/accessible_colour_scheme.png)   
+
+- Davys Grey: #565555 was used as to represents the darkness of a theatre.  
+- Yellow Orange: #FFB341and Red Crayola: #ED254E were used to represent the certification colours for PG and 18.  
+- Silver Sand: #C4CAD0 was used to represent steel book covers of DVDs and Blue Rays and leans on a sci-fi feel.  
+- Magnolia: #FCF7FF was used to represent the home, a widely used colour in many homes.  
+- White: #FFFFFF and Black: 000000 were used for text and background colours as they are contrasting colours easily readable and have a feeling of sharp edges.  
+- Black and white were primarily used for text, as they carry a high contrast level and are easily readable colours.  
+I used a tool called Contrast Grid (colour palette) to determine the foreground and background combinations to ensure a minimum contrast ratio of 4.5:1 was maintained.  
+
+I used a tool called Contrast Grid [view live colour palette](https://contrast-grid.eightshapes.com/?version=1.1.0&background-colors=&foreground-colors=%23ffffff%0D%0A%23000000%0D%0A%23565555%0D%0A%23FFB341%0D%0A%23FCF7FF%0D%0A%23C4CAD0%0D%0A%23ED254E&es-color-form__tile-size=regular&es-color-form__show-contrast=aaa&es-color-form__show-contrast=aa) to determine the foreground and background combinations to ensure a minimum contrast ratio of 4.5:1 was maintained.  
+![Accessible colour palette](docs/colours/accessible_colour_scheme_wcag_grid.png) 
