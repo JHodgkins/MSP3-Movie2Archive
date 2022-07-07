@@ -33,6 +33,8 @@ Movie2Archive helps users gather insight about their collection whilst giving th
     
     6.3 [Colour palette](#colour-palette)  
     6.4 [Typography](#typography)  
+    6.5 [Icons and imagery](#icons-and-imagery)  
+    6.6 [Sitemap and Databases](#sitemap-and-databases)  
 
 ## Overview  
 The Media2Archive application is a database application which catalogues media collections into an easy-to-understand interface which can be use by all ages.  
@@ -214,3 +216,10 @@ I used a tool called Contrast Grid [view live colour palette](https://contrast-g
 Fonts used across the application were provided by Google fonts and were used in certain areas as to maintain readability.  
 The two font families used were, Big Shoulders Display and Poppins, the fonts have a default fall-back of Sans-Serif.  
 Heading elements of the application use: Big Shoulders Display, which gives a movie poster style to match the applications theme with Poppins being used across the remainder of the application elements, to ensure readability for users, the base font size was also set to 18px from the browser default 16px to aid magnification and all audience users.  
+
+### Sitemap and databases  
+Sitemap routes showng a logged in/out user routes.  
+![Sitemap route diagram](docs/wireframes/database_and_route_diagrams/sitemap_routes_diagram.png)  
+  
+Database structure diagram outlining data structuure across the applicatons non-relational and relational databases.  
+![Database structure diagram](docs/wireframes/database_and_route_diagrams/database_diagram.png)  
