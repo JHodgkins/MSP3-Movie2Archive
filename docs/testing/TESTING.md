@@ -4,4 +4,6 @@ Tests were carried out throughout development in an intergrated way, the tests w
 
 ## Intergrated testing stages
 - #1 - Construct and render flask application to browser:  
-PEP8 complience - PASS
+PEP8 complience - Python, flask structure files - PASS
+- #2 - Database tables User, MediaType and Location models created, posthres database initialised and tables create sucessfully.
+PEP8 complience - models.py - PASS
