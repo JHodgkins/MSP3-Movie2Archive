@@ -4,8 +4,8 @@ Import db so database models can be setup and use by postgresql
 from media2archive import db
 
 
-class Users(db.Model):
-    """ Schema for users table. """
+class User(db.Model):
+    """ Schema for the user table. """
     user_id = db.Column(db.Integer, primary_key=True)
     first_name = db.Column(db.String(100), nullable=False)
     last_name = db.Column(db.String(100), nullable=False)
@@ -16,3 +16,13 @@ class Users(db.Model):
     def __repr__(self):
         """ represent each item as a string """
         return f"#{self.user_id} | Username: {self.username} | Fistname: {self.first_name} | Lastname: {self.last_name} | Join date: {self.join_date} "
+
+
+class MediaType(db.Model):
+    """ Schema for the media type table. """
+    media_type_id = db.Columns(db.Integer, primary_key=True)
+    media_type = db.Column(db.String(20), nullable=False)
+
+    def __repr__(self):
+        """ Represent each item as a string """
+        return self.media_type
