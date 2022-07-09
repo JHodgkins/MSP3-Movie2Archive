@@ -5,7 +5,7 @@ mport Users from the models file
 """
 from flask import render_template
 from media2archive import app, db
-from media2archive.models import Users
+from media2archive.models import User, MediaType
 
 
 @app.route("/")
