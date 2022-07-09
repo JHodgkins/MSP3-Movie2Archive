@@ -2,7 +2,7 @@
 Import os to gather os variables so app is able to launch
 """
 import os
-from media2archive import app
+from movie2archive import app
 
 if __name__ == "__main__":
     app.run(

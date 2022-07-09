@@ -4,8 +4,8 @@ import app and db from __init__ file
 mport Users from the models file
 """
 from flask import render_template
-from media2archive import app, db
-from media2archive.models import User, MediaType, Location
+from movie2archive import app, db
+from movie2archive.models import User, MediaType, Location
 
 
 @app.route("/")

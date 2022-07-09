@@ -1,5 +1,5 @@
 """
-Import required files to initialise the Media2Archive application
+Import required files to initialise the Movie2Archive application
 """
 import os
 import re
@@ -18,4 +18,4 @@ app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DB_URL")
 
 db = SQLAlchemy(app)
 
-from media2archive import routes  # noqa
+from movie2archive import routes  # noqa
