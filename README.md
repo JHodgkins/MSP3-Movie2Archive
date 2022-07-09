@@ -35,6 +35,10 @@ Movie2Archive helps users gather insight about their collection whilst giving th
     6.4 [Typography](#typography)  
     6.5 [Icons and imagery](#icons-and-imagery)  
     6.6 [Sitemap and Databases](#sitemap-and-databases)  
+    6.7 [Features](#features)  
+    - [Existing features](#existing-features)  
+    - [Features to be implimented in future releases](#features-to-be-implimented-in-future-releases)  
+7. [Testing](#testing)  
 
 ## Overview  
 The Media2Archive application is a database application which catalogues media collections into an easy-to-understand interface which can be use by all ages.  
@@ -223,3 +227,13 @@ Sitemap routes showng a logged in/out user routes.
   
 Database structure diagram outlining data structuure across the applicatons non-relational and relational databases.  
 ![Database structure diagram](docs/wireframes/database_and_route_diagrams/database_diagram.png)  
+
+### Features  
+This section looks at features which were implemented and those that with further research and knowledge will add to the existing set of features.  
+
+#### Existing features  
+
+#### Features to be implimented in future releases  
+
+## Testing  
+Please see [TESTING](docs/testing/TESTING.md) document for full details of the testng carried out whilst and after development of the Meia2Archive application.  
