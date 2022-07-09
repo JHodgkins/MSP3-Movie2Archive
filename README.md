@@ -1,4 +1,4 @@
-# Media2Archive
+# Movie2Archive
 
 Movie2Archive is a media management system application which organises into types and gather data from your movie collection and retrieves additional information about the movie for the user to consume.  
 Movie2Archive helps users gather insight about their collection whilst giving them an easy and convenient way to keep their personal collection organised and up to date and potentially upcycle items they do not wish to keep.  
@@ -41,9 +41,9 @@ Movie2Archive helps users gather insight about their collection whilst giving th
 7. [Testing](#testing)  
 
 ## Overview  
-The Media2Archive application is a database application which catalogues media collections into an easy-to-understand interface which can be use by all ages.  
-The Media2Archive application has been developed with a main goal to help organise, catalogue and provide an intrusive way to educate the end user about their or their families current media collection.  
-The business purpose of Media2Archive is to provide an easy and effective way of cataloguing and promote recycling aspects by easily allowing the user to see what they own and decide if duplicates or media is still needed or can be donated.  
+The Movie2Archive application is a database application which catalogues media collections into an easy-to-understand interface which can be use by all ages.  
+The Movie2Archive application has been developed with a main goal to help organise, catalogue and provide an intrusive way to educate the end user about their or their families current media collection.  
+The business purpose of Movie2Archive is to provide an easy and effective way of cataloguing and promote recycling aspects by easily allowing the user to see what they own and decide if duplicates or media is still needed or can be donated.  
 The sites expected audience will be to anyone looking to archive a small to large collection of media, the sites audience would be any user who owns or has acquired a collection and is looking to evaluate its value or recycling potential.  
 The application will provide to new users a reassurance and positive feeling by providing a simple intrusive interface which is clean and simple to use, the applications purpose is maintained throughout its interface and helps educate and promote curiously about the media they own through information provided back to the user after each media submission.  
 
@@ -53,7 +53,7 @@ The application will provide a safe and secure area for cataloguing their collec
 The application will use external resources to inform the end user about interesting information relating to their media whilst allowing the user to edit and add their own information to create their own unique media catalogue.  
 
 ## Research  
-Please view the [research](docs/research/RESEARCH.md) document for details of user research carried out through the planning phase for Media2Archive.  
+Please view the [research](docs/research/RESEARCH.md) document for details of user research carried out through the planning phase for Movie2Archive.  
 
 ## Goals and Target audience  
 ### Project goals  
@@ -63,14 +63,14 @@ Please view the [research](docs/research/RESEARCH.md) document for details of us
 - The users collection will be viewable and editable able using any browser.  
 
 ### User Goals
-- Find information about what Media2Archive is all about.  
-- Find information about how to use Media2Archive.  
+- Find information about what Movie2Archive is all about.  
+- Find information about how to use Movie2Archive.  
 - Easily register and catalogue their items.  
 - Find information about a movie that is catalogued.   
 - View their complete collection and their complete collection size.  
 
 ### Site owners goals  
-- The Media2Archive site owner would like to promote the pick-up and use approach of the application.  
+- The Movie2Archive site owner would like to promote the pick-up and use approach of the application.  
 - It is also important that users can see if duplicate copies are in their collection and promote recycling or donating.  
 - Bild trust with its users so recommendations help grow the platform as a useful resource.  
 
@@ -94,7 +94,7 @@ As a first-time user, I want to find out how to add a movie to my collection.
 As a first-time user, I want to view my collection.   
 As a first-time user, I want to find out more information about a movie I have added.  
 As a first-time user, I want to find out how to remove a movie in case I make a mistake.  
-As a first-time user, I want to know how to log out of Media2Archive.  
+As a first-time user, I want to know how to log out of Movie2Archive.  
 
 #### Returning user  
 - As a returning user, I want to be able to easily navigate to the login page.  
@@ -111,7 +111,7 @@ As a first-time user, I want to know how to log out of Media2Archive.
 - As the site owner, I want the site visitors to be able to see what they own and see their collection by type to promote recycling.  
 
 ## Design  
-Media2Archive was designed to be clean, clear and easily understood by all audiences using the application, header and footer sections persist throughout the web application to ensure navigation is kept consistent to provide easy navigation and a pleasant user experience (UX).  
+Movie2Archive was designed to be clean, clear and easily understood by all audiences using the application, header and footer sections persist throughout the web application to ensure navigation is kept consistent to provide easy navigation and a pleasant user experience (UX).  
 The application uses mainly solid colours which contrast each other, for example a darker grey against a orange giving the feeling of hard edges to reflect DVD, Blue Ray boxes and the boxy appearance of a media collection.  
 As a person with a visual impairment, the website has been designed with screen magnification and screen readers in mind.  
 
@@ -127,80 +127,80 @@ On devices tablet and below the user will be able to expand/collapse this menu u
 
 #### Footer section  
 The footer section was designed to be useful and useable; the footer is divided into two half page sections at tablet and above screen sizes.  
-The left side will shows Media2Archive social media links and the right side displays a copyright notice when on the landing page and when within the application.  
+The left side will shows Movie2Archive social media links and the right side displays a copyright notice when on the landing page and when within the application.  
 
 ### Wireframes  
 Wireframe designs show Mobile, Tablet and Desktop views of the main concept and parts of the application.  
 The application follows best practice and was developed using a mobile first approach.  
 #### Homepage  
 <details><summary>Mobile</summary>
-<img src="docs/wireframes/mobile/mobile_homepage.png" alt="wireframe screenshot of Media2Archive Homepage on mobile"></details>
+<img src="docs/wireframes/mobile/mobile_homepage.png" alt="wireframe screenshot of Movie2Archive Homepage on mobile"></details>
 
 <details><summary>Tablet</summary>
-<img src="docs/wireframes/tablet/tablet_homepage.png" alt="wireframe screenshot of Media2Archive Homepage on tablet"></details>
+<img src="docs/wireframes/tablet/tablet_homepage.png" alt="wireframe screenshot of Movie2Archive Homepage on tablet"></details>
 
 <details><summary>Desktop</summary>
-<img src="docs/wireframes/desktop/desktop_homepage.png" alt="wireframe screenshot of Media2Archive Homepage on desktop"></details>  
+<img src="docs/wireframes/desktop/desktop_homepage.png" alt="wireframe screenshot of Movie2Archive Homepage on desktop"></details>  
 
 #### Login page  
 <details><summary>Mobile</summary>
-<img src="docs/wireframes/mobile/mobile_login.png" alt="wireframe screenshot of Media2Archive Login page on mobile"></details>
+<img src="docs/wireframes/mobile/mobile_login.png" alt="wireframe screenshot of Movie2Archive Login page on mobile"></details>
 
 <details><summary>Tablet</summary>
-<img src="docs/wireframes/tablet/tablet_login.png" alt="wireframe screenshot of Media2Archive Login page on tablet"></details>
+<img src="docs/wireframes/tablet/tablet_login.png" alt="wireframe screenshot of Movie2Archive Login page on tablet"></details>
 
 <details><summary>Desktop</summary>
-<img src="docs/wireframes/desktop/desktop_login.png" alt="wireframe screenshot of Media2Archive Login page on desktop"></details>  
+<img src="docs/wireframes/desktop/desktop_login.png" alt="wireframe screenshot of Movie2Archive Login page on desktop"></details>  
   
 #### Register page  
 <details><summary>Mobile</summary>
-<img src="docs/wireframes/mobile/mobile_register.png" alt="wireframe screenshot of Media2Archive Register page on mobile"></details>
+<img src="docs/wireframes/mobile/mobile_register.png" alt="wireframe screenshot of Movie2Archive Register page on mobile"></details>
 
 <details><summary>Tablet</summary>
-<img src="docs/wireframes/tablet/tablet_register.png" alt="wireframe screenshot of Media2Archive Register page on tablet"></details>
+<img src="docs/wireframes/tablet/tablet_register.png" alt="wireframe screenshot of Movie2Archive Register page on tablet"></details>
 
 <details><summary>Desktop</summary>
-<img src="docs/wireframes/desktop/desktop_register.png" alt="wireframe screenshot of Media2Archive Register page on desktop"></details>  
+<img src="docs/wireframes/desktop/desktop_register.png" alt="wireframe screenshot of Movie2Archive Register page on desktop"></details>  
 
 #### Profile page  
 <details><summary>Mobile</summary>
-<img src="docs/wireframes/mobile/mobile_profile_page.png" alt="wireframe screenshot of Media2Archive Profile page on mobile"></details>
+<img src="docs/wireframes/mobile/mobile_profile_page.png" alt="wireframe screenshot of Movie2Archive Profile page on mobile"></details>
 
 <details><summary>Tablet</summary>
-<img src="docs/wireframes/tablet/tablet_profile_page.png" alt="wireframe screenshot of Media2Archive Profile page on tablet"></details>
+<img src="docs/wireframes/tablet/tablet_profile_page.png" alt="wireframe screenshot of Movie2Archive Profile page on tablet"></details>
 
 <details><summary>Desktop</summary>
-<img src="docs/wireframes/desktop/desktop_profile_page.png" alt="wireframe screenshot of Media2Archive Profile page on desktop"></details>  
+<img src="docs/wireframes/desktop/desktop_profile_page.png" alt="wireframe screenshot of Movie2Archive Profile page on desktop"></details>  
 
 #### Collections page  
 <details><summary>Mobile</summary>
-<img src="docs/wireframes/mobile/mobile_collections.png" alt="wireframe screenshot of Media2Archive Collections page on mobile"></details>
+<img src="docs/wireframes/mobile/mobile_collections.png" alt="wireframe screenshot of Movie2Archive Collections page on mobile"></details>
 
 <details><summary>Tablet</summary>
-<img src="docs/wireframes/tablet/tablet_collections.png" alt="wireframe screenshot of Media2Archive Collections page on tablet"></details>
+<img src="docs/wireframes/tablet/tablet_collections.png" alt="wireframe screenshot of Movie2Archive Collections page on tablet"></details>
 
 <details><summary>Desktop</summary>
-<img src="docs/wireframes/desktop/desktop_collections.png" alt="wireframe screenshot of Media2Archive Collections page on desktop"></details>  
+<img src="docs/wireframes/desktop/desktop_collections.png" alt="wireframe screenshot of Movie2Archive Collections page on desktop"></details>  
 
 #### Add movie page  
 <details><summary>Mobile</summary>
-<img src="docs/wireframes/mobile/mobile_add_movie.png" alt="wireframe screenshot of Media2Archive Add movie page on mobile"></details>
+<img src="docs/wireframes/mobile/mobile_add_movie.png" alt="wireframe screenshot of Movie2Archive Add movie page on mobile"></details>
 
 <details><summary>Tablet</summary>
-<img src="docs/wireframes/tablet/tablet_add_movie.png" alt="wireframe screenshot of Media2Archive Add movie page on tablet"></details>
+<img src="docs/wireframes/tablet/tablet_add_movie.png" alt="wireframe screenshot of Movie2Archive Add movie page on tablet"></details>
 
 <details><summary>Desktop</summary>
-<img src="docs/wireframes/desktop/desktop_add_movie.png" alt="wireframe screenshot of Media2Archive Add movie page on desktop"></details>  
+<img src="docs/wireframes/desktop/desktop_add_movie.png" alt="wireframe screenshot of Movie2Archive Add movie page on desktop"></details>  
 
 #### Edit movie page  
 <details><summary>Mobile</summary>
-<img src="docs/wireframes/mobile/mobile_edit_movie.png" alt="wireframe screenshot of Media2Archive Edit movie page on mobile"></details>
+<img src="docs/wireframes/mobile/mobile_edit_movie.png" alt="wireframe screenshot of Movie2Archive Edit movie page on mobile"></details>
 
 <details><summary>Tablet</summary>
-<img src="docs/wireframes/tablet/tablet_edit_movie.png" alt="wireframe screenshot of Media2Archive Edit movie page on tablet"></details>
+<img src="docs/wireframes/tablet/tablet_edit_movie.png" alt="wireframe screenshot of Movie2Archive Edit movie page on tablet"></details>
 
 <details><summary>Desktop</summary>
-<img src="docs/wireframes/desktop/desktop_edit_movie.png" alt="wireframe screenshot of Media2Archive Edit movie page on desktop"></details>  
+<img src="docs/wireframes/desktop/desktop_edit_movie.png" alt="wireframe screenshot of Movie2Archive Edit movie page on desktop"></details>  
 
 ### Colour palette  
 ![colour palette](docs/colours/accessible_colour_scheme.png)   
@@ -236,4 +236,4 @@ This section looks at features which were implemented and those that with furthe
 #### Features to be implimented in future releases  
 
 ## Testing  
-Please see [TESTING](docs/testing/TESTING.md) document for full details of the testng carried out whilst and after development of the Media2Archive application.  
+Please see [TESTING](docs/testing/TESTING.md) document for full details of the testng carried out whilst and after development of the Movie2Archive application.  
