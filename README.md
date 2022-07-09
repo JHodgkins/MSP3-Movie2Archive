@@ -236,4 +236,4 @@ This section looks at features which were implemented and those that with furthe
 #### Features to be implimented in future releases  
 
 ## Testing  
-Please see [TESTING](docs/testing/TESTING.md) document for full details of the testng carried out whilst and after development of the Meia2Archive application.  
+Please see [TESTING](docs/testing/TESTING.md) document for full details of the testng carried out whilst and after development of the Media2Archive application.  
