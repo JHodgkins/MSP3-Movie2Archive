@@ -26,3 +26,13 @@ class MediaType(db.Model):
     def __repr__(self):
         """ Represent each item as a string """
         return self.media_type
+
+
+class Location(db.Model):
+    """ Schema for the location table. """
+    location_id = db.Columns(db.Integer, primary_key=True)
+    location = db.Column(db.String(20), nullable=False)
+
+    def __repr__(self):
+        """ Represent each item as a string """
+        return self.media_type
