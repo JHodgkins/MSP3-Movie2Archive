@@ -5,5 +5,10 @@ Tests were carried out throughout development in an intergrated way, the tests w
 ## Intergrated testing stages
 - #1 - Construct and render flask application to browser:  
 PEP8 complience - Python, flask structure files - PASS
-- #2 - Database tables User, MediaType and Location models created, posthres database initialised and tables create sucessfully.
+- #2 - Database tables User, MediaType and Location models created, postgres database initialised and tables created sucessfully.
 PEP8 complience - models.py - PASS
+- #3 - Database tables Edition and Movielookup added to database.
+PEP8 complience - models.py, routes.py - PASS
+
+## Development bugs
+- #1 - MovieLookup table renamed to Movielookup as second capital causes an _ to appear in postgresql database tables view - Fixed
