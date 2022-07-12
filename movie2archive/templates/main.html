@@ -5,8 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie2Archive</title>
+    <!-- Compiled and minified materialize JavaScript -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" type="text/css">
+    <!-- Custom stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" typr="text/css">
+
 </head>
 <body>
-    <h1>Testing template is rendering on frontend</h1>
+    <header>
+
+    </header>
+    <main class="container">
+        {% block content %}
+        
+        {% endblock content %}
+    </main>
+    <footer>
+        <p class="copyright text-muted">Copyright &copy; <span id="copyright"></span>, Movie2Archive - Educational project</p>
+    </footer>
+
+    <!-- Compiled and minified materialize JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Custom JS -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script>
+        $("#copyright").text(new Date().getFullYear());
+  </script>
 </body>
 </html>
