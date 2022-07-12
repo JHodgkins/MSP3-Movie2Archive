@@ -17,7 +17,7 @@ from movie2archive.models import (
 @app.route("/")
 def home():
     """Create a tempory route to render main.html content to browser."""
-    return render_template("main.html")
+    return render_template("index.html", )
 
 # testing mongo connection
 @app.route("/get_movies")
