@@ -15,7 +15,32 @@
 </head>
 <body>
     <header>
+    <!-- Main navigation -->
+        <nav class="grey darken-4">
+            <div class="nav-wrapper container">
+            <div class="row">
+            <a href="{{ url_for('home') }}" class="brand-logo">Movies2Archive</a>
+            <a href="#" data-target="mobile-menu" class="sidenav-trigger" aria-label="Menu"><i class="fas fa-bars"></i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Register</a></li>
+                <li><a href="{{ url_for('get_movies') }}">Collection</a></li>
+            </ul>
+            </div>
+            </div>
+        </nav>
 
+        <!-- Mobile navigation -->
+        <div  class="sidenav" id="mobile-menu">
+        <h2>navigation</h2>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Register</a></li>
+            <li><a href="{{ url_for('get_movies') }}">Collection</a></li>
+        </ul>
+        </div>
     </header>
     <main class="container">
         {% block content %}
@@ -23,7 +48,7 @@
         {% endblock content %}
     </main>
     <footer>
-        <p class="copyright text-muted">Copyright &copy; <span id="copyright"></span>, Movie2Archive - Educational project</p>
+        <p class="copyright text-muted">&copy;<span id="copyright"></span> Movie2Archive - Educational project</p>
     </footer>
 
     <!-- Compiled and minified materialize JS -->
