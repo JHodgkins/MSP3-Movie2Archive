@@ -4,7 +4,23 @@
 html, body {
     font-family: 'Poppins', sans-serif;
     font-size: 100%;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
-h1,h2,h3,h4,h5,h6 {
+
+h1,h2,h3,h4,h5,h6, .brand-logo {
     font-family: 'Big Shoulders Display', cursive;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+footer {
+    display: flex;
+    height: 50px;
+    align-content: center;
+    justify-content: center;
+    background-color: #FFB341;
 }
