@@ -16,11 +16,11 @@ from movie2archive.models import (
 
 @app.route("/")
 def home():
-    """Create a tempory route to render main.html content to browser."""
+    """ render a landing page for when user visits Movie2Archive."""
     return render_template("index.html", )
 
 # testing mongo connection
 @app.route("/get_movies")
 def get_movies():
     movies = mongo.db.movies.find()
-    return render_template("movies-mdbtest.html", movies=movies)
+    return render_template("collection.html", movies=movies)
