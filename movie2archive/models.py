@@ -15,7 +15,8 @@ class User(UserMixin, db.Model):
     first_name = db.Column(db.String(100), nullable=False)
     last_name = db.Column(db.String(100), nullable=False)
     user_name = db.Column(db.String(50), unique=True, nullable=False)
-    password = db.Column(db.String(260), nullable=False)
+    user_email = db.Column(db.String(100), unique=True, nullable=False)
+    password = db.Column(db.String(160), nullable=False)
     join_date = db.Column(db.Date, nullable=False)
     users = db.relationship(
         "Movielookup", backref="user", cascade="all, delete", lazy=True)
@@ -24,7 +25,7 @@ class User(UserMixin, db.Model):
         """
         represent each item as a string
         """
-        return f"#{self.user_id} | Username: {self.username} | Fistname: {self.first_name} | Lastname: {self.last_name} | Join date: {self.join_date} "
+        return f"#{self.user_id} | Username: {self.username} | Fistname: {self.first_name} | Lastname: {self.last_name} | User email: {self.user_email} | Join date: {self.join_date} "
 
 
     def set_password(self, password):
@@ -32,7 +33,7 @@ class User(UserMixin, db.Model):
 
 
     def check_password(self,password):
-      return check_password_hash(self.password,password)
+      return check_password_hash(self.password, password)
 
     
 @login_manager.user_loader
