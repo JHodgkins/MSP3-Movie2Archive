@@ -2,7 +2,8 @@
 Import flask to habdle routes and render_template to handle template files, flash for message feedback, session to hold user session data and url_for for retrieving base url.
 Import Bson so Mongo Id can be read.
 Import werkzeug for security measures applied to user account.
-Import app to launch, db, mongo from __init__ file for database details annd connections.
+Import app to launch, db, mongo from __init__ file for database
+details annd connections.
 Import Users, MediaType, Location, Edition, Movielookup from the models file.
 """
 from flask import (
@@ -18,6 +19,7 @@ from movie2archive.models import (
 def home():
     """ render a landing page for when user visits Movie2Archive."""
     return render_template("index.html", )
+
 
 # testing mongo connection
 @app.route("/get_movies")
