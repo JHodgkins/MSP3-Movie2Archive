@@ -6,6 +6,7 @@ import re
 from flask import Flask
 from flask_pymongo import PyMongo
 from flask_sqlalchemy import SQLAlchemy
+from flask_login import LoginManager
 
 # Check to see if env file exists, load if True
 if os.path.exists("env.py"):
@@ -26,5 +27,8 @@ else:
 
 db = SQLAlchemy(app)
 mongo = PyMongo(app)
+
+login_manager = LoginManager()
+login_manager.init_app(app)
 
 from movie2archive import routes  # noqa

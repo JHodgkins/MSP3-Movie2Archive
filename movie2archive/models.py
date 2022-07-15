@@ -1,10 +1,13 @@
 """
 Import db so database models can be setup and use by postgresql
 """
-from movie2archive import db
+from movie2archive import db, login_manager
+from flask_login import UserMixin
+from datetime import datetime
+from werkzeug.security import generate_password_hash, check_password_hash
 
 
-class User(db.Model):
+class User(UserMixin, db.Model):
     """
     Schema for the user table.
     """
@@ -22,6 +25,19 @@ class User(db.Model):
         represent each item as a string
         """
         return f"#{self.user_id} | Username: {self.username} | Fistname: {self.first_name} | Lastname: {self.last_name} | Join date: {self.join_date} "
+
+
+    def set_password(self, password):
+        self.password = generate_password_hash(password)
+
+
+    def check_password(self,password):
+      return check_password_hash(self.password,password)
+
+    
+@login_manager.user_loader
+def load_user(user_id):
+    return User.get(user_id)
 
 
 class Media(db.Model):
