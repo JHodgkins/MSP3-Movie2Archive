@@ -6,6 +6,7 @@ import re
 from flask import Flask
 from flask_pymongo import PyMongo
 from flask_sqlalchemy import SQLAlchemy
+from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
 
 
@@ -29,6 +30,9 @@ else:
 # Databases assigned to app
 db = SQLAlchemy(app)
 mongo = PyMongo(app)
+
+# Bcrypt assignment for hashing passwords
+bcrypt = Bcrypt(app)
 
 # LoginManager assignment to app, user views and on-sscreen messages
 login_manager = LoginManager(app)
