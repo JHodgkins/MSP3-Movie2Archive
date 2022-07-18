@@ -8,6 +8,7 @@ from flask_pymongo import PyMongo
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 
+
 # Check to see if env file exists, load if True
 if os.path.exists("env.py"):
     import env  # noqa
@@ -25,10 +26,13 @@ else:
         uri = uri.replace("postgres://", "postgresql://", 1)
     app.config["SQLALCHEMY_DATABASE_URI"] = uri  # Heroku
 
+# Databases assigned to app
 db = SQLAlchemy(app)
 mongo = PyMongo(app)
 
-login_manager = LoginManager()
-login_manager.init_app(app)
+# LoginManager assignment to app, user views and on-sscreen messages
+login_manager = LoginManager(app)
+login_manager.login_view = 'login'
+login_manager.login_message_category = 'info'
 
 from movie2archive import routes  # noqa
