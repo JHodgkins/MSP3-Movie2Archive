@@ -9,7 +9,7 @@ Import Users, MediaType, Location, Edition, Movielookup from the models file.
 from flask import (
     Flask, render_template, flash, session, url_for)
 from bson.objectid import ObjectId
-from werkzeug.security import generate_password_hash, check_password_hash
+
 from movie2archive import app, db, mongo
 from movie2archive.models import (
     User, Media, Location, Edition, Movielookup)
@@ -19,6 +19,24 @@ from movie2archive.models import (
 def home():
     """ render a landing page for when user visits Movie2Archive."""
     return render_template("index.html", )
+
+
+@app.route("/about")
+def about():
+    """ render a landing page for when user visits Movie2Archive."""
+    return render_template('about.html', title='About') 
+
+
+@app.route("/login")
+def login():
+    """ render a landing page for when user visits Movie2Archive."""
+    return render_template('login.html', title='Login') 
+
+
+@app.route("/register")
+def register():
+    """ render a landing page for when user visits Movie2Archive."""
+    return render_template('register.html', title='Register') 
 
 
 # testing mongo connection
