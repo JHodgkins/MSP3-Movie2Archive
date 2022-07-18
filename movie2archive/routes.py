@@ -9,7 +9,7 @@ Import Users, MediaType, Location, Edition, Movielookup from the models file.
 from flask import (
     Flask, render_template, flash, session, url_for)
 from bson.objectid import ObjectId
-from movie2archive import app, db, mongo
+from movie2archive import app, db, mongo, bcrypt
 from movie2archive.models import (
     User, Media, MovieLookup)
 
