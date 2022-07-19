@@ -21,14 +21,14 @@ class User(db.Model, UserMixin):
     image_file = db.Column(db.String(20), nullable=False, default='default.jpg')
     password = db.Column(db.String(60), nullable=False)
     joined = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
-    movies = db.relationship('MovieLookup', backref='author', lazy=True)
+    movies = db.relationship('Movielookup', backref='author', lazy=True)
 
     def __repr__(self):
         return f"User('{self.username}', '{self.email}', '{self.image_file}')"
 
-class MovieLookup(db.Model, UserMixin):
+class Movielookup(db.Model, UserMixin):
     """
-    Schema for the MovieLookup table.
+    Schema for the Movie lookup table.
     """
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100), nullable=False)
@@ -48,7 +48,7 @@ class Media(db.Model):
     """
     id = db.Column(db.Integer, primary_key=True)
     type = db.Column(db.String(20), nullable=False)
-    mediatypes = db.relationship('MovieLookup', backref='media', lazy=True)
+    mediatypes = db.relationship('Movielookup', backref='media', lazy=True)
 
     def __repr__(self):
         """
