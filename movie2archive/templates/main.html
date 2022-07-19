@@ -56,6 +56,9 @@
                 </li>
                 {% if current_user.is_authenticated %}
                   <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('collection') }}">My Collection</a>
+                  </li>
+                  <li class="nav-item">
                     <a class="nav-link" href="{{ url_for('profile') }}">Profile</a>
                   </li>
                   <li class="nav-item">
@@ -89,6 +92,13 @@
     <main class="container">
         <div class="row">
             <div class="col-md-12">
+            {% with messages = get_flashed_messages (with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
             {% block content %}
             {% endblock content %}
             </div> <!-- end main col-md-12 -->
