@@ -77,7 +77,8 @@ def dashboard():
     if str(current_user.id) != access_key:
         flash(f'{current_user.username}, You are not authorised. to access this area.', 'warning')
         return redirect(url_for('home'))
-    return render_template("dashboard.html", title='Site Dashboard')
+    media_types = Media.query.all()
+    return render_template("dashboard.html", title='Site Dashboard', media_types=media_types)
 
 
 @app.route("/dashboard/add_media_category", methods=['GET', 'POST'])
@@ -90,6 +91,9 @@ def add_media_cat():
     else:
         form = MediaCatForm()
         if form.validate_on_submit():
-            flash(f'Media type category was added sucessfully!', 'info')
+            media_type = Media(type=form.type.data)
+            db.session.add(media_type)
+            db.session.commit()
+            flash(f'Media type category was added sucessfully to the database!', 'info')
             return redirect(url_for('dashboard'))
     return render_template("add_media_category.html", title='Add Category', form=form)
