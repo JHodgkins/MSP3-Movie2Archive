@@ -1,6 +1,7 @@
 from flask import render_template, url_for, flash, redirect, request
-from movie2archive import app, db, mongo, bcrypt
-from movie2archive.forms import RegistrationForm, LoginForm
+from movie2archive import app, db, mongo, bcrypt, access_key
+from movie2archive.forms import (
+    RegistrationForm, LoginForm, MediaCatForm)
 from movie2archive.models import User, Movielookup, Media
 from flask_login import (
     login_user, logout_user, current_user, login_required)
@@ -44,7 +45,7 @@ def login():
             login_user(user, remember=form.remember.data)
             next_redirect = request.args.get('next')
             return redirect(next_redirect) if next_redirect else redirect(
-                url_for('home'))
+                url_for('dashboard'))
         else:
             flash(f'login failed, Please try again', 'danger')
     return render_template("login.html", title='Login', form=form)
@@ -61,9 +62,34 @@ def logout():
 def profile():
     return render_template("profile.html", title='Profile')
 
+
 # testing mongo connection
 @app.route("/collection")
 @login_required
 def collection():
     movies = mongo.db.movies.find()
     return render_template("collection.html", title='Profile', movies=movies)
+
+
+@app.route("/dashboard")
+@login_required
+def dashboard():
+    if str(current_user.id) != access_key:
+        flash(f'{current_user.username}, You are not authorised. to access this area.', 'warning')
+        return redirect(url_for('home'))
+    return render_template("dashboard.html", title='Site Dashboard')
+
+
+@app.route("/dashboard/add_media_category", methods=['GET', 'POST'])
+@login_required
+def add_media_cat():
+    # Defensive check
+    if str(current_user.id) != access_key:
+        flash(f'{current_user.username}, You are not authorised. to access this url.', 'warning')
+        return redirect(url_for('home'))
+    else:
+        form = MediaCatForm()
+        if form.validate_on_submit():
+            flash(f'Media type category was added sucessfully!', 'info')
+            return redirect(url_for('dashboard'))
+    return render_template("add_media_category.html", title='Add Category', form=form)
