@@ -18,8 +18,8 @@
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         {{ media_type.type }}
                         <div class="btn-group">
-                            <a href="#" class="btn btn-primary mx-1">Edit</a>
-                            <a href="#" class="btn btn-primary">Delete</a>
+                            <a href="{{ url_for('edit_media_cat', media_type_id=media_type.id) }}" class="btn btn-primary mx-1">Edit</a>
+                            <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mediaDeleteModal" value="{{ media_type.id }}">Delete</a>
                         </div>
                     </li>
                 {% endfor %}
@@ -35,4 +35,24 @@
         </div>
         {% endif %}
     </div>
+
+    <!-- Modal -->
+<div class="modal fade" id="mediaDeleteModal" tabindex="-1" aria-labelledby="mediaModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="mediaModalLabel">Confirm deletion of media type {{ media_types.id }}</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Please read: You are about to delete a Media type from the database.</p>
+        <p>If any user has this media type assigned within their collection, those collections titles will be deleted also.</p>
+        <p>This action is permanant and cannot be reversed.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Confirm deletion</button>
+      </div>
+    </div>
+  </div>
 {% endblock content %}

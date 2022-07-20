@@ -1,7 +1,7 @@
 from flask import render_template, url_for, flash, redirect, request
 from movie2archive import app, db, mongo, bcrypt, access_key
 from movie2archive.forms import (
-    RegistrationForm, LoginForm, MediaCatForm)
+    RegistrationForm, LoginForm, MediaCatForm, EditMediaCatForm)
 from movie2archive.models import User, Movielookup, Media
 from flask_login import (
     login_user, logout_user, current_user, login_required)
@@ -97,3 +97,24 @@ def add_media_cat():
             flash(f'Media type category was added sucessfully to the database!', 'info')
             return redirect(url_for('dashboard'))
     return render_template("add_media_category.html", title='Add Category', form=form)
+
+@app.route("/dashboard/edit_media_category/<int:media_type_id>", methods=['GET' , 'POST'])
+@login_required
+def edit_media_cat(media_type_id):
+    # Defensive check
+    if str(current_user.id) != access_key:
+        flash(f'{current_user.username}, You are not authorised. to access this url.', 'warning')
+        return redirect(url_for('home'))
+    else:
+        media_types = Media.query.get_or_404(media_type_id)
+        form = EditMediaCatForm()
+        if form.validate_on_submit():
+            media_types.type == form.type.data
+            print(media_types.type)
+            db.session.commit()
+            flash(f'Media type category was sucessfully updated and added to the database!', 'info')
+            return redirect(url_for('dashboard'))
+        elif request.method == 'GET':
+             form.type.data = media_types.type
+            #media_types.type=request.form.get()
+    return render_template("add_media_category.html", title='Edit Category', form=form)

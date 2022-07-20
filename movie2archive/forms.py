@@ -36,3 +36,8 @@ class LoginForm(FlaskForm):
 class MediaCatForm(FlaskForm):
     type = StringField('Media type', validators=[DataRequired()])
     submit = SubmitField('Add media type')
+
+
+class EditMediaCatForm(FlaskForm):
+    type = StringField('Edit media type', validators=[DataRequired()])
+    submit = SubmitField('Update media type')
