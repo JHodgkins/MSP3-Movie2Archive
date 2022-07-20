@@ -11,13 +11,21 @@
                     <li><a href="{{ url_for('add_media_cat') }}">Add a Media type category</a></li>
                     <li>Add a location type category</li>
                 </ul>
-            {% endif %}
 
             <h3>Media Types</h3>
-            <ul>
-                <li><a href="{{ url_for('add_media_cat') }}">Add a Media type category</a></li>
-                <li>Add a location type category</li>
-            </ul>
+            <ul class="list-group">
+                {% for media_type in media_types %}
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        {{ media_type.type }}
+                        <div class="btn-group">
+                            <a href="#" class="btn btn-primary mx-1">Edit</a>
+                            <a href="#" class="btn btn-primary">Delete</a>
+                        </div>
+                    </li>
+                {% endfor %}
+            <hr>
+            <a href="{{ url_for('add_media_cat') }}">Add a Media type category</a>
+            <hr>
 
             <h3>All location types</h3>
             <ul>
@@ -25,5 +33,6 @@
                 <li>Add a location type category</li>
             </ul>
         </div>
+        {% endif %}
     </div>
 {% endblock content %}
