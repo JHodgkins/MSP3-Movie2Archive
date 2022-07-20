@@ -98,23 +98,26 @@ def add_media_cat():
             return redirect(url_for('dashboard'))
     return render_template("add_media_category.html", title='Add Category', form=form)
 
-@app.route("/dashboard/edit_media_category/<int:media_type_id>", methods=['GET' , 'POST'])
+@app.route("/dashboard/edit_media_category/<int:media_type_id>/", methods=[
+    'GET', 'POST'])
 @login_required
 def edit_media_cat(media_type_id):
     # Defensive check
-    if str(current_user.id) != access_key:
-        flash(f'{current_user.username}, You are not authorised. to access this url.', 'warning')
-        return redirect(url_for('home'))
-    else:
-        media_types = Media.query.get_or_404(media_type_id)
-        form = EditMediaCatForm()
-        if form.validate_on_submit():
-            media_types.type == form.type.data
-            print(media_types.type)
-            db.session.commit()
-            flash(f'Media type category was sucessfully updated and added to the database!', 'info')
-            return redirect(url_for('dashboard'))
-        elif request.method == 'GET':
-             form.type.data = media_types.type
+    # if str(current_user.id) != access_key:
+    #     flash(f'{current_user.username}, You are not authorised. to access this url.', 'warning')
+    #     return redirect(url_for('home'))
+    # else:
+    media_types = Media.query.get_or_404(media_type_id)
+    form2 = EditMediaCatForm()
+    if form2.validate_on_submit():
+        media_types.type = form2.type.data
+        print(media_types.type)
+            
+        db.session.commit()
+            # flash(f'Media type category was sucessfully updated and added to the database!', 'info')
+        return redirect(url_for('profile'))
+    elif request.method == 'GET':
+        form2.type.data = media_types.type
+        print("form.type.data")
             #media_types.type=request.form.get()
-    return render_template("add_media_category.html", title='Edit Category', form=form)
+    return render_template("edit_media_category.html", title='Edit Category', form2=form2)
