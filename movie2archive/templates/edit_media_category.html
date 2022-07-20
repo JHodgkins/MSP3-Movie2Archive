@@ -5,26 +5,26 @@
       <h1>Edit a media type category</h1>
         <div class="col-sm-6">       
 
-            <form action="" method="post" novalidate>
+            <form action="" method="POST" novalidate>
                 {# CSR token #}
-                {{ form.hidden_tag() }}
+                {{ form2.hidden_tag() }}
 
                 <div class="mb-3">
-                    {{ form.type.label(class="form-label") }}
-                        {% if form.type.errors %}
-                            {{ form.type(class="form-control is-invalid") }}
+                    {{ form2.type.label(class="form-label") }}
+                        {% if form2.type.errors %}
+                            {{ form2.type(class="form-control is-invalid") }}
                             <div class="invalid-feedback">
-                                {% for error in form.type.errors %}
+                                {% for error in form2.type.errors %}
                                     <span>{{ error }}
                                 {% endfor %}
                             </div>
                         {% else %}
-                            {{ form.type(class="form-control") }} 
+                            {{ form2.type(class="form-control") }} 
                         {% endif %}
                 </div>
 
                 <div class="mb-3">
-                {{ form.submit(class="btn btn-outline-info") }}
+                {{ form2.submit(class="btn btn-outline-info") }}
                 </div>
             </form>
         </div>
