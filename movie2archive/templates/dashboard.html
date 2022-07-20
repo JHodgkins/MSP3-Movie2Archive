@@ -1,0 +1,29 @@
+{% extends "main.html" %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-6">
+            <h1 class="">MOVIE2ARCHIVE Dashboard</h2>
+            <h2 class="">Admin actions</h2>
+            <p>Manage the site here.</p>
+            {% if current_user.username == "admin" %}
+                <ul>
+                    <li><a class="nav-link" href="{{ url_for('dashboard') }}">Dashboard</a></li>
+                    <li><a href="{{ url_for('add_media_cat') }}">Add a Media type category</a></li>
+                    <li>Add a location type category</li>
+                </ul>
+            {% endif %}
+
+            <h3>Media Types</h3>
+            <ul>
+                <li><a href="{{ url_for('add_media_cat') }}">Add a Media type category</a></li>
+                <li>Add a location type category</li>
+            </ul>
+
+            <h3>All location types</h3>
+            <ul>
+                <li><a href="{{ url_for('add_media_cat') }}">Add a Media type category</a></li>
+                <li>Add a location type category</li>
+            </ul>
+        </div>
+    </div>
+{% endblock content %}

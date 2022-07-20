@@ -1,0 +1,38 @@
+{% extends "main.html" %}
+{% block content %}
+<section class="form-area">
+    <div class="row">
+      <h1>Add a media type category</h1>
+        <div class="col-sm-6">       
+
+            <form action="" method="post" novalidate>
+                {# CSR token #}
+                {{ form.hidden_tag() }}
+
+                <div class="mb-3">
+                    {{ form.type.label(class="form-label") }}
+                        {% if form.type.errors %}
+                            {{ form.type(class="form-control is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.type.errors %}
+                                    <span>{{ error }}
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.type(class="form-control") }} 
+                        {% endif %}
+                </div>
+
+                <div class="mb-3">
+                {{ form.submit(class="btn btn-outline-info") }}
+                </div>
+            </form>
+        </div>
+
+        <div class="col-sm-6">
+            <h2>View media types</h2>
+            <a href="#">Media type categories</a>
+        </div>
+    </div>
+</section>
+{% endblock content %}
