@@ -1,8 +1,8 @@
 from flask import render_template, url_for, flash, redirect, request
 from movie2archive import app, db, mongo, bcrypt, access_key
 from movie2archive.forms import (
-    RegistrationForm, LoginForm, MediaCatForm, EditMediaCatForm)
-from movie2archive.models import User, Movielookup, Media
+    RegistrationForm, LoginForm, MediaCatForm, EditMediaCatForm, LocationCatForm)
+from movie2archive.models import User, Movielookup, Media, Location
 from flask_login import (
     login_user, logout_user, current_user, login_required)
 
@@ -78,7 +78,8 @@ def dashboard():
         flash(f'{current_user.username}, You are not authorised. to access this area.', 'warning')
         return redirect(url_for('home'))
     media_types = Media.query.all()
-    return render_template("dashboard.html", title='Site Dashboard', media_types=media_types)
+    location_types = Location.query.all()
+    return render_template("dashboard.html", title='Site Dashboard', location_types=location_types, media_types=media_types)
 
 
 @app.route("/dashboard/add_media_category", methods=['GET', 'POST'])
@@ -97,6 +98,7 @@ def add_media_cat():
             flash(f'Media type category was added sucessfully to the database!', 'info')
             return redirect(url_for('dashboard'))
     return render_template("add_media_category.html", title='Add Category', form=form)
+
 
 @app.route("/dashboard/edit_media_category/<int:media_type_id>/", methods=[
     'GET', 'POST'])
@@ -133,3 +135,31 @@ def delete_media_cat(media_type_id):
         db.session.commit()
         flash(f'Media type category was sucessfully deleted from the database!', 'info')
         return redirect(url_for('dashboard'))
+
+
+# @app.route("/dashboard")
+# @login_required
+# def dashboard_location():
+#     if str(current_user.id) != access_key:
+#         flash(f'{current_user.username}, You are not authorised. to access this area.', 'warning')
+#         return redirect(url_for('home'))
+#     location_types = Location.query.all()
+#     return render_template("dashboard.html", title='Site Dashboard', location_types=location_types)
+
+
+@app.route("/dashboard/add_location_category", methods=['GET', 'POST'])
+@login_required
+def add_location_cat():
+    # Defensive check
+    if str(current_user.id) != access_key:
+        flash(f'{current_user.username}, You are not authorised. to access this url.', 'warning')
+        return redirect(url_for('home'))
+    else:
+        form = LocationCatForm()
+        if form.validate_on_submit():
+            location_type = Location(location=form.location.data)
+            db.session.add(location_type)
+            db.session.commit()
+            flash(f'Location category was added sucessfully to the database!', 'info')
+            return redirect(url_for('dashboard'))
+    return render_template("add_location_category.html", title='Add Location', form=form)
