@@ -9,7 +9,7 @@
                 <ul>
                     <li><a class="nav-link" href="{{ url_for('dashboard') }}">Dashboard</a></li>
                     <li><a href="{{ url_for('add_media_cat') }}">Add a Media type category</a></li>
-                    <li>Add a location type category</li>
+                    <li><a href="{{ url_for('add_location_cat') }}">Add a location category</a></li>
                 </ul>
 
             <h3>Media Types</h3>
@@ -52,10 +52,43 @@
             <hr>
 
             <h3>All location types</h3>
-            <ul>
-                <li><a href="{{ url_for('add_media_cat') }}">Add a Media type category</a></li>
-                <li>Add a location type category</li>
-            </ul>
+            <ul class="list-group">
+              {% for location_type in location_types %}
+                  <li class="list-group-item d-flex justify-content-between align-items-center">{{ location_type.location }}
+                    <div class="btn-group">
+                      <a href="" class="btn btn-primary mx-1">Edit</a>
+                      <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete_modal-{{ location_type.id }}">Delete</button>
+                    </div>
+                  </li>
+                  <!-- Modal -->
+                  <div class="modal fade" id="delete_modal-{{ location_type.id }}" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h2 class="modal-title" id="ModalLabel">Confirm deletion of location ({{ location_type.location }})</h2>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <p>Please read:<br>
+                          You are about to delete Media type <strong>{{ location_type.location }}</strong> from the database.</p>
+                          <p>If any user has this media type assigned within their collection, those collection titles will be deleted also.</p>
+                          <p><strong>This action is permanant and cannot be reversed</strong>.</p>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                          <form action="" method="POST">
+                            <input class="btn btn-danger" type="submit" value="I understand, Delete now">
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- end modal -->
+                {% endfor %}
+                </ul>
+            <hr>
+              <a href="{{ url_for('add_location_cat') }}">Add a Location category</a>
+            <hr>
         </div>
         {% endif %}
     </div>
