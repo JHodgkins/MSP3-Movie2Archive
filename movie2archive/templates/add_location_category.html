@@ -1,0 +1,38 @@
+{% extends "main.html" %}
+{% block content %}
+<section class="form-area">
+    <div class="row">
+      <h1>{{ title }}</h1>
+        <div class="col-sm-6">       
+
+            <form action="" method="post" novalidate>
+                {# CSR token #}
+                {{ form.hidden_tag() }}
+
+                <div class="mb-3">
+                    {{ form.location.label(class="form-label") }}
+                        {% if form.location.errors %}
+                            {{ form.location(class="form-control is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.location.errors %}
+                                    <span>{{ error }}
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.location(class="form-control") }} 
+                        {% endif %}
+                </div>
+
+                <div class="mb-3">
+                {{ form.submit(class="btn btn-outline-info") }}
+                </div>
+            </form>
+        </div>
+
+        <div class="col-sm-6">
+            <h2>View location areas</h2>
+            <a href="#">Location categories</a>
+        </div>
+    </div>
+</section>
+{% endblock content %}
