@@ -57,11 +57,11 @@
                   <li class="list-group-item d-flex justify-content-between align-items-center">{{ location_type.location }}
                     <div class="btn-group">
                       <a href="" class="btn btn-primary mx-1">Edit</a>
-                      <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete_modal-{{ location_type.id }}">Delete</button>
+                      <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete_modal_loc-{{ location_type.id }}">Delete</button>
                     </div>
                   </li>
                   <!-- Modal -->
-                  <div class="modal fade" id="delete_modal-{{ location_type.id }}" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                  <div class="modal fade" id="delete_modal_loc-{{ location_type.id }}" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                       <div class="modal-content">
                         <div class="modal-header">
@@ -70,13 +70,13 @@
                         </div>
                         <div class="modal-body">
                           <p>Please read:<br>
-                          You are about to delete Media type <strong>{{ location_type.location }}</strong> from the database.</p>
-                          <p>If any user has this media type assigned within their collection, those collection titles will be deleted also.</p>
+                          You are about to delete Location <strong>{{ location_type.location }}</strong> from the database.</p>
+                          <p>If any user has this location type assigned within their collection, those collection titles will be deleted also.</p>
                           <p><strong>This action is permanant and cannot be reversed</strong>.</p>
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                          <form action="" method="POST">
+                          <form action="{{ url_for('delete_location_cat', location_type_id=location_type.id) }}" method="POST">
                             <input class="btn btn-danger" type="submit" value="I understand, Delete now">
                           </form>
                         </div>
