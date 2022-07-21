@@ -1,7 +1,8 @@
 from flask import render_template, url_for, flash, redirect, request
 from movie2archive import app, db, mongo, bcrypt, access_key
 from movie2archive.forms import (
-    RegistrationForm, LoginForm, MediaCatForm, EditMediaCatForm, LocationCatForm)
+    RegistrationForm, LoginForm, MediaCatForm, EditMediaCatForm,
+    EditLocationCatForm, LocationCatForm)
 from movie2archive.models import User, Movielookup, Media, Location
 from flask_login import (
     login_user, logout_user, current_user, login_required)
@@ -163,6 +164,26 @@ def add_location_cat():
             flash(f'Location category was added sucessfully to the database!', 'info')
             return redirect(url_for('dashboard'))
     return render_template("add_location_category.html", title='Add Location', form=form)
+
+
+@app.route("/dashboard/edit_location_category/<int:location_type_id>/", methods=['GET', 'POST'])
+@login_required
+def edit_location_cat(location_type_id):
+    # Defensive check
+    if str(current_user.id) != access_key:
+        flash(f'{current_user.username}, You are not authorised. to access this url.', 'warning')
+        return redirect(url_for('home'))
+    else:
+        location_types = Location.query.get_or_404(location_type_id)
+        form = EditLocationCatForm()
+        if form.validate_on_submit():
+            location_types.location = form.location.data
+            db.session.commit()
+            flash(f'Location category was sucessfully updated and added to the database!', 'info')
+            return redirect(url_for('dashboard'))
+        elif request.method == 'GET':
+            form.location.data = location_types.location
+    return render_template("edit_location_category.html", title='Edit location Category', form=form)
 
 
 @app.route("/dashboard/delete_location_type/<int:location_type_id>/", methods=['POST'])
