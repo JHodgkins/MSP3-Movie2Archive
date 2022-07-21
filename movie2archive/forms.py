@@ -46,3 +46,8 @@ class EditMediaCatForm(FlaskForm):
 class LocationCatForm(FlaskForm):
     location = StringField('Location', validators=[DataRequired(), Length(min=2, max=20)])
     submit = SubmitField('Add location area')
+
+
+class EditLocationCatForm(FlaskForm):
+    location = StringField('Location', validators=[DataRequired(), Length(min=2, max=20)])
+    submit = SubmitField('Update location area')
