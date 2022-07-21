@@ -70,4 +70,4 @@ class Location(db.Model):
         """
         Represent each item as a string
         """
-        return f"Media('{self.location}')"
+        return f"Location('{self.location}')"
