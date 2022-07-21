@@ -37,6 +37,7 @@ class Movielookup(db.Model, UserMixin):
     imdbID = db.Column(db.String(30), nullable=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     media_id = db.Column(db.Integer, db.ForeignKey('media.id'), nullable=False)
+    location_id = db.Column(db.Integer, db.ForeignKey('location.id'), nullable=False)
 
     def __repr__(self):
         return f"Movie('{self.title}', '{self.date_posted}', '{self.imdbID}')"
@@ -55,3 +56,18 @@ class Media(db.Model):
         Represent each item as a string
         """
         return f"Media('{self.type}')"
+
+
+class Location(db.Model):
+    """
+    Schema for the Location table.
+    """
+    id = db.Column(db.Integer, primary_key=True)
+    location = db.Column(db.String(20), nullable=False)
+    locationtypes = db.relationship('Movielookup', backref='location', lazy=True)
+
+    def __repr__(self):
+        """
+        Represent each item as a string
+        """
+        return f"Media('{self.location}')"
