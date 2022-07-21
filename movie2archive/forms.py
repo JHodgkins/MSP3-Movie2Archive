@@ -34,10 +34,10 @@ class LoginForm(FlaskForm):
 
 
 class MediaCatForm(FlaskForm):
-    type = StringField('Media type', validators=[DataRequired()])
+    type = StringField('Media type', validators=[DataRequired(), Length(min=2, max=20)])
     submit = SubmitField('Add media type')
 
 
 class EditMediaCatForm(FlaskForm):
-    type = StringField('Edit media type', validators=[DataRequired()])
+    type = StringField('Edit media type', validators=[DataRequired(), Length(min=2, max=20)])
     submit = SubmitField('Update media type')
