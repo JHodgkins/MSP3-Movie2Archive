@@ -110,16 +110,16 @@ def edit_media_cat(media_type_id):
         return redirect(url_for('home'))
     else:
         media_types = Media.query.get_or_404(media_type_id)
-        form2 = EditMediaCatForm()
-        if form2.validate_on_submit():
-            media_types.type = form2.type.data
+        form = EditMediaCatForm()
+        if form.validate_on_submit():
+            media_types.type = form.type.data
             db.session.commit()
             flash(f'Media type category was sucessfully updated and added to the database!', 'info')
             return redirect(url_for('dashboard'))
         elif request.method == 'GET':
-            form2.type.data = media_types.type
+            form.type.data = media_types.type
             print("form.type.data")
-    return render_template("edit_media_category.html", title='Edit Category', form2=form2)
+    return render_template("edit_media_category.html", title='Edit Category', form=form)
 
 
 @app.route("/dashboard/delete_type/<int:media_type_id>/", methods=['POST'])
@@ -163,3 +163,18 @@ def add_location_cat():
             flash(f'Location category was added sucessfully to the database!', 'info')
             return redirect(url_for('dashboard'))
     return render_template("add_location_category.html", title='Add Location', form=form)
+
+
+@app.route("/dashboard/delete_location_type/<int:location_type_id>/", methods=['POST'])
+@login_required
+def delete_location_cat(location_type_id):
+    # Defensive check
+    if str(current_user.id) != access_key:
+        flash(f'{current_user.username}, You are not authorised. to access this url.', 'warning')
+        return redirect(url_for('home'))
+    else:
+        location_types = Location.query.get_or_404(location_type_id)
+        db.session.delete(location_types)
+        db.session.commit()
+        flash(f'Location category was sucessfully deleted from the database!', 'info')
+        return redirect(url_for('dashboard'))
