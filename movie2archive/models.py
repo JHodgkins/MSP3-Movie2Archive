@@ -33,14 +33,14 @@ class Movielookup(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100), nullable=False)
     date_posted = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
-    review = db.Column(db.Text, nullable=False)
+    notes = db.Column(db.Text, nullable=False)
     imdbID = db.Column(db.String(30), nullable=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     media_id = db.Column(db.Integer, db.ForeignKey('media.id'), nullable=False)
     location_id = db.Column(db.Integer, db.ForeignKey('location.id'), nullable=False)
 
     def __repr__(self):
-        return f"Movie('{self.title}', '{self.date_posted}', '{self.imdbID}')"
+        return f"Movie('{self.title}', '{self.notes}', '{self.date_posted}', '{self.imdbID}')"
 
 
 class Media(db.Model):
