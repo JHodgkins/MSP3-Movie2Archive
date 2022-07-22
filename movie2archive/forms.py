@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import (
-    StringField, PasswordField, SubmitField, BooleanField)
+    StringField, TextAreaField, SelectField, PasswordField, SubmitField, BooleanField)
 from wtforms.validators import (
     DataRequired, Length, Email, EqualTo, ValidationError)
 from movie2archive.models import User, Media
@@ -51,3 +51,11 @@ class LocationCatForm(FlaskForm):
 class EditLocationCatForm(FlaskForm):
     location = StringField('Location', validators=[DataRequired(), Length(min=2, max=20)])
     submit = SubmitField('Update location area')
+
+
+class MovieForm(FlaskForm):
+    title = StringField('Movie title', validators=[DataRequired(), Length(min=2, max=100)])
+    notes = TextAreaField('Notes about the movie', validators=[DataRequired()])
+    media_id = SelectField('Media type', coerce=int)
+    location_id = SelectField('Location of collection', coerce=int)
+    submit = SubmitField('Add movie to collection')
