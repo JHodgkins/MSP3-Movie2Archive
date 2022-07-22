@@ -68,7 +68,8 @@ def profile():
 @app.route("/collection")
 @login_required
 def collection():
-    movies = mongo.db.movies.find()
+    # movies = mongo.db.movies.find()
+    movies = Movielookup.query.all()
     return render_template("collection.html", title='My collection', movies=movies)
 
 
