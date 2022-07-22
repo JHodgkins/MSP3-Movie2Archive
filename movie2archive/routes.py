@@ -2,7 +2,7 @@ from flask import render_template, url_for, flash, redirect, request
 from movie2archive import app, db, mongo, bcrypt, access_key
 from movie2archive.forms import (
     RegistrationForm, LoginForm, MediaCatForm, EditMediaCatForm,
-    EditLocationCatForm, LocationCatForm)
+    EditLocationCatForm, LocationCatForm, MovieForm)
 from movie2archive.models import User, Movielookup, Media, Location
 from flask_login import (
     login_user, logout_user, current_user, login_required)
@@ -69,7 +69,7 @@ def profile():
 @login_required
 def collection():
     movies = mongo.db.movies.find()
-    return render_template("collection.html", title='Profile', movies=movies)
+    return render_template("collection.html", title='My collection', movies=movies)
 
 
 @app.route("/dashboard")
@@ -199,3 +199,30 @@ def delete_location_cat(location_type_id):
         db.session.commit()
         flash(f'Location category was sucessfully deleted from the database!', 'info')
         return redirect(url_for('dashboard'))
+
+
+@app.route("/my_collection/add_movie/", methods=['GET', 'POST'])
+@login_required
+def add_movie():
+    # stackoverflow used to help constrict select field, original code
+    # modified, source: https://stackoverflow.com/questions/17534345/typeerror-missing-1-required-positional-argument-self
+    media_types = Media.query.all()
+    media_list = [(media.id, media.type) for media in media_types]
+    location_types = Location.query.all()
+    location_list = [(location.id, location.location) for location in location_types]
+    form = MovieForm()
+    form.media_id.choices = media_list
+    form.location_id.choices = location_list
+    if form.validate_on_submit():
+        movie = Movielookup(
+            title=form.title.data,
+            notes=form.notes.data,
+            media_id=form.media_id.data,
+            location_id=form.location_id.data,
+            user_id=current_user.id
+        )
+        db.session.add(movie)
+        db.session.commit()
+        flash('Your movie was successfully added to your collection.', 'info')
+        return redirect(url_for('collection'))
+    return render_template("add_movie.html", title='Add a movie to your collection', form=form)
