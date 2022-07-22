@@ -1,7 +1,7 @@
 {% extends "main.html" %}
 {% block content %}
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-8">
             <h2 class="">Your collection</h2>
             {% block collection %}
                 {% for movie in movies  %}
@@ -11,6 +11,11 @@
                     {{ movie.Plot }}<br>
                 {% endfor %}
             {% endblock collection %}
+        </div>
+
+        <div class="col-md-4">
+            <h2 class="">Add to your collection</h2>
+            <a href="{{ url_for('add_movie') }}">Add Movie</a>
         </div>
     </div>
 
