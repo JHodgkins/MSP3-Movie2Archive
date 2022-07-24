@@ -6,6 +6,8 @@ from movie2archive.forms import (
 from movie2archive.models import User, Movielookup, Media, Location
 from flask_login import (
     login_user, logout_user, current_user, login_required)
+import urllib
+import hashlib
 
 
 @app.route("/")
@@ -46,7 +48,7 @@ def login():
             login_user(user, remember=form.remember.data)
             next_redirect = request.args.get('next')
             return redirect(next_redirect) if next_redirect else redirect(
-                url_for('dashboard'))
+                url_for('collection_all'))
         else:
             flash(f'login failed, Please try again', 'danger')
     return render_template("login.html", title='Login', form=form)
@@ -65,12 +67,39 @@ def profile():
 
 
 # testing mongo connection
-@app.route("/collection")
+@app.route("/collection/all")
 @login_required
-def collection():
+def collection_all():
     # movies = mongo.db.movies.find()
-    movies = Movielookup.query.all()
-    return render_template("collection.html", title='My collection', movies=movies)
+    movies = Movielookup.query.order_by(Movielookup.date_posted.desc()).all()
+    movie_types = Media.query.order_by(Media.type.asc()).all()
+    return render_template("collection_all.html", title='My collection', default='no movies currently in your collection', movies=movies, movie_types=movie_types)
+
+@app.route("/collection/<int:media_type_id>/")
+@login_required
+def collection_cat(media_type_id):
+    movies = Movielookup.query.order_by(Movielookup.date_posted.desc()).all()
+    movie_types = Media.query.order_by(Media.type.asc()).all()
+    m_types = Media.query.get_or_404(media_type_id)
+    if m_types == ():
+         defaultmsg = "no media"
+    return render_template("collection_type.html", title='My collection', default='No otems in this collection', movies=movies, movie_types=movie_types, m_types=m_types)
+
+
+@app.route("/collection/movie/<int:movie_id>/", methods=[
+    'GET', 'POST'])
+@login_required
+def movie_details(movie_id):
+    # Defensive check
+    if str(current_user.id) != access_key:
+        flash(f'{current_user.username}, You are not authorised. to access this url.', 'warning')
+        return redirect(url_for('home'))
+    else:
+        movie = Movielookup.query.get_or_404(movie_id)
+        return render_template("movie.html", title=movie.title, movie=movie)
+
+
+
 
 
 @app.route("/dashboard")
@@ -225,5 +254,5 @@ def add_movie():
         db.session.add(movie)
         db.session.commit()
         flash('Your movie was successfully added to your collection.', 'info')
-        return redirect(url_for('collection'))
+        return redirect(url_for('collection_all'))
     return render_template("add_movie.html", title='Add a movie to your collection', form=form)
