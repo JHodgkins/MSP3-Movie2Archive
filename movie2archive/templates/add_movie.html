@@ -33,7 +33,8 @@
                                 {% endfor %}
                             </div>
                         {% else %}
-                            {{ form.notes(class="form-control") }} 
+                            {{ form.notes(class="form-control", onkeyup="textareaLengthCheck(this)") }}
+                            <p id="lblRemainingCount">Max characters: 100</p>
                         {% endif %}
                 </div>
 
@@ -73,7 +74,7 @@
 
         <div class="col-sm-6">
             <h2>Movie collection</h2>
-            <a href="{{ url_for('collection') }}">View my movie collection</a>
+            <a href="{{ url_for('collection_all') }}">View my movie collection</a>
         </div>
     </div>
 </section>
