@@ -41,5 +41,10 @@ login_manager.login_message_category = 'info'
 
 access_key = os.environ.get("ACCKEY")
 movie_key = os.environ.get("APIKEY")
+apiurl = os.environ.get("APIURL")
+headers = {
+    "X-RapidAPI-Key": movie_key,
+    "X-RapidAPI-Host": "1mdb-data-searching.p.rapidapi.com"
+    }
 
 from movie2archive import routes  # noqa
