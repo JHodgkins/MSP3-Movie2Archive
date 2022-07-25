@@ -53,9 +53,20 @@ class EditLocationCatForm(FlaskForm):
     submit = SubmitField('Update location area')
 
 
+class EditionCatForm(FlaskForm):
+    edition = StringField('Edition type', validators=[DataRequired(), Length(min=2, max=50)])
+    submit = SubmitField('Add edition type')
+
+
+class EditEditionCatForm(FlaskForm):
+    edition = StringField('Edition type', validators=[DataRequired(), Length(min=2, max=50)])
+    submit = SubmitField('Update edition type')
+
+
 class MovieForm(FlaskForm):
     title = StringField('Movie title', validators=[DataRequired(), Length(min=2, max=100)])
     notes = TextAreaField('Notes about the movie', validators=[DataRequired()])
     media_id = SelectField('Media type', coerce=int)
     location_id = SelectField('Location of collection', coerce=int)
+    edition_id = SelectField('Media edition type', coerce=int)
     submit = SubmitField('Add movie to collection')
