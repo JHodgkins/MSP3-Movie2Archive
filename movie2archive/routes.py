@@ -304,19 +304,40 @@ def add_movie():
     form.edition_id.choices = edition_list
 
     if form.validate_on_submit():
+        # call imdb api and return values to be sent to MongoDB
+        movie_name = form.title.data
+        querystring = {"t": movie_name}
+        response = requests.request("GET", apiurl, headers=headers, params=querystring)
+        data = [json.loads(response.text)]
+        for item in data:
+            mid = item['imdbID']
+            mtitle = item['Title']
+            mplot = item['Plot']
+            mposter = item['Poster']
+        
+        movie_mongo = {
+            "Title": mtitle,
+            "imdbID": mid,
+            "Plot": mplot,
+            "Poster": mposter
+        }
+        mongo.db.movies.insert_one(movie_mongo)
+
         movie = Movielookup(
             title=form.title.data,
             notes=form.notes.data,
             media_id=form.media_id.data,
             location_id=form.location_id.data,
             edition_id=form.edition_id.data,
-            user_id=current_user.id
+            user_id=current_user.id,
+            imdbID=mid
         )
         db.session.add(movie)
         db.session.commit()
         flash('Your movie was successfully added to your collection.', 'info')
         return redirect(url_for('collection_all'))
     return render_template("add_movie.html", title='Add a movie to your collection', form=form)
+
 
 @app.route("/movietest", methods=['GET', 'POST'])
 def movietest():
@@ -326,22 +347,6 @@ def movietest():
     response = requests.request("GET", apiurl, headers=headers, params=querystring)
     data = [json.loads(response.text)]
 
-    # formattedData = json.dumps(data, indent=4)
-    # dataDict = json.loads(formattedData)
-
-    # for movie in dataDict:
-         
-    # for result in responses:
-    #     print(result.Title)
-    # responses.append(dataDict)
-    # print(type(dataDict))
-    # movies = responses
-    # for item in dataDict:
-        
-    #     print(item)
-    #     print(item['Title'])
-    # for key, value in dataDict.items():
-    #     print(key, value)
     print(json.dumps(data, indent=2))
     for item in data:
         print(item)
