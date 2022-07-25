@@ -14,7 +14,7 @@
                         {% if form.title.errors %}
                             {{ form.title(class="form-control is-invalid") }}
                             <div class="invalid-feedback">
-                                {% for error in form.type.errors %}
+                                {% for error in form.title.errors %}
                                     <span>{{ error }}
                                 {% endfor %}
                             </div>
@@ -53,6 +53,20 @@
                 </div>
 
                 <div class="mb-3">
+                    {{ form.edition_id.label(class="form-label") }}
+                        {% if form.edition_id.errors %}
+                            {{ form.edition_id(class="form-select is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.edition_id.errors %}
+                                    <span>{{ error }}
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.edition_id(class="form-select") }} 
+                        {% endif %}
+                </div>
+
+                <div class="mb-3">
                     {{ form.location_id.label(class="form-label") }}
                         {% if form.location_id.errors %}
                             {{ form.location_id(class="form-select is-invalid") }}
@@ -74,7 +88,7 @@
 
         <div class="col-sm-6">
             <h2>Movie collection</h2>
-            <a href="{{ url_for('collection_all') }}">View my movie collection</a>
+            <a href="{{ url_for('collection_all') }}">View your movie collection</a>
         </div>
     </div>
 </section>
