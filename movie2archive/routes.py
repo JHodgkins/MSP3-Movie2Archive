@@ -1,6 +1,8 @@
 from flask import render_template, url_for, flash, redirect, request
+import requests, json
 from bson.objectid import ObjectId
-from movie2archive import app, db, mongo, bcrypt, access_key, movie_key
+from movie2archive import (
+    app, db, mongo, bcrypt, access_key, movie_key, apiurl, headers)
 from movie2archive.forms import (
     RegistrationForm, LoginForm, MediaCatForm, EditMediaCatForm,
     EditLocationCatForm, LocationCatForm, EditionCatForm, EditEditionCatForm, MovieForm)
@@ -300,6 +302,7 @@ def add_movie():
     form.media_id.choices = media_list
     form.location_id.choices = location_list
     form.edition_id.choices = edition_list
+
     if form.validate_on_submit():
         movie = Movielookup(
             title=form.title.data,
@@ -314,3 +317,42 @@ def add_movie():
         flash('Your movie was successfully added to your collection.', 'info')
         return redirect(url_for('collection_all'))
     return render_template("add_movie.html", title='Add a movie to your collection', form=form)
+
+@app.route("/movietest", methods=['GET', 'POST'])
+def movietest():
+    movie_name = 'The matrix'
+    querystring = {"t": movie_name}
+    # responses = []
+    response = requests.request("GET", apiurl, headers=headers, params=querystring)
+    data = [json.loads(response.text)]
+
+    # formattedData = json.dumps(data, indent=4)
+    # dataDict = json.loads(formattedData)
+
+    # for movie in dataDict:
+         
+    # for result in responses:
+    #     print(result.Title)
+    # responses.append(dataDict)
+    # print(type(dataDict))
+    # movies = responses
+    # for item in dataDict:
+        
+    #     print(item)
+    #     print(item['Title'])
+    # for key, value in dataDict.items():
+    #     print(key, value)
+    print(json.dumps(data, indent=2))
+    for item in data:
+        print(item)
+        print(item['Title'])
+        print(item['imdbID'])
+        mid = item['imdbID']
+        mtitle = item['Title']
+        mplot = item['Plot']
+    print("this is the title:", mtitle)
+    print("this is the plot:", mplot)
+    movies = data
+    print(mtitle)
+
+    return render_template('movietest.html', title='movietest', movies=movies)
