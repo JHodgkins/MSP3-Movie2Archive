@@ -12,18 +12,19 @@ from flask_login import (
 import urllib
 import hashlib
 
-
+# Main navigation | Homepage/Landing page
 @app.route("/")
 @app.route("/home")
 def home():
     return render_template('index.html')
 
-
+# Main navigation | About page
 @app.route("/about")
 def about():
     return render_template('about.html', title='About')
 
 
+# User managment | Regiter for an account
 @app.route("/register.html", methods=['POST', 'GET'])
 def register():
     if current_user.is_authenticated:
@@ -39,6 +40,7 @@ def register():
     return render_template('register.html', title='Register', form=form)
 
 
+# User managment | Login to site
 @app.route("/login", methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
@@ -57,19 +59,21 @@ def login():
     return render_template("login.html", title='Login', form=form)
 
 
+# User managment | Logout of site
 @app.route("/logout")
 def logout():
     logout_user()
     return redirect(url_for('home'))
 
 
+# User profile | View uer details
 @app.route("/profile")
 @login_required
 def profile():
     return render_template("profile.html", title='Profile')
 
 
-# testing mongo connection
+# My collection | View Most recent entries (20 moviee)
 @app.route("/collection/all")
 @login_required
 def collection_all():
@@ -79,15 +83,16 @@ def collection_all():
     return render_template("collection_all.html", title='My collection', default='no movies currently in your collection', movies=movies, movie_types=movie_types)
 
 
+# My collection | View Movie by media type
 @app.route("/collection/<int:media_type_id>/")
 @login_required
 def collection_cat(media_type_id):
     movies = Movielookup.query.order_by(Movielookup.date_posted.desc()).all()
     movie_types = Media.query.order_by(Media.type.asc()).all()
     m_types = Media.query.get_or_404(media_type_id)
-    return render_template("collection_type.html", title='My collection', default='No otems in this collection', movies=movies, movie_types=movie_types, m_types=m_types)
+    return render_template("collection_type.html", title='My collection', default='No items in this collection', movies=movies, movie_types=movie_types, m_types=m_types)
 
-
+# My collection | View Movie information and detail
 @app.route("/collection/movie/<int:movie_id>/", methods=[
     'GET', 'POST'])
 @login_required
@@ -101,192 +106,7 @@ def movie_details(movie_id):
         return render_template("movie.html", title=movie.title, movie=movie)
 
 
-
-
-
-@app.route("/dashboard")
-@login_required
-def dashboard():
-    if str(current_user.id) != access_key:
-        flash(f'{current_user.username}, You are not authorised. to access this area.', 'warning')
-        return redirect(url_for('home'))
-    media_types = Media.query.all()
-    location_types = Location.query.all()
-    edition_types = Edition.query.all()
-    return render_template("dashboard.html", title='Admin Dashboard | Movie2Archive', location_types=location_types, media_types=media_types, edition_types=edition_types)
-
-
-@app.route("/dashboard/add_media_category", methods=['GET', 'POST'])
-@login_required
-def add_media_cat():
-    # Defensive check
-    if str(current_user.id) != access_key:
-        flash(f'{current_user.username}, You are not authorised. to access this url.', 'warning')
-        return redirect(url_for('home'))
-    else:
-        form = MediaCatForm()
-        if form.validate_on_submit():
-            media_type = Media(type=form.type.data)
-            db.session.add(media_type)
-            db.session.commit()
-            flash(f'Media type category was added sucessfully to the database!', 'info')
-            return redirect(url_for('dashboard'))
-    return render_template("add_media_category.html", title='Add Category', form=form)
-
-
-@app.route("/dashboard/edit_media_category/<int:media_type_id>/", methods=[
-    'GET', 'POST'])
-@login_required
-def edit_media_cat(media_type_id):
-    # Defensive check
-    if str(current_user.id) != access_key:
-        flash(f'{current_user.username}, You are not authorised. to access this url.', 'warning')
-        return redirect(url_for('home'))
-    else:
-        media_types = Media.query.get_or_404(media_type_id)
-        form = EditMediaCatForm()
-        if form.validate_on_submit():
-            media_types.type = form.type.data
-            db.session.commit()
-            flash(f'Media type category was sucessfully updated and added to the database!', 'info')
-            return redirect(url_for('dashboard'))
-        elif request.method == 'GET':
-            form.type.data = media_types.type
-            print("form.type.data")
-    return render_template("edit_media_category.html", title='Edit Category', form=form)
-
-
-@app.route("/dashboard/delete_type/<int:media_type_id>/", methods=['POST'])
-@login_required
-def delete_media_cat(media_type_id):
-    # Defensive check
-    if str(current_user.id) != access_key:
-        flash(f'{current_user.username}, You are not authorised. to access this url.', 'warning')
-        return redirect(url_for('home'))
-    else:
-        media_types = Media.query.get_or_404(media_type_id)
-        db.session.delete(media_types)
-        db.session.commit()
-        flash(f'Media type category was sucessfully deleted from the database!', 'info')
-        return redirect(url_for('dashboard'))
-
-
-# @app.route("/dashboard")
-# @login_required
-# def dashboard_location():
-#     if str(current_user.id) != access_key:
-#         flash(f'{current_user.username}, You are not authorised. to access this area.', 'warning')
-#         return redirect(url_for('home'))
-#     location_types = Location.query.all()
-#     return render_template("dashboard.html", title='Site Dashboard', location_types=location_types)
-
-
-@app.route("/dashboard/add_location_category", methods=['GET', 'POST'])
-@login_required
-def add_location_cat():
-    # Defensive check
-    if str(current_user.id) != access_key:
-        flash(f'{current_user.username}, You are not authorised. to access this url.', 'warning')
-        return redirect(url_for('home'))
-    else:
-        form = LocationCatForm()
-        if form.validate_on_submit():
-            location_type = Location(location=form.location.data)
-            db.session.add(location_type)
-            db.session.commit()
-            flash(f'Location category was added sucessfully to the database!', 'info')
-            return redirect(url_for('dashboard'))
-    return render_template("add_location_category.html", title='Add Location', form=form)
-
-
-@app.route("/dashboard/edit_location_category/<int:location_type_id>/", methods=['GET', 'POST'])
-@login_required
-def edit_location_cat(location_type_id):
-    # Defensive check
-    if str(current_user.id) != access_key:
-        flash(f'{current_user.username}, You are not authorised. to access this url.', 'warning')
-        return redirect(url_for('home'))
-    else:
-        location_types = Location.query.get_or_404(location_type_id)
-        form = EditLocationCatForm()
-        if form.validate_on_submit():
-            location_types.location = form.location.data
-            db.session.commit()
-            flash(f'Location category was sucessfully updated and added to the database!', 'info')
-            return redirect(url_for('dashboard'))
-        elif request.method == 'GET':
-            form.location.data = location_types.location
-    return render_template("edit_location_category.html", title='Edit location Category', form=form)
-
-
-@app.route("/dashboard/delete_location_type/<int:location_type_id>/", methods=['POST'])
-@login_required
-def delete_location_cat(location_type_id):
-    # Defensive check
-    if str(current_user.id) != access_key:
-        flash(f'{current_user.username}, You are not authorised. to access this url.', 'warning')
-        return redirect(url_for('home'))
-    else:
-        location_types = Location.query.get_or_404(location_type_id)
-        db.session.delete(location_types)
-        db.session.commit()
-        flash(f'Location category was sucessfully deleted from the database!', 'info')
-        return redirect(url_for('dashboard'))
-
-
-@app.route("/dashboard/add_edition_category", methods=['GET', 'POST'])
-@login_required
-def add_edition_cat():
-    # Defensive check
-    if str(current_user.id) != access_key:
-        flash(f'{current_user.username}, You are not authorised. to access this url.', 'warning')
-        return redirect(url_for('home'))
-    else:
-        form = EditionCatForm()
-        if form.validate_on_submit():
-            edition_type = Edition(edition=form.edition.data)
-            db.session.add(edition_type)
-            db.session.commit()
-            flash(f'Edition category was added sucessfully to the database!', 'info')
-            return redirect(url_for('dashboard'))
-    return render_template("add_edition_category.html", title='Add edition type', form=form)
-
-
-@app.route("/dashboard/edit_edition_category/<int:edition_type_id>/", methods=['GET', 'POST'])
-@login_required
-def edit_edition_cat(edition_type_id):
-    # Defensive check
-    if str(current_user.id) != access_key:
-        flash(f'{current_user.username}, You are not authorised. to access this url.', 'warning')
-        return redirect(url_for('home'))
-    else:
-        edition_types = Edition.query.get_or_404(edition_type_id)
-        form = EditEditionCatForm()
-        if form.validate_on_submit():
-            edition_types.edition = form.edition.data
-            db.session.commit()
-            flash(f'Edition category was sucessfully updated and added to the database!', 'info')
-            return redirect(url_for('dashboard'))
-        elif request.method == 'GET':
-            form.edition.data = edition_types.edition
-    return render_template("edit_edition_category.html", title='Edit edition Category', form=form)
-
-
-@app.route("/dashboard/delete_edition_category<int:edition_type_id>/", methods=['GET', 'POST'])
-@login_required
-def delete_edition_cat(edition_type_id):
-    # Defensive check
-    if str(current_user.id) != access_key:
-        flash(f'{current_user.username}, You are not authorised. to access this url.', 'warning')
-        return redirect(url_for('home'))
-    else:
-        edition_types = Edition.query.get_or_404(edition_type_id)
-        db.session.delete(edition_types)
-        db.session.commit()
-        flash(f'Edition category was sucessfully deleted from the database!', 'info')
-        return redirect(url_for('dashboard'))
-
-
+# My collection | Add Movie
 @app.route("/my_collection/add_movie/", methods=['GET', 'POST'])
 @login_required
 def add_movie():
@@ -339,6 +159,189 @@ def add_movie():
     return render_template("add_movie.html", title='Add a movie to your collection', form=form)
 
 
+# Admin dashoard view
+@app.route("/dashboard")
+@login_required
+def dashboard():
+    if str(current_user.id) != access_key:
+        flash(f'{current_user.username}, You are not authorised. to access this area.', 'warning')
+        return redirect(url_for('home'))
+    media_types = Media.query.all()
+    location_types = Location.query.all()
+    edition_types = Edition.query.all()
+    return render_template("dashboard.html", title='Admin Dashboard | Movie2Archive', location_types=location_types, media_types=media_types, edition_types=edition_types)
+
+
+# Admin dashoard | Add Media type category 
+@app.route("/dashboard/add_media_category", methods=['GET', 'POST'])
+@login_required
+def add_media_cat():
+    # Defensive check
+    if str(current_user.id) != access_key:
+        flash(f'{current_user.username}, You are not authorised. to access this url.', 'warning')
+        return redirect(url_for('home'))
+    else:
+        form = MediaCatForm()
+        if form.validate_on_submit():
+            media_type = Media(type=form.type.data)
+            db.session.add(media_type)
+            db.session.commit()
+            flash(f'Media type category was added sucessfully to the database!', 'info')
+            return redirect(url_for('dashboard'))
+    return render_template("add_media_category.html", title='Add Category', form=form)
+
+# Admin dashoard | Edit Media type category
+@app.route("/dashboard/edit_media_category/<int:media_type_id>/", methods=[
+    'GET', 'POST'])
+@login_required
+def edit_media_cat(media_type_id):
+    # Defensive check
+    if str(current_user.id) != access_key:
+        flash(f'{current_user.username}, You are not authorised. to access this url.', 'warning')
+        return redirect(url_for('home'))
+    else:
+        media_types = Media.query.get_or_404(media_type_id)
+        form = EditMediaCatForm()
+        if form.validate_on_submit():
+            media_types.type = form.type.data
+            db.session.commit()
+            flash(f'Media type category was sucessfully updated and added to the database!', 'info')
+            return redirect(url_for('dashboard'))
+        elif request.method == 'GET':
+            form.type.data = media_types.type
+            print("form.type.data")
+    return render_template("edit_media_category.html", title='Edit Category', form=form)
+
+
+# Admin dashoard | Delete Media type category
+@app.route("/dashboard/delete_type/<int:media_type_id>/", methods=['POST'])
+@login_required
+def delete_media_cat(media_type_id):
+    # Defensive check
+    if str(current_user.id) != access_key:
+        flash(f'{current_user.username}, You are not authorised. to access this url.', 'warning')
+        return redirect(url_for('home'))
+    else:
+        media_types = Media.query.get_or_404(media_type_id)
+        db.session.delete(media_types)
+        db.session.commit()
+        flash(f'Media type category was sucessfully deleted from the database!', 'info')
+        return redirect(url_for('dashboard'))
+
+
+# Admin dashoard | Add location category
+@app.route("/dashboard/add_location_category", methods=['GET', 'POST'])
+@login_required
+def add_location_cat():
+    # Defensive check
+    if str(current_user.id) != access_key:
+        flash(f'{current_user.username}, You are not authorised. to access this url.', 'warning')
+        return redirect(url_for('home'))
+    else:
+        form = LocationCatForm()
+        if form.validate_on_submit():
+            location_type = Location(location=form.location.data)
+            db.session.add(location_type)
+            db.session.commit()
+            flash(f'Location category was added sucessfully to the database!', 'info')
+            return redirect(url_for('dashboard'))
+    return render_template("add_location_category.html", title='Add Location', form=form)
+
+
+# Admin dashoard | Edit Location category
+@app.route("/dashboard/edit_location_category/<int:location_type_id>/", methods=['GET', 'POST'])
+@login_required
+def edit_location_cat(location_type_id):
+    # Defensive check
+    if str(current_user.id) != access_key:
+        flash(f'{current_user.username}, You are not authorised. to access this url.', 'warning')
+        return redirect(url_for('home'))
+    else:
+        location_types = Location.query.get_or_404(location_type_id)
+        form = EditLocationCatForm()
+        if form.validate_on_submit():
+            location_types.location = form.location.data
+            db.session.commit()
+            flash(f'Location category was sucessfully updated and added to the database!', 'info')
+            return redirect(url_for('dashboard'))
+        elif request.method == 'GET':
+            form.location.data = location_types.location
+    return render_template("edit_location_category.html", title='Edit location Category', form=form)
+
+
+# Admin dashoard | Delete Location category
+@app.route("/dashboard/delete_location_type/<int:location_type_id>/", methods=['POST'])
+@login_required
+def delete_location_cat(location_type_id):
+    # Defensive check
+    if str(current_user.id) != access_key:
+        flash(f'{current_user.username}, You are not authorised. to access this url.', 'warning')
+        return redirect(url_for('home'))
+    else:
+        location_types = Location.query.get_or_404(location_type_id)
+        db.session.delete(location_types)
+        db.session.commit()
+        flash(f'Location category was sucessfully deleted from the database!', 'info')
+        return redirect(url_for('dashboard'))
+
+
+# Admin dashoard | Add Media type edition
+@app.route("/dashboard/add_edition_category", methods=['GET', 'POST'])
+@login_required
+def add_edition_cat():
+    # Defensive check
+    if str(current_user.id) != access_key:
+        flash(f'{current_user.username}, You are not authorised. to access this url.', 'warning')
+        return redirect(url_for('home'))
+    else:
+        form = EditionCatForm()
+        if form.validate_on_submit():
+            edition_type = Edition(edition=form.edition.data)
+            db.session.add(edition_type)
+            db.session.commit()
+            flash(f'Edition category was added sucessfully to the database!', 'info')
+            return redirect(url_for('dashboard'))
+    return render_template("add_edition_category.html", title='Add edition type', form=form)
+
+
+# Admin dashoard | Edit Media type edition
+@app.route("/dashboard/edit_edition_category/<int:edition_type_id>/", methods=['GET', 'POST'])
+@login_required
+def edit_edition_cat(edition_type_id):
+    # Defensive check
+    if str(current_user.id) != access_key:
+        flash(f'{current_user.username}, You are not authorised. to access this url.', 'warning')
+        return redirect(url_for('home'))
+    else:
+        edition_types = Edition.query.get_or_404(edition_type_id)
+        form = EditEditionCatForm()
+        if form.validate_on_submit():
+            edition_types.edition = form.edition.data
+            db.session.commit()
+            flash(f'Edition category was sucessfully updated and added to the database!', 'info')
+            return redirect(url_for('dashboard'))
+        elif request.method == 'GET':
+            form.edition.data = edition_types.edition
+    return render_template("edit_edition_category.html", title='Edit edition Category', form=form)
+
+
+# Admin dashoard | Delete Media type edition
+@app.route("/dashboard/delete_edition_category<int:edition_type_id>/", methods=['GET', 'POST'])
+@login_required
+def delete_edition_cat(edition_type_id):
+    # Defensive check
+    if str(current_user.id) != access_key:
+        flash(f'{current_user.username}, You are not authorised. to access this url.', 'warning')
+        return redirect(url_for('home'))
+    else:
+        edition_types = Edition.query.get_or_404(edition_type_id)
+        db.session.delete(edition_types)
+        db.session.commit()
+        flash(f'Edition category was sucessfully deleted from the database!', 'info')
+        return redirect(url_for('dashboard'))
+
+
+# Movie test area code
 @app.route("/movietest", methods=['GET', 'POST'])
 def movietest():
     movie_name = 'The matrix'
