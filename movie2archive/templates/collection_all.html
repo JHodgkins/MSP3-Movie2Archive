@@ -27,10 +27,13 @@
             {% block collection %}
       <div class="my-3 p-3 bg-body rounded shadow-sm">
               <h2 class="border-bottom pb-2 mb-0">Recently added to collection</h2>
-              {% if not movie %}
-              {{ default }}
-              {% endif %}
+              {% if movies|length == '' %}
+            <span>You have no movies at present in your collection</span>
+            {% else %}
+            <span>You have {{movies|length}} movie(s) in your collecton</span>
+            {% endif %}
             {% for movie in movies[0:10] if current_user.id == movie.user_id %}
+            
             <div class="d-flex text-muted pt-3">
               <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"></rect><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
 
