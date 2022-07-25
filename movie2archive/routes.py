@@ -1,5 +1,6 @@
 from flask import render_template, url_for, flash, redirect, request
-from movie2archive import app, db, mongo, bcrypt, access_key
+from bson.objectid import ObjectId
+from movie2archive import app, db, mongo, bcrypt, access_key, movie_key
 from movie2archive.forms import (
     RegistrationForm, LoginForm, MediaCatForm, EditMediaCatForm,
     EditLocationCatForm, LocationCatForm, EditionCatForm, EditEditionCatForm, MovieForm)
@@ -82,8 +83,6 @@ def collection_cat(media_type_id):
     movies = Movielookup.query.order_by(Movielookup.date_posted.desc()).all()
     movie_types = Media.query.order_by(Media.type.asc()).all()
     m_types = Media.query.get_or_404(media_type_id)
-    if m_types == ():
-         defaultmsg = "no media"
     return render_template("collection_type.html", title='My collection', default='No otems in this collection', movies=movies, movie_types=movie_types, m_types=m_types)
 
 
