@@ -40,5 +40,6 @@ login_manager.login_view = 'login'
 login_manager.login_message_category = 'info'
 
 access_key = os.environ.get("ACCKEY")
+movie_key = os.environ.get("APIKEY")
 
 from movie2archive import routes  # noqa
