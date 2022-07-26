@@ -12,11 +12,13 @@ from flask_login import (
 import urllib
 import hashlib
 
+
 # Main navigation | Homepage/Landing page
 @app.route("/")
 @app.route("/home")
 def home():
     return render_template('index.html')
+
 
 # Main navigation | About page
 @app.route("/about")
@@ -66,7 +68,7 @@ def logout():
     return redirect(url_for('home'))
 
 
-# User profile | View uer details
+# User profile | View user details
 @app.route("/profile")
 @login_required
 def profile():
@@ -92,18 +94,17 @@ def collection_cat(media_type_id):
     m_types = Media.query.get_or_404(media_type_id)
     return render_template("collection_type.html", title='My collection', default='No items in this collection', movies=movies, movie_types=movie_types, m_types=m_types)
 
+
 # My collection | View Movie information and detail
-@app.route("/collection/movie/<int:movie_id>/", methods=[
+@app.route("/collection/movie/<int:movie_id>", methods=[
     'GET', 'POST'])
 @login_required
 def movie_details(movie_id):
-    # Defensive check
-    if str(current_user.id) != access_key:
-        flash(f'{current_user.username}, You are not authorised. to access this url.', 'warning')
-        return redirect(url_for('home'))
-    else:
-        movie = Movielookup.query.get_or_404(movie_id)
-        return render_template("movie.html", title=movie.title, movie=movie)
+    movie = Movielookup.query.get_or_404(movie_id)
+    # mongo_movies = mongo.db.movies.find_one({"imdbID": ObjectId(movie.imdbID)})
+    mongo_movies = mongo.db.movies.find({"imdbID": movie.imdbID})
+    return render_template("movie.html", title=movie.title, movie=movie, mongo_movies=mongo_movies)
+    # movies = mongo.db.movies.find()
 
 
 # My collection | Add Movie
