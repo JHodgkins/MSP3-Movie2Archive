@@ -1,12 +1,19 @@
 {% extends "main.html" %}
 {% block content %}
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-8">
             <h1 class="">Movie: {{ title }}</h2>
 
-            <h2>Movie details</h2>
-            {{movie.title}}<br>
-            {{movie.notes}}
+            <h3>My notes about the movie</h3>
+            {{movie.notes}}<br>
+{% for mongo in mongo_movies %}
+<h2>Movie plot</h2>
+{{mongo.Plot}}<br>
+  {# {{ mongo.imdbID }} #}
+  {# {{ mongo.Plot }} #}
+  {# {{ mongo.Poster }}<br> #}
+  
+            
             {# <ul class="list-group">
                   <li class="list-group-item d-flex justify-content-between align-items-center">{{ media_type.type }}
                     <div class="btn-group">
@@ -21,6 +28,14 @@
             <a href="">Edit movie</a>
             <hr>
 
+        </div>
+        <div class="col-md-4">
+          <h2>Cover Art</h2>
+          <img src="{{ mongo.Poster }}" alt="{{ mongo.Title }}">
+          <small clas="muted">Image source: imdb api</small>
+          {% endfor %}
+          <h2 class="">Add a movie to your collection</h2>
+          <a href="{{ url_for('add_movie') }}">Add Movie</a>
         </div>
         
     </div>
