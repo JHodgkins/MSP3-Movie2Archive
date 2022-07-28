@@ -12,9 +12,9 @@
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="navbar-collapse justify-content-md-center collapse" id="navbarsExample10" style="">
+        <div class="navbar-collapse justify-content-md-center collapse" id="navbarsExample10">
+        <span class="filter-media-type">Filter collection by:</span>
           <ul class="navbar-nav">
-          <span class="filter-media-type">Filter collection by:</span>
             <li class="nav-item">
               <a class="nav-link" href="{{ url_for('collection_all') }}">All</a>
             </li>
@@ -31,11 +31,7 @@
     {% block collection %}
     <div class="my-3 p-3 bg-body rounded shadow-sm">
       <h2 class="border-bottom pb-2 mb-0">Recently added to collection</h2>
-      {% if movies|length == '' %}
-      <span>You have no movies at present in your collection</span>
-      {% else %}
-      <span>You have {{movies|length}} movie(s) in your collecton</span>
-      {% endif %}
+      
       {% for movie in movies[0:10] if current_user.id == movie.user_id %}
 
       <div class="d-flex text-muted pt-3">
@@ -48,7 +44,8 @@
           <div class="d-flex justify-content-between">
             <a href="{{ url_for('movie_details', movie_id=movie.id,) }}"><strong
                 class="text-gray-dark">{{movie.title}}</strong></a>
-            <a class="btn btn-primary" href="{{ url_for('edit_movie', movie_id=movie.id) }}">Edit</a>
+            <a class="btn btn-primary btn-sm collection-button-group" href="{{ url_for('edit_movie', movie_id=movie.id) }}">Edit</a>
+            <a class="btn btn-primary btn-sm" href="{{ url_for('movie_details', movie_id=movie.id) }}">View</a>
           </div>
           <span class="d-block">{{ movie.notes }}</span>
         </div>
