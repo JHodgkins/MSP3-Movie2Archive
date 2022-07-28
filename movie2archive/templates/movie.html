@@ -20,16 +20,43 @@
       <hr>
       <a href="{{ url_for('edit_movie', movie_id=movie.id) }}">Update Movie</a>
       <hr>
-
+      <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete_modal_movie-{{ movie.id }}">Delete this movie</button>
+      <hr>
+      <!-- Modal -->
+                  <div class="modal fade" id="delete_modal_movie-{{ movie.id }}" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h2 class="modal-title" id="ModalLabel">Confirm deletion of movie ({{ movie.title }})</h2>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <p>Please read:<br>
+                          You are about to delete Movie <strong>{{ movie.title }}</strong> from your collection.</p>
+                          <p>Please be aware that deleting a movie will remove it permantly from your collection</p>
+                          <p><strong>This action is permanant and cannot be reversed.</strong>.</p>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                          <form action="{{ url_for('delete_movie', movie_id=movie.id) }}" method="POST">
+                            <input class="btn btn-danger" type="submit" value="I understand, Delete movie">
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- end modal -->
   </div>
-  <div class="col-md-4">
-    <h2>Cover Art</h2>
-    <img src="{{ mongo.Poster }}" alt="{{ mongo.Title }}">
-    <small clas="muted">Image source: imdb api</small>
-    {% endfor %}
-    <h2 class="">Add a movie to your collection</h2>
-    <a href="{{ url_for('add_movie') }}">Add Movie</a>
-  </div>
+  <aside class="col-md-4">
+    <section class="box-art">
+      <h2>Cover Art</h2>
+      <img src="{{ mongo.Poster }}" alt="{{ mongo.Title }}"><br>
+      <small clas="muted"><i>Image provided through 1MDB Data Searching api</i></small>
+      {% endfor %}
+      <h3 class="">Add a movie to your collection</h3>
+      <a href="{{ url_for('add_movie') }}">Add Movie</a>
+    </section>
+  </aside>
 
 </div>
 {% endblock content %}
