@@ -70,3 +70,12 @@ class MovieForm(FlaskForm):
     location_id = SelectField('Location of collection', coerce=int)
     edition_id = SelectField('Media edition type', coerce=int)
     submit = SubmitField('Add movie to collection')
+
+
+class EditMovieForm(FlaskForm):
+    title = StringField('Movie title', validators=[DataRequired(), Length(min=2, max=100)])
+    notes = TextAreaField('Update your notes about the movie', validators=[DataRequired()])
+    media_id = SelectField('Media type', coerce=int)
+    location_id = SelectField('Location of collection', coerce=int)
+    edition_id = SelectField('Media edition type', coerce=int)
+    submit = SubmitField('Update movie details')
