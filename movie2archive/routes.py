@@ -11,7 +11,7 @@ from flask_login import (
     login_user, logout_user, current_user, login_required)
 import urllib
 import hashlib
-
+from sqlalchemy.sql.functions import func
 
 # Main navigation | Homepage/Landing page
 @app.route("/")
@@ -170,7 +170,7 @@ def add_movie():
             }
             # Add to MongoDB
             mongo.db.movies.insert_one(movie_mongo)
-            
+
             # Construct Movielookup table
             movie = Movielookup(
                 title=form.title.data.upper(),
@@ -225,6 +225,17 @@ def edit_movie(movie_id):
         form.edition_id.data = movies.edition_id
     return render_template("edit_movie.html", title=movies.title, form=form)
 
+
+# My collection | Delete a Movie title
+@app.route("/collection/movie/delete_movie/<int:movie_id>/", methods=[
+ 'POST'])
+@login_required
+def delete_movie(movie_id):
+    movies = Movielookup.query.get_or_404(movie_id)  
+    db.session.delete(movies)
+    db.session.commit()
+    flash('Media type category was sucessfully deleted from the database!', 'info')
+    return redirect(url_for('collection_all'))
 
 
 # Admin dashoard view
