@@ -1,8 +1,95 @@
 {% extends "main.html" %}
 {% block content %}
+<section class="form-area">
     <div class="row">
-        <div class="col-md-12">
-            <h1 class="">{{ title }}</h1>
+        <h1>Update/Edit: {{ title }}</h1>
+        <div class="col-sm-6">
+
+            <form action="" method="post" novalidate>
+                {# CSR token #}
+                {{ form.hidden_tag() }}
+
+                <div class="mb-3">
+                    {{ form.title.label(class="form-label") }}
+                    {% if form.title.errors %}
+                    {{ form.title(class="form-control is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.title.errors %}
+                        <span>{{ error }}
+                            {% endfor %}
+                    </div>
+                    {% else %}
+                    {{ form.title(class="form-control") }}
+                    {% endif %}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.notes.label(class="form-label") }}
+                    {% if form.notes.errors %}
+                    {{ form.notes(class="form-control is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.notes.errors %}
+                        <span>{{ error }}
+                            {% endfor %}
+                    </div>
+                    {% else %}
+                    {{ form.notes(class="form-control", onkeyup="textareaLengthCheck(this)") }}
+                    <p id="lblRemainingCount">Max characters: 100</p>
+                    {% endif %}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.media_id.label(class="form-label") }}
+                    {% if form.media_id.errors %}
+                    {{ form.media_id(class="form-select is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.media_id.errors %}
+                        <span>{{ error }}
+                            {% endfor %}
+                    </div>
+                    {% else %}
+                    {{ form.media_id(class="form-select") }}
+                    {% endif %}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.edition_id.label(class="form-label") }}
+                    {% if form.edition_id.errors %}
+                    {{ form.edition_id(class="form-select is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.edition_id.errors %}
+                        <span>{{ error }}
+                            {% endfor %}
+                    </div>
+                    {% else %}
+                    {{ form.edition_id(class="form-select") }}
+                    {% endif %}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.location_id.label(class="form-label") }}
+                    {% if form.location_id.errors %}
+                    {{ form.location_id(class="form-select is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.location_id.errors %}
+                        <span>{{ error }}
+                            {% endfor %}
+                    </div>
+                    {% else %}
+                    {{ form.location_id(class="form-select") }}
+                    {% endif %}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.submit(class="btn btn-outline-info") }}
+                </div>
+            </form>
+        </div>
+
+        <div class="col-sm-6">
+            <h2>Movie collection</h2>
+            <a href="{{ url_for('collection_all') }}">View your movie collection</a>
         </div>
     </div>
+</section>
 {% endblock content %}
