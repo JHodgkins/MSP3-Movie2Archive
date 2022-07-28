@@ -5,7 +5,7 @@ from movie2archive import (
     app, db, mongo, bcrypt, access_key, movie_key, apiurl, headers)
 from movie2archive.forms import (
     RegistrationForm, LoginForm, MediaCatForm, EditMediaCatForm,
-    EditLocationCatForm, LocationCatForm, EditionCatForm, EditEditionCatForm, MovieForm)
+    EditLocationCatForm, LocationCatForm, EditionCatForm, EditEditionCatForm, MovieForm, EditMovieForm)
 from movie2archive.models import User, Movielookup, Media, Location, Edition
 from flask_login import (
     login_user, logout_user, current_user, login_required)
@@ -82,7 +82,7 @@ def collection_all():
     # movies = mongo.db.movies.find()
     movies = Movielookup.query.order_by(Movielookup.date_posted.desc()).all()
     movie_types = Media.query.order_by(Media.type.asc()).all()
-    return render_template("collection_all.html", title='My collection', default='no movies currently in your collection', movies=movies, movie_types=movie_types)
+    return render_template("collection_all.html", title='All', default='no movies currently in your collection', movies=movies, movie_types=movie_types)
 
 
 # My collection | View Movie by media type
@@ -92,7 +92,9 @@ def collection_cat(media_type_id):
     movies = Movielookup.query.order_by(Movielookup.date_posted.desc()).all()
     movie_types = Media.query.order_by(Media.type.asc()).all()
     m_types = Media.query.get_or_404(media_type_id)
-    return render_template("collection_type.html", title='My collection', default='No items in this collection', movies=movies, movie_types=movie_types, m_types=m_types)
+    # mongo_movies = mongo.db.movies.find({"Title": mt})
+    mongo_movies = mongo.db.movies.find()
+    return render_template("collection_type.html", title=m_types.type, default='No items in this collection', movies=movies, movie_types=movie_types, m_types=m_types, mongo_movies=mongo_movies)
 
 
 # My collection | View Movie information and detail
@@ -125,39 +127,104 @@ def add_movie():
     form.edition_id.choices = edition_list
 
     if form.validate_on_submit():
-        # call imdb api and return values to be sent to MongoDB
-        movie_name = form.title.data
-        querystring = {"t": movie_name}
-        response = requests.request("GET", apiurl, headers=headers, params=querystring)
-        data = [json.loads(response.text)]
-        for item in data:
-            mid = item['imdbID']
-            mtitle = item['Title']
-            mplot = item['Plot']
-            mposter = item['Poster']
+        # Check if movie already exists
+        movie_name = form.title.data.upper()
+        check_mongo = mongo.db.movies.find_one({"Title": movie_name})
         
-        movie_mongo = {
-            "Title": mtitle,
-            "imdbID": mid,
-            "Plot": mplot,
-            "Poster": mposter
-        }
-        mongo.db.movies.insert_one(movie_mongo)
+        if check_mongo != None:
 
-        movie = Movielookup(
-            title=form.title.data,
+            # Construct Movielookup table
+            movie = Movielookup(
+            title=form.title.data.upper(),
             notes=form.notes.data,
             media_id=form.media_id.data,
             location_id=form.location_id.data,
             edition_id=form.edition_id.data,
             user_id=current_user.id,
-            imdbID=mid
-        )
-        db.session.add(movie)
+            imdbID=check_mongo['imdbID']
+            )
+            
+            # Add to Potgresql
+            db.session.add(movie)
+            db.session.commit()
+            flash('Name match: Your movie was successfully added to your collection.', 'info')
+            return redirect(url_for('collection_all'))
+        else:
+            # call imdb api and return values to be sent to MongoDB
+            movie_name = form.title.data
+            querystring = {"t": movie_name}
+            response = requests.request("GET", apiurl, headers=headers, params=querystring)
+            data = [json.loads(response.text)]
+            for item in data:
+                mid = item['imdbID']
+                mtitle = item['Title']
+                mplot = item['Plot']
+                mposter = item['Poster']
+            
+            # Construct collection for MongoDB
+            movie_mongo = {
+                "Title": mtitle.upper(),
+                "imdbID": mid,
+                "Plot": mplot,
+                "Poster": mposter
+            }
+            # Add to MongoDB
+            mongo.db.movies.insert_one(movie_mongo)
+            
+            # Construct Movielookup table
+            movie = Movielookup(
+                title=form.title.data.upper(),
+                notes=form.notes.data,
+                media_id=form.media_id.data,
+                location_id=form.location_id.data,
+                edition_id=form.edition_id.data,
+                user_id=current_user.id,
+                imdbID=mid
+            )
+            
+            # Add to Potgresql
+            db.session.add(movie)
+            db.session.commit()
+            flash('Your movie was successfully added to your collection.', 'info')
+            return redirect(url_for('collection_all'))
+    return render_template(
+        "add_movie.html", title='Add a movie to your collection', form=form)
+
+
+# My collection | Edit a Movie title
+@app.route("/collection/movie/edit_movie/<int:movie_id>/", methods=[
+    'GET', 'POST'])
+@login_required
+def edit_movie(movie_id):
+    movies = Movielookup.query.get_or_404(movie_id)
+    media_types = Media.query.all()
+    media_list = [(media.id, media.type) for media in media_types]
+    location_types = Location.query.all()
+    location_list = [(location.id, location.location) for location in location_types]
+    edition_types = Edition.query.all()
+    edition_list = [(edition.id, edition.edition) for edition in edition_types]
+    form = EditMovieForm()
+    form.media_id.choices = media_list
+    form.location_id.choices = location_list
+    form.edition_id.choices = edition_list
+
+    if form.validate_on_submit():
+        movies.title = form.title.data.upper(),
+        movies.notes = form.notes.data,
+        movies.media_id = form.media_id.data,
+        movies.location_id = form.location_id.data,
+        movies.edition_id = form.edition_id.data
         db.session.commit()
-        flash('Your movie was successfully added to your collection.', 'info')
+        flash(f'Your movie was sucessfully updated with your amended details and will be viewable in your collection!', 'info')
         return redirect(url_for('collection_all'))
-    return render_template("add_movie.html", title='Add a movie to your collection', form=form)
+    elif request.method == 'GET':
+        form.title.data = movies.title
+        form.notes.data = movies.notes
+        form.media_id.data = movies.media_id
+        form.location_id.data = movies.location_id
+        form.edition_id.data = movies.edition_id
+    return render_template("edit_movie.html", title=movies.title, form=form)
+
 
 
 # Admin dashoard view
@@ -210,7 +277,6 @@ def edit_media_cat(media_type_id):
             return redirect(url_for('dashboard'))
         elif request.method == 'GET':
             form.type.data = media_types.type
-            print("form.type.data")
     return render_template("edit_media_category.html", title='Edit Category', form=form)
 
 
