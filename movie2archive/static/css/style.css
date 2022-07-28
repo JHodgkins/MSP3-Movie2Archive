@@ -1,6 +1,12 @@
 /* Import Google fonts Big - Headings, Poppins - Body text */
 @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100;200;400;500;700&family=Poppins:wght@400;500;700&display=swap');
 
+:root, html, * {
+    margin: 0;
+    padding: 0;
+}
+/* Structure styles */
+
 html, body {
     font-family: 'Poppins', sans-serif;
     font-size: 100%;
@@ -12,8 +18,14 @@ html, body {
 body {
     padding-top: 5rem;
 }
+
 h1,h2,h3,h4,h5,h6, .brand-logo {
     font-family: 'Big Shoulders Display', cursive;
+}
+
+hr {
+    border: 2px solid orange;
+    color: orange;
 }
 
 main {
@@ -32,5 +44,21 @@ footer {
 /* Collection area */
 
 .filter-media-type {
-    padding-top: 8px;
+    padding-top: 0;
+}
+
+.collection-button-group {
+    margin-left: auto;
+    margin-right: 1rem;
+}
+
+/* Single Movie view */
+
+.box-art img {
+    width: 100%;
+    border: 2px solid orange;
+}
+
+.box-art small, .box-art h3, .box-art a {
+    padding: 1rem 1rem;
 }
