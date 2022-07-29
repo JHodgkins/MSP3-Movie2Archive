@@ -18,7 +18,6 @@
 
 </head>
 <body>
-    <header class="site-header container">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
           <a class="navbar-brand" href="{{ url_for('home') }}"><i class="fa-solid fa-box-open"></i> Movie2Archive</a>
@@ -76,6 +75,11 @@
                     <a class="nav-link" href="{{ url_for('register') }}">Register</a>
                   </li>
                 {% endif %}
+                {% if current_user.is_authenticated and current_user.username == 'admin' %}
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('profile') }}">secret link</a>
+                  </li>
+                  {% endif %}
               </ul>
               <form class="d-flex" role="search">
                 <input
@@ -92,6 +96,9 @@
           </div>
         </div>
       </nav>
+    <header class="site-header">
+      {% block header %}
+      {% endblock header %}
     </header>
     <main class="container">
         <div class="row">
@@ -105,12 +112,41 @@
             {% endwith %}
             </div> <!-- end main col-md-12 -->
         </div>
+        
             {% block content %}
             {% endblock content %}
     </main>
-    <footer>
-        <p class="copyright text-muted">&copy;<span id="copyright"></span> Movie2Archive - Educational project</p>
-    </footer>
+    <footer class="d-flex flex-wrap justify-content-center align-items-center py-3 border-top site-footer">
+      <div class="col-md-4 d-flex align-items-center">
+        <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+          <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+        </a>
+        <span class="mb-3 mb-md-0 text-muted copyright">&copy;<span id="copyright"></span> Movie2Archive - Educational project</span>
+      </div>
+
+    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex social-icons">
+      <li class="ms-3">
+        <a target="_blank" href="https://www.facebook.com/" rel="noopener">
+          <i class="fab fa-facebook" aria-hidden="true"></i>
+            <span class="sr-only">Find us on Facebook (opens in a new window)
+            </span>
+          </a>
+      </li>
+      <li class="ms-3">
+        <a target="_blank" href="https://twitter.com/" rel="noopener">
+          <i class="fab fa-twitter" aria-hidden="true"></i>
+            <span class="sr-only">Find us on Twitter (opens in a new window)
+            </span>
+          </a>
+      </li>
+      <li class="ms-3">
+        <a target="_blank" href="https://www.instagram.com/" rel="noopener">
+          <i class="fab fa-instagram" aria-hidden="true"></i>
+            <span class="sr-only">Find us on Instagram (opens in a new window)</span>
+        </a>
+      </li>
+    </ul>
+  </footer>
 
     <!-- compiled Bootstrap JS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
