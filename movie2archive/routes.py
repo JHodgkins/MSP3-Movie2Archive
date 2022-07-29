@@ -69,10 +69,12 @@ def logout():
 
 
 # User profile | View user details
-@app.route("/profile")
+@app.route("/profile", methods=['GET', 'POST'])
 @login_required
 def profile():
-    return render_template("profile.html", title='Profile')
+    user_id = current_user.id 
+    user_movies = Movielookup.query.filter_by(user_id=user_id)
+    return render_template("profile.html", title='Profile', user_movies=user_movies)
 
 
 # My collection | View Most recent entries (20 moviee)
