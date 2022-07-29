@@ -16,7 +16,7 @@ html, body {
 }
 
 body {
-    padding-top: 5rem;
+    padding-top: 56px;
 }
 
 h1,h2,h3,h4,h5,h6, .brand-logo {
@@ -40,6 +40,15 @@ footer {
     background-color: #FFB341;
 }
 
+/* Profile page */
+
+.profile-page {
+    margin-bottom: 1rem;
+}
+
+.profile-page-inner {
+    padding: 0 2rem;
+} 
 
 /* Collection area */
 
@@ -61,4 +70,14 @@ footer {
 
 .box-art small, .box-art h3, .box-art a {
     padding: 1rem 1rem;
+}
+
+/* Footer */
+
+.site-footer {
+    margin-bottom: 0;
+}
+.social-icons i {
+    font-size: 2rem;
+    color: black;
 }
