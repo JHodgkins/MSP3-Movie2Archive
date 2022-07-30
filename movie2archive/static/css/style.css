@@ -5,6 +5,33 @@
     margin: 0;
     padding: 0;
 }
+
+/* Colour variables */
+
+:root { 
+    --white: #ffffff;
+    --black: #000000;
+    --grey: #565555; /* Davys Grey */
+    --orange: #FFB341; /* Yellow Orange */
+    --red: #ED254E; /* Red Crayola */
+    --silver: #C4CAD0; /* Silver Sand */
+    --cream: #FCF7FF; /* Magnolia */
+    }
+
+/* commonly used colour styles */
+
+.navbar-dark a{
+    color: var(--silver);
+}
+
+.navbar-dark a:hover {
+    color: var(--orange);
+}
+
+.text-silver {
+    color: var(--silver);
+}
+
 /* Structure styles */
 
 html, body {
@@ -24,8 +51,16 @@ h1,h2,h3,h4,h5,h6, .brand-logo {
 }
 
 hr {
-    border: 2px solid orange;
-    color: orange;
+    border: 3px solid var(--orange);
+    color: var(--orange);
+}
+
+.hr-50 {
+    width: 25%;
+    margin: 2rem auto;
+    color: var(--orange);
+    border-left: 3px solid var(--orange);
+    opacity: 1;
 }
 
 main {
@@ -37,7 +72,7 @@ footer {
     height: 50px;
     align-content: center;
     justify-content: center;
-    background-color: #FFB341;
+    background-color: var(--orange);
 }
 
 /* Profile page */
@@ -46,10 +81,33 @@ footer {
     margin-bottom: 1rem;
 }
 
-.profile-page-inner {
+.profile-page-inner, .user-account-page-inner {
     padding: 0 2rem;
-} 
+}
 
+.content-divider-border {
+    border-left: 3px solid var(--orange);
+}
+
+.main-area, .user-account-options {
+    margin-top: 2rem;
+    padding: 2rem;
+}
+.main-area i, .user-account-options i {
+    font-size: 2rem;
+}
+
+.large-icon {
+    text-align: center;
+}
+.large-icon i {
+    font-size: 26rem;
+}
+
+.list-group a:hover {
+    background-color: var(--orange);
+    color: var(--black);
+}
 /* Collection area */
 
 .filter-media-type {
@@ -65,7 +123,7 @@ footer {
 
 .box-art img {
     width: 100%;
-    border: 2px solid orange;
+    border: 2px solid var(--orange);
 }
 
 .box-art small, .box-art h3, .box-art a {
@@ -79,5 +137,9 @@ footer {
 }
 .social-icons i {
     font-size: 2rem;
-    color: black;
+    color: var(--grey);
+}
+
+.social-icons i:hover {
+    color: var(--black);
 }
