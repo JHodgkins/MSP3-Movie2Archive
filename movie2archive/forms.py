@@ -54,6 +54,15 @@ class UpdateUserForm(FlaskForm):
 
 
 """
+User change password form
+"""
+class ChangePasswordForm(FlaskForm):
+    password = PasswordField('New Password', validators=[DataRequired(), Length(min=8, max=20)])
+    password2 = PasswordField('Confirm Password', validators=[DataRequired(), EqualTo('password')])
+    submit = SubmitField('Change password')
+
+
+"""
 User login form
 """
 class LoginForm(FlaskForm):
