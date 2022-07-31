@@ -108,8 +108,33 @@ footer {
     margin-bottom: 1rem;
 }
 
+.bg-quotes-wrapper {
+    background-color: var(--cream);
+}
+
 .content-divider-border-small {
     border-left: 3px solid var(--orange);
+}
+
+.large-image img {
+    width: 100%;
+    border: 2px solid var(--orange);
+}
+
+/* Quote section */
+
+.quotes {
+    font-size: 3rem;
+    color: var(--orange);
+}
+
+.blockquote h2 {
+    font-size: 3rem;
+}
+
+.movie_number {
+    font-size: 3rem;
+    color: var(--red);
 }
 
 /* Profile page */
