@@ -4,7 +4,7 @@
    <div class="row">
       <h1>{{ title }}</h1>
       <div class="col-md-6">
-            
+           
          <form action="" method="post" novalidate>
          {# CSR token #}
             {{ form.hidden_tag() }}
@@ -20,11 +20,6 @@
                   {% else %}
                      {{ form.username(class="form-control") }} 
                {% endif %}
-               {# {{ form.username() }}
-               {{ form.username.label() }}
-            {% for error in form.username.errors %}
-            <span class="helper-text" data-error="You must enter a valid username" data-success="username entered">{{ error }}</span>
-            {% endfor %} #}
             </div>
 
             <div class="mb-3">
