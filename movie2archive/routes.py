@@ -17,7 +17,8 @@ from sqlalchemy.sql.functions import func
 @app.route("/")
 @app.route("/home")
 def home():
-    return render_template('index.html')
+    movies = Movielookup.query.order_by(Movielookup.date_posted.desc()).all()
+    return render_template('index.html', movies=movies)
 
 
 # Main navigation | About page
