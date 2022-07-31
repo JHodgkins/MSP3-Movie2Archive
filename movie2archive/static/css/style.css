@@ -69,7 +69,6 @@ main {
 
 footer {
     display: flex;
-    height: 50px;
     align-content: center;
     justify-content: center;
     background-color: var(--orange);
@@ -81,18 +80,15 @@ footer {
     margin-bottom: 1rem;
 }
 
-.profile-page-inner, .user-account-page-inner {
-    padding: 0 2rem;
-}
-
 .content-divider-border {
     border-left: 3px solid var(--orange);
 }
 
-.main-area, .user-account-options {
-    margin-top: 2rem;
-    padding: 2rem;
+.profile-page-main-inner .option-container {
+    margin-top: 1rem;
+    padding: 25px;
 }
+
 .main-area i, .user-account-options i {
     font-size: 2rem;
 }
@@ -142,4 +138,18 @@ footer {
 
 .social-icons i:hover {
     color: var(--black);
+}
+
+/* Media queries */
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .profile-page-banner-inner, .profile-page-main-inner, .user-account-page-inner {
+        padding: 0 2rem;
+    }
+
+    .main-area, .user-account-options {
+        margin-top: 2rem;
+        padding: 2rem;
+    }
 }
