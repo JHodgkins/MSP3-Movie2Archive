@@ -18,7 +18,7 @@
                     {% for movies in user_movies %}
                     {% endfor %}
                     <h2 class="display-5 fw-bolder text-white mb-2">Movies in collection</h2>
-                    <p class="big-text text-white" style="font-size: 5rem;">{{ user_movies|list|length }}
+                    <p class="big-text text-white" style="font-size: 5rem;">{{ user_movies|list|length }}</p>
                 </div>
             </div>
         </div><!-- end 6 -->
@@ -186,7 +186,7 @@
             <div class="col-lg-6">
                 <h2 class="">Your current account details</h2>
                 <div class="d-flex gap-3 py-3 option-container">
-                        <i class="fa-solid fa-key"></i>
+                        <i class="fa-solid fa-person-circle-check"></i>
                         <div class="d-flex gap-2 w-100 justify-content-between">
                             <div>
                                 <h3 class="mb-0">Username</h6>
@@ -196,7 +196,6 @@
                                 <h3 class="mb-0">Joined Movie2archive</h6>
                                 <p class="mb-0 opacity-75">{{ current_user.joined.strftime('%d-%m-%Y') }}</p>
                             </div>
-                            <small class="opacity-50 text-nowrap">Link</small>
                         </div>
                     </div>
 
