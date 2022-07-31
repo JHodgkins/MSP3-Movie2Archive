@@ -90,8 +90,13 @@ def edit_profile(id):
         flash(f'Hey {current_user.username}, Your account details were  sucessfully updated.', 'success')
         return redirect(url_for('profile'))
     elif request.method == 'GET':
-        form.username.data = current_user.username
-        form.email.data = current_user.email
+        # Defensive check
+        if id != current_user.id:
+            flash('You cannot edit another persons profile', 'info')
+            return redirect(url_for('profile'))
+        else:
+            form.username.data = current_user.username
+            form.email.data = current_user.email
     return render_template("update_profile.html", title='Update your account details', form=form, select_user=select_user)
 
 
