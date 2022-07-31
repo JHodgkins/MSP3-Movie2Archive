@@ -4,7 +4,7 @@ from bson.objectid import ObjectId
 from movie2archive import (
     app, db, mongo, bcrypt, access_key, movie_key, apiurl, headers)
 from movie2archive.forms import (
-    RegistrationForm, LoginForm, UpdateUserForm, MediaCatForm, EditMediaCatForm,
+    RegistrationForm, LoginForm, UpdateUserForm, ChangePasswordForm, MediaCatForm, EditMediaCatForm,
     EditLocationCatForm, LocationCatForm, EditionCatForm, EditEditionCatForm, MovieForm, EditMovieForm)
 from movie2archive.models import User, Movielookup, Media, Location, Edition
 from flask_login import (
@@ -98,6 +98,29 @@ def edit_profile(id):
             form.username.data = current_user.username
             form.email.data = current_user.email
     return render_template("update_profile.html", title='Update your account details', form=form, select_user=select_user)
+
+
+# User profile | Change password
+@app.route("/profile/change_password/<int:id>", methods=['GET', 'POST'])
+@login_required
+def change_password(id):
+    form = ChangePasswordForm()
+    select_user = User.query.get_or_404(id)
+    if form.validate_on_submit():
+        hashed_password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
+        select_user.password = hashed_password
+        db.session.commit()
+        flash('Your password has been changed! Please login again to confirm the password change.', 'success')
+        logout_user()
+        return redirect(url_for('login'))
+    elif request.method == 'GET':
+        # Defensive check
+        if id != current_user.id:
+            flash('You cannot edit another persons account details', 'info')
+            return redirect(url_for('profile'))
+        else:
+            form.password.data = current_user.password
+    return render_template('change_password.html', title='Change your  Password', form=form, select_user=select_user)
 
 
 # My collection | View Most recent entries (20 moviee)
