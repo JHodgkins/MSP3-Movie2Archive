@@ -1,7 +1,7 @@
 {% extends "main.html" %}
 {% block header %}
 <section class="bg-dark py-5 profile-page">
-    <div class="container profile-page-inner">
+    <div class="container profile-page-banner-inner">
         <div class="row gx-5 justify-content-center">
             <div class="col-lg-6">
                 <div class="my-5">
@@ -23,12 +23,12 @@
             </div>
         </div><!-- end 6 -->
     </div>
-</section>
+</section><!-- end banner area -->
 {% endblock header %}
 
 {% block content %}
 <section class="py-5 main-area">
-    <div class="container profile-page-inner">
+    <div class="container profile-page-main-inner">
         <div class="row gx-5 justify-content-center">
             <div class="col-lg-6">
                 <h2>What would you like to do? {{ current_user.username }}</h2>
@@ -55,24 +55,24 @@
                             <small class="opacity-50 text-nowrap">link</small>
                         </div>
                     </a>
-                    <div class="list-group-item list-group-item-action d-flex gap-3 py-3">
-                        <i class="fa-solid fa-square-pen rounded-circle flex-shrink-0"></i>
+                    <div class="d-flex gap-3 py-3 option-container">
+                        <i class="fa-solid fa-clipboard-question"></i>
                         <div class="d-flex gap-2 w-100 justify-content-between">
                             <div>
-                                <h3 class="mb-0">Update a Movie</h3>
+                                <h3 class="mb-0">How to update a Movie</h3>
                                 <p class="mb-0 opacity-75">
-                                    Update a movie stored in your collection, just select a movie to update your notes, type, version or change its location.
+                                    Updating a movie stored in your collection is very eay, just visit your collection and select the edit button to make an edit or update your movie, update your notes, type, version or change its location.
                                 </p>
                             </div>
                             <small class="opacity-50 text-nowrap">info</small>
                         </div>
                     </div>
-                    <div class="list-group-item d-flex gap-3 py-3">
-                        <i class="fa-solid fa-square-minus rounded-circle flex-shrink-0"></i>
+                    <div class="d-flex gap-3 py-3 option-container">
+                        <i class="fa-solid fa-clipboard-question"></i>
                         <div class="d-flex gap-2 w-100 justify-content-between">
                             <div>
-                                <h3 class="mb-0">Delete a movie</h3>
-                                <p class="mb-0 opacity-75">No longer own a movie, jut find and select that movie and remove it from the list.</p>
+                                <h3 class="mb-0">Need to delete a movie</h3>
+                                <p class="mb-0 opacity-75">No longer own a movie, view your collection and find the movie in the list, select that movie to view its details and then select remove to delete the item from your collection.</p>
                             </div>
                             <small class="opacity-50 text-nowrap">info</small>
                         </div>
@@ -83,16 +83,73 @@
             <div class="col-lg-6">
             {% if current_user.is_authenticated and current_user.id == 1 %}
                 <h2 class="">Admin actions</h2>
-
+                <div class="list-group">
+                    <a href="{{ url_for('dashboard') }}" class="list-group-item list-group-item-action d-flex gap-3 py-3">
+                        <i class="fa-solid fa-lock rounded-circle flex-shrink-0"></i>
+                        <div class="d-flex gap-2 w-100 justify-content-between">
+                            <div>
+                                <h3 class="mb-0">Admin dashboard</h6>
+                                <p class="mb-0 opacity-75">Create, edit, update and delete main site categorie used across Movie2archive.</p>
+                            </div>
+                            <small class="opacity-50 text-nowrap">link</small>
+                        </div>
+                    </a>
+                    <div class="d-flex gap-3 py-3 mb-2 option-container">
+                        <i class="fa-solid fa-square-arrow-up-right"></i>
+                        <div class="d-flex gap-2 w-100 justify-content-between">
+                            <div>
+                                <h3 class="mb-0">Quick links</h3>
+                                <p class="mb-0 opacity-75">
+                                    Add categories to the site quickly using thee links.
+                                </p>
+                            </div>
+                            <small class="opacity-50 text-nowrap">info</small>
+                        </div>
+                    </div>
+                    <a href="{{ url_for('add_media_cat') }}" class="list-group-item list-group-item-action d-flex gap-3 py-3">
+                        <i class="fa-solid fa-square-plus rounded-circle flex-shrink-0"></i>
+                        <div class="d-flex gap-2 w-100 justify-content-between">
+                            <div>
+                                <h3 class="mb-0">Add a Media type</h3>
+                                <p class="mb-0 opacity-75">
+                                    Add a media type to the available options for a user.
+                                </p>
+                            </div>
+                            <small class="opacity-50 text-nowrap">link</small>
+                        </div>
+                    </a>
+                    <a href="{{ url_for('add_location_cat') }}" class="list-group-item list-group-item-action d-flex gap-3 py-3">
+                        <i class="fa-solid fa-square-plus rounded-circle flex-shrink-0"></i>
+                        <div class="d-flex gap-2 w-100 justify-content-between">
+                            <div>
+                                <h3 class="mb-0">Add a Location</h3>
+                                <p class="mb-0 opacity-75">Add a location to the available options for a user.</p>
+                            </div>
+                            <small class="opacity-50 text-nowrap">link</small>
+                        </div>
+                    </a>
+                    <a href="{{ url_for('add_edition_cat') }}" class="list-group-item list-group-item-action d-flex gap-3 py-3">
+                        <i class="fa-solid fa-square-plus rounded-circle flex-shrink-0"></i>
+                        <div class="d-flex gap-2 w-100 justify-content-between">
+                            <div>
+                                <h3 class="mb-0">Add an Edition type</h3>
+                                <p class="mb-0 opacity-75">
+                                    Add a edition type to the available options for a user.
+                                </p>
+                            </div>
+                            <small class="opacity-50 text-nowrap">link</small>
+                        </div>
+                    </a>
+                </div>
             {% else %}
                 <div class="large-icon">
                     <i class="fa-solid fa-file-video""></i>
                 </div>
             {% endif %}
-            </div><!-- end 6 -->
+            </div><!-- end col 6 -->
         </div>
     </div>
-</section>
+</section><!-- end user/admin options -->
 
 <hr class="hr-50">
 
@@ -102,125 +159,52 @@
             <div class="col-lg-6">
                 <h2>Edit your user account details, {{ current_user.username }}</h2>
                 <div class="list-group">
-                    <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3">
-                        <i class="fa-solid fa-square-plus rounded-circle flex-shrink-0"></i>
+                    <a href="{{ url_for('edit_profile', id=current_user.id) }}" class="list-group-item list-group-item-action d-flex gap-3 py-3">
+                        <i class="fa-solid fa-pen-to-square"></i>
                         <div class="d-flex gap-2 w-100 justify-content-between">
                             <div>
-                                <h3 class="mb-0">Edit account</h6>
+                                <h3 class="mb-0">Update account details</h6>
                                 <p class="mb-0 opacity-75">Amend your details to ensure they are up to date and secure.</p>
                             </div>
                             <small class="opacity-50 text-nowrap">Link</small>
                         </div>
                     </a>
-                    <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-                        
+                    <a href="{{ url_for('edit_profile', id=current_user.id) }}" class="list-group-item list-group-item-action d-flex gap-3 py-3">
+                        <i class="fa-solid fa-key"></i>
                         <div class="d-flex gap-2 w-100 justify-content-between">
                             <div>
-                                <h3 class="mb-0">Why would I need to update my details</h3>
-                                <p class="mb-0 opacity-75">
-                                    View a movie stored in your collection, or view your collection in an easy to read list.
-                                </p>
+                                <h3 class="mb-0">Change account password</h6>
+                                <p class="mb-0 opacity-75">Change your password here if you believe it may have been comprimised.</p>
                             </div>
                             <small class="opacity-50 text-nowrap">Link</small>
                         </div>
                     </a>
-                    <div class="list-group-item list-group-item-action d-flex gap-3 py-3">
-                        <i class="fa-solid fa-1"></i>
-                        <div class="d-flex gap-2 w-100 justify-content-between">
-                            <div>
-                                <h3 class="mb-0">Update a Movie</h3>
-                                <p class="mb-0 opacity-75">
-                                    Update a movie stored in your collection, just select a movie to update your notes, type, version or change its location.
-                                </p>
-                            </div>
-                            <small class="opacity-50 text-nowrap">info</small>
-                        </div>
-                    </div>
-                    <div class="list-group-item d-flex gap-3 py-3">
-                        <i class="fa-solid fa-square-minus rounded-circle flex-shrink-0"></i>
-                        <div class="d-flex gap-2 w-100 justify-content-between">
-                            <div>
-                                <h3 class="mb-0">Delete a movie</h3>
-                                <p class="mb-0 opacity-75">No longer own a movie, jut find and select that movie and remove it from the list.</p>
-                            </div>
-                            <small class="opacity-50 text-nowrap">info</small>
-                        </div>
-                    </div>
-                </div><!-- end profile options list group -->
+                    
+                </div><!-- end uer account list group -->
             </div>
 
             <div class="col-lg-6">
-                <h2 class="">Change your password</h2>
+                <h2 class="">Your current account details</h2>
+                <div class="d-flex gap-3 py-3 option-container">
+                        <i class="fa-solid fa-key"></i>
+                        <div class="d-flex gap-2 w-100 justify-content-between">
+                            <div>
+                                <h3 class="mb-0">Username</h6>
+                                <p class="mb-0 opacity-75">{{ current_user.username }}</p>
+                                <h3 class="mb-0">Email</h6>
+                                <p class="mb-0 opacity-75">{{ current_user.email }}</p>
+                                <h3 class="mb-0">Joined Movie2archive</h6>
+                                <p class="mb-0 opacity-75">{{ current_user.joined.strftime('%d-%m-%Y') }}</p>
+                            </div>
+                            <small class="opacity-50 text-nowrap">Link</small>
+                        </div>
+                    </div>
 
             </div><!-- end 6 -->
         </div>
     </div>
 </section>
 
+<hr class="hr-50">
 
-
-
-
-<div class="row">
-    <!-- Main area of the profile page -->
-    <section class="main-area">
-        <div class="col-md-6">
-            <h2>What would you like to do? {{ current_user.username }}</h2>
-            <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3">
-                    <i class="fa-solid fa-square-plus rounded-circle flex-shrink-0"></i>
-                    <div class="d-flex gap-2 w-100 justify-content-between">
-                        <div>
-                            <h3 class="mb-0">Add a monie</h6>
-                            <p class="mb-0 opacity-75">Add a movie from your pysical collection to Movie2archive.</p>
-                        </div>
-                    </div>
-                </a>
-                <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-                    <i class="fa-solid fa-eye rounded-circle flex-shrink-0"></i>
-                    <div class="d-flex gap-2 w-100 justify-content-between">
-                        <div>
-                            <h3 class="mb-0">View your collection</h3>
-                            <p class="mb-0 opacity-75">
-                                View a movie stored in your collection, or view your collection in an easy to read list.
-                            </p>
-                        </div>
-                    </div>
-                </a>
-                <div class="list-group-item list-group-item-action d-flex gap-3 py-3">
-                    <i class="fa-solid fa-square-pen rounded-circle flex-shrink-0"></i>
-                    <div class="d-flex gap-2 w-100 justify-content-between">
-                        <div>
-                            <h3 class="mb-0">Update a Movie</h3>
-                            <p class="mb-0 opacity-75">
-                                Update a movie stored in your collection, just select a movie to update your notes, type, version or change its location.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="list-group-item d-flex gap-3 py-3">
-                    <i class="fa-solid fa-square-minus rounded-circle flex-shrink-0"></i>
-                    <div class="d-flex gap-2 w-100 justify-content-between">
-                        <div>
-                            <h3 class="mb-0">Delete a movie</h3>
-                            <p class="mb-0 opacity-75">No longer own a movie, jut find and select that movie and remove it from the list.</p>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- end profile options list group -->
-        </div><!-- end col-6 -->
-
-        {% if current_user.is_authenticated and current_user.id == 1 %}
-        <div class="col-md-6">
-            <h2 class="">Admin actions</h2>
-            <p>Manage the site here.</p>
-            <ul>
-                <li><a class="nav-link" href="{{ url_for('dashboard') }}">Go to Dashboard</a></li>
-                <li><a href="{{ url_for('add_media_cat') }}">Add a Media type category</a></li>
-                <li>Add a location type category</li>
-            </ul>
-        </div>
-        {% endif %}
-    </section>
-</div>
 {% endblock content %}
