@@ -2,45 +2,101 @@
 {% block header %}
 <section class="bg-dark home-page">
     <div class="home-page-image">
-    <div class="container home-page-banner-inner py-5">
-        <div class="row gx-5 justify-content-center">
-            <div class="col-lg-12">
-                <div class="my-5 home-page-main-heading">
-                    <h1 class="display-5 fw-bolder text-white mb-2 text-center">ALL ABOUT THE MOVIES
-                    </h1>
+        <div class="container home-page-banner-inner py-5">
+            <div class="row gx-5 justify-content-center">
+                <div class="col-lg-12">
+                    <div class="my-5 home-page-main-heading">
+                        <h1 class="display-5 fw-bolder text-white mb-2 text-center">ALL ABOUT THE MOVIES
+                        </h1>
+                    </div>
+                </div>
+            </div><!-- end row -->
+            <div class="row">
+            <div class="col-lg-4">
+                <div class="banner-taglines">
+                    <p class="big-text text-white content-divider-border-small">Archieve your VHS,
+                    DVD and Blue-Rav movies into collections, you will never need to hunt for a movie on movie night.</p>
                 </div>
             </div>
-        </div><!-- end row -->
-        <div class="row">
-        <div class="col-lg-4">
-            <div class="banner-taglines">
-                <p class="big-text text-white content-divider-border-small">Archieve your VHS,
-                DVD and Blue-Rav movies into collections, you will never need to hunt for a movie on movie night.</p>
+            <div class="col-lg-4">
+                <div class="banner-taglines">
+                    <p class="big-text text-white content-divider-border-small">Find intresting details about each film in yourcollection such as plot, original cover art and more.</p>
+                </div>
             </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="banner-taglines">
-                <p class="big-text text-white content-divider-border-small">Find intresting details about each film in yourcollection such as plot, original cover art and more.</p>
+            <div class="col-lg-4">
+                <div class="banner-taglines">
+                    <p class="big-text text-white content-divider-border-small">Keep your collection up to date and never buy a duplicate again.</p>
+                </div>
             </div>
+            </div><!-- end row -->
         </div>
-        <div class="col-lg-4">
-            <div class="banner-taglines">
-                <p class="big-text text-white content-divider-border-small">Keep your collection up to date and never buy a duplicate again.</p>
-            </div>
-        </div>
-        </div><!-- end row -->
-
     </div>
-    </div>
-</section><!-- end banner area -->
+</section><!-- end home page banner area -->
 {% endblock header %}
-{% block content %}
-    <div class="row">
-        <div class="col-md-12">
-            <h2 class="">MOVIE2ARCHIVE</h2>
 
-            <a href="{{ url_for('movietest') }}">movie test page</a>
+{% block content %}
+<!-- Quote section  -->
+    <section class="bg-quotes-wrapper">
+      <div class="container">
+        <div class="row">
+          <blockquote class="blockquote py-5 text-center">
+            <h2><span class="quotes">"</span>Movie2archive has helped people archive <span class="movie_number">{{ movies|list|length }}</span> movies so far.<span class="quotes">"</span>
+            </h2>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+    <!-- end quote section -->
+
+    <section class="py-5 main-area">
+    <div class="container homepage-main-inner">
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-6">
+                <h2>3 easy steps to getting started with Movie2archive</h2>
+                <div class="list-group">
+                    
+                    <div class="d-flex gap-3 py-3 option-container">
+                        <i class="fa-solid fa-1"></i>
+                        <div class="d-flex gap-2 w-100 justify-content-between">
+                            <div>
+                                <p class="mb-0">
+                                    Register to create your movie2archive account, or login if you already have an account.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-3 py-3 option-container">
+                        <i class="fa-solid fa-2"></i>
+                        <div class="d-flex gap-2 w-100 justify-content-between">
+                            <div>
+                                <p class="mb-0">
+                                    Visit My collection page and add a movie, you only need the title, media type, edition and location of your movie..
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-3 py-3 option-container">
+                        <i class="fa-solid fa-3"></i>
+                        <div class="d-flex gap-2 w-100 justify-content-between">
+                            <div>
+                                <p class="mb-0">
+                                    View a simple list of your movie collection or view each title to discover more information about your movie.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- end home page list group -->
+            </div>
+
+            <div class="col-lg-6">
+                <div class="large-image">
+                    <img src="{{ url_for('static', filename='images/homepage_image_cameron_bunney_unsplash.jpg') }}" alt="Image showing a pile of discs.">
+                </div>
+            </div><!-- end col 6 -->
         </div>
     </div>
+</section><!-- end homepage main area -->
+
+<hr class="hr-50">
 
 {% endblock content %}
