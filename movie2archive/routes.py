@@ -4,7 +4,7 @@ from bson.objectid import ObjectId
 from movie2archive import (
     app, db, mongo, bcrypt, access_key, movie_key, apiurl, headers)
 from movie2archive.forms import (
-    RegistrationForm, LoginForm, MediaCatForm, EditMediaCatForm,
+    RegistrationForm, LoginForm, UpdateUserForm, MediaCatForm, EditMediaCatForm,
     EditLocationCatForm, LocationCatForm, EditionCatForm, EditEditionCatForm, MovieForm, EditMovieForm)
 from movie2archive.models import User, Movielookup, Media, Location, Edition
 from flask_login import (
@@ -75,6 +75,24 @@ def profile():
     user_id = current_user.id 
     user_movies = Movielookup.query.filter_by(user_id=user_id)
     return render_template("profile.html", title='Profile', user_movies=user_movies)
+
+
+# User profile | Edit user detail
+@app.route("/profile/update/<int:id>", methods=['GET', 'POST'])
+@login_required
+def edit_profile(id):
+    form = UpdateUserForm()
+    select_user = User.query.get_or_404(id)
+    if form.validate_on_submit():
+        current_user.username = form.username.data
+        current_user.email = form.email.data
+        db.session.commit()
+        flash(f'Hey {current_user.username}, Your account details were  sucessfully updated.', 'success')
+        return redirect(url_for('profile'))
+    elif request.method == 'GET':
+        form.username.data = current_user.username
+        form.email.data = current_user.email
+    return render_template("update_profile.html", title='Update your account details', form=form, select_user=select_user)
 
 
 # My collection | View Most recent entries (20 moviee)
@@ -269,7 +287,7 @@ def add_media_cat():
             db.session.commit()
             flash(f'Media type category was added sucessfully to the database!', 'info')
             return redirect(url_for('dashboard'))
-    return render_template("add_media_category.html", title='Add Category', form=form)
+    return render_template("add_media_category.html", title='Add Media type', form=form)
 
 # Admin dashoard | Edit Media type category
 @app.route("/dashboard/edit_media_category/<int:media_type_id>/", methods=[
@@ -290,7 +308,7 @@ def edit_media_cat(media_type_id):
             return redirect(url_for('dashboard'))
         elif request.method == 'GET':
             form.type.data = media_types.type
-    return render_template("edit_media_category.html", title='Edit Category', form=form)
+    return render_template("edit_media_category.html", title='Edit Media type', form=form)
 
 
 # Admin dashoard | Delete Media type category
@@ -325,7 +343,7 @@ def add_location_cat():
             db.session.commit()
             flash(f'Location category was added sucessfully to the database!', 'info')
             return redirect(url_for('dashboard'))
-    return render_template("add_location_category.html", title='Add Location', form=form)
+    return render_template("add_location_category.html", title='Add a location', form=form)
 
 
 # Admin dashoard | Edit Location category
@@ -365,7 +383,7 @@ def delete_location_cat(location_type_id):
         return redirect(url_for('dashboard'))
 
 
-# Admin dashoard | Add Media type edition
+# Admin dashoard | Add Edition type
 @app.route("/dashboard/add_edition_category", methods=['GET', 'POST'])
 @login_required
 def add_edition_cat():
@@ -381,10 +399,10 @@ def add_edition_cat():
             db.session.commit()
             flash(f'Edition category was added sucessfully to the database!', 'info')
             return redirect(url_for('dashboard'))
-    return render_template("add_edition_category.html", title='Add edition type', form=form)
+    return render_template("add_edition_category.html", title='Add an edition type', form=form)
 
 
-# Admin dashoard | Edit Media type edition
+# Admin dashoard | Edit Edition type
 @app.route("/dashboard/edit_edition_category/<int:edition_type_id>/", methods=['GET', 'POST'])
 @login_required
 def edit_edition_cat(edition_type_id):
@@ -402,10 +420,10 @@ def edit_edition_cat(edition_type_id):
             return redirect(url_for('dashboard'))
         elif request.method == 'GET':
             form.edition.data = edition_types.edition
-    return render_template("edit_edition_category.html", title='Edit edition Category', form=form)
+    return render_template("edit_edition_category.html", title='Edit edition type', form=form)
 
 
-# Admin dashoard | Delete Media type edition
+# Admin dashoard | Delete Edition type
 @app.route("/dashboard/delete_edition_category<int:edition_type_id>/", methods=['GET', 'POST'])
 @login_required
 def delete_edition_cat(edition_type_id):
