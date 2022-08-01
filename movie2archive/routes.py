@@ -24,7 +24,7 @@ def home():
 # Main navigation | About page
 @app.route("/about")
 def about():
-    return render_template('about.html', title='About')
+    return render_template('about.html', title='About Movie2archive')
 
 
 # User managment | Regiter for an account
