@@ -97,7 +97,7 @@ footer {
     font-size: 5rem;
 }
 
-.home-page-main-inner {
+.home-page-main-inner, .home-page-secondary-inner {
     margin-top: 1rem;
     padding: 25px;
 }
@@ -118,6 +118,16 @@ footer {
 
 .large-image img {
     width: 100%;
+    border: 2px solid var(--orange);
+}
+
+.medium-image {
+    text-align: center;
+}
+
+.medium-image img {
+    width: 60%;
+    text-align: center;
     border: 2px solid var(--orange);
 }
 
@@ -218,7 +228,7 @@ footer {
         padding: 0 2rem;
     }
 
-    .main-area, .user-account-options {
+    .main-area, .user-account-options, .secondary-area {
         margin-top: 2rem;
         padding: 2rem;
     }
