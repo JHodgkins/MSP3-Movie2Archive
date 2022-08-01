@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
       M.Sidenav.init(sidenav);
 });
 
+// Text area countdown to show characters left to enter
 function textareaLengthCheck(el) {
   let textArea = el.value.length;
   let charactersLeft = 100 - textArea;
