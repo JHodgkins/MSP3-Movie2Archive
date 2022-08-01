@@ -56,7 +56,7 @@ def login():
             login_user(user, remember=form.remember.data)
             next_redirect = request.args.get('next')
             return redirect(next_redirect) if next_redirect else redirect(
-                url_for('collection_all'))
+                url_for('profile'))
         else:
             flash(f'login failed, Please try again', 'danger')
     return render_template("login.html", title='Login', form=form)
