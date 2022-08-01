@@ -1,62 +1,76 @@
 {% extends "main.html" %}
-{% block content %}
-<div class="row">
-  <div class="col-md-8">
-    <h1 class="">Movie: {{ movie.title }}</h2>
-
-      <h3>My notes about the movie</h3>
-      {{movie.notes}}<br>
-      {% for mongo in mongo_movies [0:1] %}
-      <h2>Movie plot</h2>
-      {{mongo.Plot}}<br>
-      {# <ul class="list-group">
-                  <li class="list-group-item d-flex justify-content-between align-items-center">{{ media_type.type }}
-                    <div class="btn-group">
-                      <a href="{{ url_for('edit_media_cat', media_type_id=media_type.id) }}" class="btn btn-primary mx-1">Edit</a>
-                      <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete_modal-{{ media_type.id }}">Delete</button>
+{% block header %}
+<section class="bg-dark movie-page">
+    <div class="page-image-small">
+        <div class="container">
+            <div class="row gx-5">
+                <div class="col-lg-12">
+                    <div class="my-5 page-main-heading">
+                        <h1 class="display-5 fw-bolder text-white mb-2">{{ title }}</h1>
                     </div>
-                  </li>
-                </ul> #}
-      <hr>
-      <a href="{{ url_for('edit_movie', movie_id=movie.id) }}">Update Movie</a>
-      <hr>
-      <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete_modal_movie-{{ movie.id }}">Delete this movie</button>
-      <hr>
-      <!-- Modal -->
-                  <div class="modal fade" id="delete_modal_movie-{{ movie.id }}" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h2 class="modal-title" id="ModalLabel">Confirm deletion of movie ({{ movie.title }})</h2>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                          <p>Please read:<br>
-                          You are about to delete Movie <strong>{{ movie.title }}</strong> from your collection.</p>
-                          <p>Please be aware that deleting a movie will remove it permantly from your collection</p>
-                          <p><strong>This action is permanant and cannot be reversed.</strong>.</p>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                          <form action="{{ url_for('delete_movie', movie_id=movie.id) }}" method="POST">
-                            <input class="btn btn-danger" type="submit" value="I understand, Delete movie">
-                          </form>
-                        </div>
+                </div>
+            </div><!-- end row -->
+        </div>
+    </div>
+</section><!-- end movie page banner area -->
+{% endblock header %}
+
+{% block content %}
+<section class="main-area">
+    <div class="container movie-page-main-inner">
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-8">
+              <h2 class="">Movie: {{ movie.title }}</h2>
+
+              <h3>My notes about the movie</h3>
+              {{movie.notes}}<br>
+              {% for mongo in mongo_movies [0:1] %}
+                <h2>Movie plot</h2>
+                {{mongo.Plot}}<br>
+                <hr>
+                <a href="{{ url_for('edit_movie', movie_id=movie.id) }}">Update Movie</a>
+                <hr>
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete_modal_movie-{{ movie.id }}">Delete this movie</button>
+                <hr>
+
+                <!-- Modal -->
+                <div class="modal fade" id="delete_modal_movie-{{ movie.id }}" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h2 class="modal-title" id="ModalLabel">Confirm deletion of movie ({{ movie.title }})</h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <p>Please read:<br>
+                        You are about to delete Movie <strong>{{ movie.title }}</strong> from your collection.</p>
+                        <p>Please be aware that deleting a movie will remove it permantly from your collection</p>
+                        <p><strong>This action is permanant and cannot be reversed.</strong>.</p>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <form action="{{ url_for('delete_movie', movie_id=movie.id) }}" method="POST">
+                          <input class="btn btn-danger" type="submit" value="I understand, Delete movie">
+                        </form>
                       </div>
                     </div>
                   </div>
-                  <!-- end modal -->
-  </div>
-  <aside class="col-md-4">
-    <section class="box-art">
-      <h2>Cover Art</h2>
-      <img src="{{ mongo.Poster }}" alt="{{ mongo.Title }}"><br>
-      <small clas="muted"><i>Image provided through 1MDB Data Searching api</i></small>
-      {% endfor %}
-      <h3 class="">Add a movie to your collection</h3>
-      <a href="{{ url_for('add_movie') }}">Add Movie</a>
-    </section>
-  </aside>
+                </div>
+                <!-- end modal -->
+            </div>
+              
+            <aside class="col-lg-4">
+              <section class="box-art">
+                <h2>Cover Art</h2>
+                  <img src="{{ mongo.Poster }}" alt="{{ mongo.Title }}"><br>
+                  <small clas="muted"><i>Image provided through 1MDB Data Searching api</i></small>
+                {% endfor %}
 
-</div>
+                <h3 class="">Add a movie to your collection</h3>
+                <a href="{{ url_for('add_movie') }}">Add Movie</a>
+              </section>
+            </aside>
+        </div>
+    </div>
+  </section>
 {% endblock content %}
