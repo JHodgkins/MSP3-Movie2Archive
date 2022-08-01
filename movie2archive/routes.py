@@ -28,7 +28,7 @@ def about():
 
 
 # User managment | Regiter for an account
-@app.route("/register.html", methods=['POST', 'GET'])
+@app.route("/register", methods=['POST', 'GET'])
 def register():
     if current_user.is_authenticated:
         return redirect(url_for('home'))
