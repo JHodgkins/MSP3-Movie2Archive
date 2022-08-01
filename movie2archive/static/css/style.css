@@ -35,6 +35,16 @@
     font-size: 3rem;
 }
 
+.btn-m2a {
+    background-color: var(--orange);
+    color: var(--black);
+    border: 1px solid var(--grey);
+}
+
+.btn-m2a:hover, .btn-m2a:focus {
+    background-color: var(--cream);
+}
+
 /* Structure styles */
 
 html, body {
