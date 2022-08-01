@@ -294,10 +294,12 @@ def dashboard():
     if str(current_user.id) != access_key:
         flash(f'{current_user.username}, You are not authorised. to access this area.', 'warning')
         return redirect(url_for('home'))
+    users = User.query.order_by(User.joined.desc()).all()
+    movies = Movielookup.query.order_by(Movielookup.date_posted.desc()).all()
     media_types = Media.query.all()
     location_types = Location.query.all()
     edition_types = Edition.query.all()
-    return render_template("dashboard.html", title='Admin Dashboard | Movie2Archive', location_types=location_types, media_types=media_types, edition_types=edition_types)
+    return render_template("dashboard.html", title='Admin Dashboard | Movie2Archive', users=users, movies=movies,location_types=location_types, media_types=media_types, edition_types=edition_types)
 
 
 # Admin dashoard | Add Media type category 
@@ -316,7 +318,7 @@ def add_media_cat():
             db.session.commit()
             flash(f'Media type category was added sucessfully to the database!', 'info')
             return redirect(url_for('dashboard'))
-    return render_template("add_media_category.html", title='Add Media type', form=form)
+    return render_template("add_media_category.html", title='Add a Media type', form=form)
 
 # Admin dashoard | Edit Media type category
 @app.route("/dashboard/edit_media_category/<int:media_type_id>/", methods=[
@@ -337,7 +339,7 @@ def edit_media_cat(media_type_id):
             return redirect(url_for('dashboard'))
         elif request.method == 'GET':
             form.type.data = media_types.type
-    return render_template("edit_media_category.html", title='Edit Media type', form=form)
+    return render_template("edit_media_category.html", title=media_types.type, form=form)
 
 
 # Admin dashoard | Delete Media type category
@@ -393,7 +395,8 @@ def edit_location_cat(location_type_id):
             return redirect(url_for('dashboard'))
         elif request.method == 'GET':
             form.location.data = location_types.location
-    return render_template("edit_location_category.html", title='Edit location Category', form=form)
+    return render_template(
+        "edit_location_category.html", title=location_types.location, form=form)
 
 
 # Admin dashoard | Delete Location category
@@ -449,7 +452,8 @@ def edit_edition_cat(edition_type_id):
             return redirect(url_for('dashboard'))
         elif request.method == 'GET':
             form.edition.data = edition_types.edition
-    return render_template("edit_edition_category.html", title='Edit edition type', form=form)
+    return render_template(
+        "edit_edition_category.html", title=edition_types.edition, form=form)
 
 
 # Admin dashoard | Delete Edition type
