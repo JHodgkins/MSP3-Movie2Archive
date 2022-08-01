@@ -1,134 +1,199 @@
 {% extends "main.html" %}
-{% block content %}
-    <div class="row">
-        <div class="col-md-6">
-            <h1 class="">{{ title }}</h2>
-            <h2 class="">Admin actions</h2>
-            <p>Manage the site here.</p>
-            {% if current_user.username == "admin" %}
-                <ul>
-                    <li><a class="nav-link" href="{{ url_for('dashboard') }}">Dashboard</a></li>
-                    <li><a href="{{ url_for('add_media_cat') }}">Add a Media type category</a></li>
-                    <li><a href="{{ url_for('add_location_cat') }}">Add a location category</a></li>
-                </ul>
+{% block header %}
+<section class="bg-dark profile-page">
+    <div class="page-image-small py-5">
+    <div class="container profile-page-banner-inner">
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-8">
+                <div class="my-5">
+                    <h1 class="display-5 fw-bolder text-white mb-2">Welcome to the Adnin dashboard, {{ current_user.username }}
+                    </h1>
+                    <p class="lead text-silver mb-4">This dashboard is used to manage the Media types, Edition type and location areas used by uers of Med2archive.
+                    </p>
+                </div>
+            </div>
 
-            <h3>Media Types</h3>
-            <ul class="list-group">
-              {% for media_type in media_types %}
-                  <li class="list-group-item d-flex justify-content-between align-items-center">{{ media_type.type }}
-                    <div class="btn-group">
-                      <a href="{{ url_for('edit_media_cat', media_type_id=media_type.id) }}" class="btn btn-primary mx-1">Edit</a>
-                      <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete_modal-{{ media_type.id }}">Delete</button>
-                    </div>
-                  </li>
-                  <!-- Modal -->
-                  <div class="modal fade" id="delete_modal-{{ media_type.id }}" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h2 class="modal-title" id="ModalLabel">Confirm deletion of media type ({{ media_type.type }})</h2>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                          <p>Please read:<br>
-                          You are about to delete Media type <strong>{{ media_type.type }}</strong> from the database.</p>
-                          <p>If any user has this media type assigned within their collection, those collection titles will be deleted also.</p>
-                          <p><strong>This action is permanant and cannot be reversed</strong>.</p>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                          <form action="{{ url_for('delete_media_cat', media_type_id=media_type.id) }}" method="POST">
-                            <input class="btn btn-danger" type="submit" value="I understand, Delete now">
-                          </form>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- end modal -->
-                {% endfor %}
-                </ul>
-            <hr>
-            <a href="{{ url_for('add_media_cat') }}">Add a Media type category</a>
-            <hr>
-
-            <h3>All location types</h3>
-            <ul class="list-group">
-              {% for location_type in location_types %}
-                  <li class="list-group-item d-flex justify-content-between align-items-center">{{ location_type.location }}
-                    <div class="btn-group">
-                      <a href="{{ url_for('edit_location_cat', location_type_id=location_type.id) }}" class="btn btn-primary mx-1">Edit</a>
-                      <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete_modal_loc-{{ location_type.id }}">Delete</button>
-                    </div>
-                  </li>
-                  <!-- Modal -->
-                  <div class="modal fade" id="delete_modal_loc-{{ location_type.id }}" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h2 class="modal-title" id="ModalLabel">Confirm deletion of location ({{ location_type.location }})</h2>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                          <p>Please read:<br>
-                          You are about to delete Location <strong>{{ location_type.location }}</strong> from the database.</p>
-                          <p>If any user has this location type assigned within their collection, those collection titles will be deleted also.</p>
-                          <p><strong>This action is permanant and cannot be reversed</strong>.</p>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                          <form action="{{ url_for('delete_location_cat', location_type_id=location_type.id) }}" method="POST">
-                            <input class="btn btn-danger" type="submit" value="I understand, Delete now">
-                          </form>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- end modal -->
-                {% endfor %}
-                </ul>
-            <hr>
-              <a href="{{ url_for('add_location_cat') }}">Add a Location category</a>
-            <hr>
-
-            <h3>All edition types</h3>
-            <ul class="list-group">
-              {% for edition_type in edition_types %}
-                  <li class="list-group-item d-flex justify-content-between align-items-center">{{ edition_type.edition }}
-                    <div class="btn-group">
-                      <a href="{{ url_for('edit_edition_cat', edition_type_id=edition_type.id) }}" class="btn btn-primary mx-1">Edit</a>
-                      <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete_modal_ed-{{ edition_type.id }}">Delete</button>
-                    </div>
-                  </li>
-                  <!-- Modal -->
-                  <div class="modal fade" id="delete_modal_ed-{{ edition_type.id }}" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h2 class="modal-title" id="ModalLabel">Confirm deletion of location ({{ edition_type.edition }})</h2>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                          <p>Please read:<br>
-                          You are about to delete Edition <strong>{{ edition_type.edition }}</strong> from the database.</p>
-                          <p>If any user has this edition type assigned within their collection, those collection titles will be deleted also.</p>
-                          <p><strong>This action is permanant and cannot be reversed</strong>.</p>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                          <form action="{{ url_for('delete_edition_cat', edition_type_id=edition_type.id) }}" method="POST">
-                            <input class="btn btn-danger" type="submit" value="I understand, Delete now">
-                          </form>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- end modal -->
-                {% endfor %}
-                </ul>
-            <hr>
-              <a href="{{ url_for('add_edition_cat') }}">Add an edition category</a>
-            <hr>
-        </div>
-        {% endif %}
+            <div class="col-lg-4 content-divider-border">
+                <div class="text-center my-5">
+                    <i class="fa-solid fa-lock dashboard-icon"></i>
+                </div>
+            </div>
+        </div><!-- end 6 -->
     </div>
+    </div>
+</section><!-- end banner area -->
+{% endblock header %}
+
+{% block content %}
+<section class="main-area">
+    <div class="container movie-page-main-inner">
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-8">
+              <h2 class="">{{ title }}</h2>
+              <p>Manage the site options below.</p>
+              {% if current_user.username == "admin" %}
+
+                <h3>Media Types</h3>
+                <ul class="list-group">
+                  {% for media_type in media_types %}
+                      <li class="list-group-item d-flex justify-content-between align-items-center">{{ media_type.type }}
+                        <div class="btn-group">
+                          <a href="{{ url_for('edit_media_cat', media_type_id=media_type.id) }}" class="btn btn-primary mx-1">Edit</a>
+                          <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete_modal-{{ media_type.id }}">Delete</button>
+                        </div>
+                      </li>
+                      <!-- Modal -->
+                      <div class="modal fade" id="delete_modal-{{ media_type.id }}" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h2 class="modal-title" id="ModalLabel">Confirm deletion of media type ({{ media_type.type }})</h2>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              <p>Please read:<br>
+                              You are about to delete Media type <strong>{{ media_type.type }}</strong> from the database.</p>
+                              <p>If any user has this media type assigned within their collection, those collection titles will be deleted also.</p>
+                              <p><strong>This action is permanant and cannot be reversed</strong>.</p>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                              <form action="{{ url_for('delete_media_cat', media_type_id=media_type.id) }}" method="POST">
+                                <input class="btn btn-danger" type="submit" value="I understand, Delete now">
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- end modal -->
+                    {% endfor %}
+                    </ul>
+                
+                <a href="{{ url_for('add_media_cat') }}">Add a Media type category</a>
+                <hr class="hr-50">
+
+                <h3>All location types</h3>
+                <ul class="list-group">
+                  {% for location_type in location_types %}
+                      <li class="list-group-item d-flex justify-content-between align-items-center">{{ location_type.location }}
+                        <div class="btn-group">
+                          <a href="{{ url_for('edit_location_cat', location_type_id=location_type.id) }}" class="btn btn-primary mx-1">Edit</a>
+                          <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete_modal_loc-{{ location_type.id }}">Delete</button>
+                        </div>
+                      </li>
+                      <!-- Modal -->
+                      <div class="modal fade" id="delete_modal_loc-{{ location_type.id }}" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h2 class="modal-title" id="ModalLabel">Confirm deletion of location ({{ location_type.location }})</h2>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              <p>Please read:<br>
+                              You are about to delete Location <strong>{{ location_type.location }}</strong> from the database.</p>
+                              <p>If any user has this location type assigned within their collection, those collection titles will be deleted also.</p>
+                              <p><strong>This action is permanant and cannot be reversed</strong>.</p>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                              <form action="{{ url_for('delete_location_cat', location_type_id=location_type.id) }}" method="POST">
+                                <input class="btn btn-danger" type="submit" value="I understand, Delete now">
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- end modal -->
+                    {% endfor %}
+                    </ul>
+                
+                  <a href="{{ url_for('add_location_cat') }}">Add a Location category</a>
+                <hr class="hr-50">
+
+                <h3>All edition types</h3>
+                <ul class="list-group">
+                  {% for edition_type in edition_types %}
+                      <li class="list-group-item d-flex justify-content-between align-items-center">{{ edition_type.edition }}
+                        <div class="btn-group">
+                          <a href="{{ url_for('edit_edition_cat', edition_type_id=edition_type.id) }}" class="btn btn-primary mx-1">Edit</a>
+                          <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete_modal_ed-{{ edition_type.id }}">Delete</button>
+                        </div>
+                      </li>
+                      <!-- Modal -->
+                      <div class="modal fade" id="delete_modal_ed-{{ edition_type.id }}" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h2 class="modal-title" id="ModalLabel">Confirm deletion of location ({{ edition_type.edition }})</h2>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              <p>Please read:<br>
+                              You are about to delete Edition <strong>{{ edition_type.edition }}</strong> from the database.</p>
+                              <p>If any user has this edition type assigned within their collection, those collection titles will be deleted also.</p>
+                              <p><strong>This action is permanant and cannot be reversed</strong>.</p>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                              <form action="{{ url_for('delete_edition_cat', edition_type_id=edition_type.id) }}" method="POST">
+                                <input class="btn btn-danger" type="submit" value="I understand, Delete now">
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- end modal -->
+                    {% endfor %}
+                    </ul>
+                
+                  <a href="{{ url_for('add_edition_cat') }}">Add an edition category</a>
+                <hr class="hr-50">
+            </div>
+            {% endif %}
+            
+            <div class="col-lg-4">
+              <h3 class="">Movie2archive site stats</h3>
+              
+              <ul class="list-group mb-3">
+                <li class="list-group-item d-flex justify-content-between lh-sm">
+                  <div>
+                    <h4 class="my-0">Users</h4>
+                    <small>Registered users</small>
+                  </div>
+                  <span class="stat-number">{{ users|list|length }}</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between lh-sm">
+                  <div>
+                    <h4 class="my-0">Movies</h4>
+                    <small>Total number of movies archived</small>
+                  </div>
+                  <span class="stat-number">{{ movies|list|length }}</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between lh-sm">
+                  <div>
+                    <h4 class="my-0">Media types</h4>
+                    <small>Number of Media types</small>
+                  </div>
+                  <span class="stat-number">{{ media_types|list|length }}</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between lh-sm">
+                  <div>
+                    <h4 class="my-0">Media edition types</h4>
+                    <small>Number of Media edition types</small>
+                  </div>
+                  <span class="stat-number">{{ edition_types|list|length }}</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between lh-sm">
+                  <div>
+                    <h4 class="my-0">Location areas</h4>
+                    <small>Number of location areas</small>
+                  </div>
+                  <span class="stat-number">{{ location_types|list|length }}</span>
+                </li>
+              </ul>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock content %}
