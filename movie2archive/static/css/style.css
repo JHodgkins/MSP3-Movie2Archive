@@ -61,6 +61,7 @@ h1,h2,h3,h4,h5,h6 {
 hr {
     border: 3px solid var(--orange);
     color: var(--orange);
+    opacity: 1;
 }
 
 .hr-50 {
@@ -215,8 +216,20 @@ footer {
     border: 2px solid var(--orange);
 }
 
-.box-art small, .box-art h3, .box-art a {
-    padding: 1rem 1rem;
+.box-art small i {
+    font-size: 1rem;
+}
+
+/* Dashboard */
+
+.dashboard-icon {
+    color: var(--cream);
+    font-size: 10rem;
+}
+
+.stat-number {
+    color: var(--grey);
+    font-size: 2rem;
 }
 
 /* Footer */
