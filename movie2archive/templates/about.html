@@ -1,8 +1,47 @@
 {% extends "main.html" %}
-{% block content %}
-    <div class="row">
-        <div class="col-md-12">
-            <h2 class="">About MOVIE2ARCHIVE</h2>
+{% block header %}
+<section class="bg-dark about-page">
+    <div class="page-image-small">
+        <div class="container">
+            <div class="row gx-5">
+                <div class="col-lg-12">
+                    <div class="my-5 page-main-heading">
+                        <h1 class="display-5 fw-bolder text-white mb-2">{{ title }}</h1>
+                    </div>
+                </div>
+            </div><!-- end row -->
         </div>
     </div>
+</section><!-- end about page banner area -->
+{% endblock header %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container px-5 my-5">
+        <div class="row gx-5 align-items-center">
+            <div class="col-lg-12">
+                <h2 class="fw-bolder">What inspired Movie2archive</h2>
+                <p>Movie2archive was inspired through the need to archive a large collection of movies left to my family by my late father.
+                Inspiration came and has become a mission to help others as this is undoubtedly not a unique case, by creating Media2archive it will continue to help the community who may be in a similar situation.</p>
+                <p>Media2archive is also there for the movie fans out there that love to collect these incrediable block busters, but ater time it can become hard to know exactly where every movie is when stored around the average home.</p>
+            </div>
+        </div>
+    </div>
+</section><!-- end about section 1 -->
+
+<hr class="hr-50">
+
+<section class="py-5">
+    <div class="container px-5 my-5">
+        <div class="row gx-5 align-items-center">
+            <div class="col-lg-6 order-first order-lg-last medium-icon">
+            <i class="fa-solid fa-people-group"></i>
+            </div>
+            <div class="col-lg-6">
+                <h2>What can we do next</h2>
+                <p>Movie2archive will continue to build on its foundations to help people, we have a strong desire also to help the environment and encourage recycling through normal means or through friends and family and the community so everyone can enjoy movies no matter your age.</p>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock content %}
