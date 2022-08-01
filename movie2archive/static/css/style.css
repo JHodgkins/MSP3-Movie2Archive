@@ -87,14 +87,12 @@ footer {
 .home-page-image, .page-image-small {
     position: relative;
     min-height: 500px;
-
     /* Image source, Unsplash: https://unsplash.com/photos/BQTHOGNHo08 Author: https://unsplash.com/@tysonmoultrie */
     background-image: url(../images/bg_homepage_tyson_moultrie_unsplash.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-
     /* Stack overflow source for text shadow: https://stackoverflow.com/questions/34702477/add-a-dark-overlay-to-background-image */
-    box-shadow: 0px 4px 4px 0px #00000040,inset 0 0 0 1000px rgba(0,0,0,.75);
+    box-shadow: 0px 4px 4px 0px #00000040,inset 0 0 0 1000px rgba(0,0,0,.8);
 }
 
 .home-page-main-heading {
