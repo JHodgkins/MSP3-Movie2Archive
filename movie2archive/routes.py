@@ -13,6 +13,7 @@ import urllib
 import hashlib
 from sqlalchemy.sql.functions import func
 
+
 # Main navigation | Homepage/Landing page
 @app.route("/")
 @app.route("/home")
@@ -73,7 +74,7 @@ def logout():
 @app.route("/profile", methods=['GET', 'POST'])
 @login_required
 def profile():
-    user_id = current_user.id 
+    user_id = current_user.id
     user_movies = Movielookup.query.filter_by(user_id=user_id)
     return render_template("profile.html", title='Profile', user_movies=user_movies)
 
@@ -146,7 +147,7 @@ def collection_cat(media_type_id):
     return render_template("collection_type.html", title=m_types.type, default='No items in this collection', movies=movies, movie_types=movie_types, m_types=m_types, mongo_movies=mongo_movies)
 
 
-# My collection | View Movie information and detail
+# My collection | View Movie information and details
 @app.route("/collection/movie/<int:movie_id>", methods=[
     'GET', 'POST'])
 @login_required
@@ -154,7 +155,8 @@ def movie_details(movie_id):
     movie = Movielookup.query.get_or_404(movie_id)
     # mongo_movies = mongo.db.movies.find_one({"imdbID": ObjectId(movie.imdbID)})
     mongo_movies = mongo.db.movies.find({"imdbID": movie.imdbID})
-    return render_template("movie.html", title=movie.title, movie=movie, mongo_movies=mongo_movies)
+    mongo_art = mongo.db.movies.find({"imdbID": movie.imdbID})
+    return render_template("movie.html", title=movie.title, movie=movie, mongo_movies=mongo_movies, mongo_art=mongo_art)
     # movies = mongo.db.movies.find()
 
 
@@ -202,23 +204,48 @@ def add_movie():
             # call imdb api and return values to be sent to MongoDB
             movie_name = form.title.data
             querystring = {"t": movie_name}
-            response = requests.request("GET", apiurl, headers=headers, params=querystring)
+            response = requests.request(
+                "GET", apiurl, headers=headers, params=querystring)
             data = [json.loads(response.text)]
             for item in data:
-                mid = item['imdbID']
-                mtitle = item['Title']
-                mplot = item['Plot']
-                mposter = item['Poster']
-            
-            # Construct collection for MongoDB
-            movie_mongo = {
-                "Title": mtitle.upper(),
-                "imdbID": mid,
-                "Plot": mplot,
-                "Poster": mposter
-            }
-            # Add to MongoDB
-            mongo.db.movies.insert_one(movie_mongo)
+                if item['Response'] == "False":
+                    mid = item['Error']
+                else:
+                    mid = item['imdbID']
+                    mtitle = item['Title']
+                    mplot = item['Plot']
+                    mposter = item['Poster']
+                    mactors = item['Actors']
+                    mdirector = item['Director']
+                    mwriter = item['Writer']
+                    mtype = item['Type']
+                    mgenre = item['Genre']
+                    mreleased = item['Released']
+                    mruntime = item['Runtime']
+                    mawards = item['Awards']
+                    mboxoffice = item['BoxOffice']
+                    mimdbrating = item['imdbRating']
+                
+                if mid != "Movie not found!":
+                    # Construct collection for MongoDB
+                    movie_mongo = {
+                        "Title": mtitle.upper(),
+                        "imdbID": mid,
+                        "Plot": mplot,
+                        "Poster": mposter,
+                        "Actors": mactors,
+                        "Director": mdirector,
+                        "Writer": mwriter,
+                        "Type": mtype,
+                        "Genre": mgenre,
+                        "Released": mreleased,
+                        "Runtime": mruntime,
+                        "Awards": mawards,
+                        "BoxOffice": mboxoffice,
+                        "imdbRating": mimdbrating
+                    }
+                    # Add to MongoDB
+                    mongo.db.movies.insert_one(movie_mongo)
 
             # Construct Movielookup table
             movie = Movielookup(
