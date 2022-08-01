@@ -1,35 +1,54 @@
 {% extends "main.html" %}
-{% block content %}
-<section class="form-area">
-    <div class="row">
-      <h1>Edit an edition type category</h1>
-        <div class="col-sm-6">       
-            <form action="" method="POST" novalidate>
-                {# CSR token #}
-                {{ form.hidden_tag() }}
-                <div class="mb-3">
-                    {{ form.edition.label(class="form-label") }}
-                        {% if form.edition.errors %}
-                            {{ form.edition(class="form-control is-invalid") }}
-                            <div class="invalid-feedback">
-                                {% for error in form.edition.errors %}
-                                    <span>{{ error }}
-                                {% endfor %}
-                            </div>
-                        {% else %}
-                            {{ form.edition(class="form-control") }} 
-                        {% endif %}
+{% block header %}
+<section class="bg-dark edit-edition-page">
+    <div class="page-image-small">
+        <div class="container">
+            <div class="row gx-5">
+                <div class="col-lg-12">
+                    <div class="my-5 page-main-heading">
+                        <h1 class="display-5 fw-bolder text-white mb-2">Currently editing edition type: {{ title }}</h1>
+                    </div>
                 </div>
-
-                <div class="mb-3">
-                {{ form.submit(class="btn btn-outline-info") }}
-                </div>
-            </form>
+            </div><!-- end row -->
         </div>
+    </div>
+</section><!-- end edit edition page banner area -->
+{% endblock header %}
 
-        <div class="col-sm-6">
-            <h2>View edition types</h2>
-            <a href="#">Edition type categories</a>
+{% block content %}
+<section class="py-5 main-area">
+    <div class="container edit-edition-page-main-inner">
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-8">     
+                <h2>Edit edition type: {{ title }}</h2>
+
+                <form action="" method="POST" novalidate>
+                    {# CSR token #}
+                    {{ form.hidden_tag() }}
+                    <div class="mb-3">
+                        {{ form.edition.label(class="form-label") }}
+                            {% if form.edition.errors %}
+                                {{ form.edition(class="form-control is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.edition.errors %}
+                                        <span>{{ error }}
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.edition(class="form-control") }} 
+                            {% endif %}
+                    </div>
+
+                    <div class="mb-3">
+                    {{ form.submit(class="btn btn-outline-info") }}
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-lg-4">
+                <h2>View all edition types</h2>
+                <a href="{{ url_for('dashboard') }}">view all edition type categories</a>
+            </div>
         </div>
     </div>
 </section>
