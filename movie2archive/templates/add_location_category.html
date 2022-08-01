@@ -1,37 +1,55 @@
 {% extends "main.html" %}
-{% block content %}
-<section class="form-area">
-    <div class="row">
-      <h1>{{ title }}</h1>
-        <div class="col-sm-6">       
-
-            <form action="" method="post" novalidate>
-                {# CSR token #}
-                {{ form.hidden_tag() }}
-
-                <div class="mb-3">
-                    {{ form.location.label(class="form-label") }}
-                        {% if form.location.errors %}
-                            {{ form.location(class="form-control is-invalid") }}
-                            <div class="invalid-feedback">
-                                {% for error in form.location.errors %}
-                                    <span>{{ error }}
-                                {% endfor %}
-                            </div>
-                        {% else %}
-                            {{ form.location(class="form-control") }} 
-                        {% endif %}
+{% block header %}
+<section class="bg-dark add-location-page">
+    <div class="page-image-small">
+        <div class="container">
+            <div class="row gx-5">
+                <div class="col-lg-12">
+                    <div class="my-5 page-main-heading">
+                        <h1 class="display-5 fw-bolder text-white mb-2">Create a new location area</h1>
+                    </div>
                 </div>
-
-                <div class="mb-3">
-                {{ form.submit(class="btn btn-outline-info") }}
-                </div>
-            </form>
+            </div><!-- end row -->
         </div>
+    </div>
+</section><!-- end add location page banner area -->
+{% endblock header %}
 
-        <div class="col-sm-6">
-            <h2>View location areas</h2>
-            <a href="#">Location categories</a>
+{% block content %}
+<section class="py-5 main-area">
+    <div class="container add-location-page-main-inner">
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-8">     
+                <h2>{{ title }}</h2>       
+
+                <form action="" method="post" novalidate>
+                    {# CSR token #}
+                    {{ form.hidden_tag() }}
+
+                    <div class="mb-3">
+                        {{ form.location.label(class="form-label") }}
+                            {% if form.location.errors %}
+                                {{ form.location(class="form-control is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.location.errors %}
+                                        <span>{{ error }}
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.location(class="form-control") }} 
+                            {% endif %}
+                    </div>
+
+                    <div class="mb-3">
+                    {{ form.submit(class="btn btn-outline-info") }}
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-lg-4">
+                <h2>View all locations</h2>
+                <a href="{{ url_for('dashboard') }}">View all location areas</a>
+            </div>
         </div>
     </div>
 </section>
