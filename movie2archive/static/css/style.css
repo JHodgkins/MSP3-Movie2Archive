@@ -31,6 +31,9 @@
 .text-silver {
     color: var(--silver);
 }
+.page-main-heading h1 {
+    font-size: 3rem;
+}
 
 /* Structure styles */
 
@@ -46,8 +49,13 @@ body {
     padding-top: 56px;
 }
 
-h1,h2,h3,h4,h5,h6, .brand-logo {
+h1,h2,h3,h4,h5,h6 {
     font-family: 'Big Shoulders Display', cursive;
+}
+
+.navbar .navbar-brand, .brand-logo {
+    font-family: 'Big Shoulders Display', cursive;
+    font-size: 2rem;
 }
 
 hr {
@@ -76,7 +84,7 @@ footer {
 
 /* Homepage */
 
-.home-page-image {
+.home-page-image, .page-image-small {
     position: relative;
     min-height: 500px;
 
@@ -145,6 +153,20 @@ footer {
 .movie_number {
     font-size: 3rem;
     color: var(--red);
+}
+
+/* About page */
+
+.page-image-small {
+    min-height: 100px;
+}
+
+.medium-icon {
+    text-align: center;
+}
+
+.medium-icon i {
+    font-size: 20rem;
 }
 
 /* Profile page */
