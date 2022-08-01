@@ -17,21 +17,33 @@
 
 {% block content %}
 <section class="main-area">
+<div class="back-link">
+<a href="{{ url_for('collection_all') }}"><i class="fa-solid fa-circle-arrow-left" aria-hidden="true"></i> Back to my collection</a>
+</div>
     <div class="container movie-page-main-inner">
         <div class="row gx-5 justify-content-center">
             <div class="col-lg-8">
               <h2 class="">Movie: {{ movie.title }}</h2>
 
-              <h3>My notes about the movie</h3>
-              {{movie.notes}}<br>
               {% for mongo in mongo_movies [0:1] %}
                 <h2>Movie plot</h2>
                 {{mongo.Plot}}<br>
+                <h2>My notes about the movie</h2>
+                {{movie.notes}}<br>
+                <h2>Media type and edition owned</h2>
+                {{movie.media}}, {{movie.edition}}<br>
+                <h2>Location of movie</h2>
+                Your movie is located in your <strong>{{movie.location.location}}</strong> collection.<br>
+                <hr class="hr-50">
+                <h2>More intresting facts about {{ movie.title }}</h2>
+                
+                
+                
                 <hr>
-                <a href="{{ url_for('edit_movie', movie_id=movie.id) }}">Update Movie</a>
-                <hr>
+                <a class="btn btn-m2a" href="{{ url_for('edit_movie', movie_id=movie.id) }}">Update Movie</a>
+                
                 <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete_modal_movie-{{ movie.id }}">Delete this movie</button>
-                <hr>
+                <hr class="hr-50">
 
                 <!-- Modal -->
                 <div class="modal fade" id="delete_modal_movie-{{ movie.id }}" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
