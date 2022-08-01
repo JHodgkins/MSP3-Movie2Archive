@@ -222,7 +222,7 @@ footer {
 /* Single Movie view */
 
 .back-link {
-    margin-top: -20px;
+    margin-top: 20px;
     margin-bottom: 20px;
 }
 
@@ -289,5 +289,9 @@ footer {
     .main-area, .user-account-options, .secondary-area {
         margin-top: 2rem;
         padding: 2rem;
+    }
+
+    .back-link {
+        margin-top: -20px;
     }
 }
