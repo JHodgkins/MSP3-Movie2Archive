@@ -24,21 +24,94 @@
         <div class="row gx-5 justify-content-center">
             <div class="col-lg-8">
               <h2 class="">Movie: {{ movie.title }}</h2>
-
-              {% for mongo in mongo_movies [0:1] %}
-                <h2>Movie plot</h2>
-                {{mongo.Plot}}<br>
-                <h2>My notes about the movie</h2>
+              <h2>My notes about the movie</h2>
                 {{movie.notes}}<br>
-                <h2>Media type and edition owned</h2>
+              <h2>Media type and edition owned</h2>
                 {{movie.media}}, {{movie.edition}}<br>
-                <h2>Location of movie</h2>
-                Your movie is located in your <strong>{{movie.location.location}}</strong> collection.<br>
+              <h2>Location of movie</h2>
+                <p>Your movie is located in your <strong>{{movie.location.location}}</strong> collection.</p>
+
+              <hr>
+              
+              <!-- Call to MongoDB to gather information -->
+                {% for mongo in mongo_movies [0:1]%}
+                  <h2>Some intresting facts about {{ movie.title }}</h2>
+                
+                    <h2>Movie plot</h2>
+                    {{ mongo.Plot }}
+
+                    <div class="row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-2  py-5">
+                      <div class="col d-flex align-items-start">
+                        <div>
+                          <h4 class="fw-bold mb-0">Director(s)</h4>
+                          <p>{{ mongo.Director }}</p>
+                        </div>
+                      </div>
+                      <div class="col d-flex align-items-start">
+                        <div>
+                          <h4 class="fw-bold mb-0">Writer(s)</h4>
+                          <p>{{ mongo.Writer }}</p>
+                        </div>
+                      </div>
+                      <div class="col d-flex align-items-start">
+                        <div>
+                          <h4 class="fw-bold mb-0">Actor(s)</h4>
+                          <p>{{ mongo.Actors }}</p>
+                        </div>
+                      </div>
+                      <div class="col d-flex align-items-start">
+                        <div>
+                          <h4 class="fw-bold mb-0">Genre(s)</h4>
+                          <p>{{ mongo.Genre }}</p>
+                        </div>
+                      </div>
+                      <div class="col d-flex align-items-start">
+                        <div>
+                          <h4 class="fw-bold mb-0">Release date</h4>
+                          <p>{{ mongo.Released }}</p>
+                        </div>
+                      </div>
+                      <div class="col d-flex align-items-start">
+                        <div>
+                          <h4 class="fw-bold mb-0">Run time</h4>
+                          <p>{{ mongo.Runtime }}</p>
+                        </div>
+                      </div>
+                      <div class="col d-flex align-items-start">
+                        <div>
+                          <h4 class="fw-bold mb-0">Award(s)</h4>
+                          <p>{{ mongo.Awards }}</p>
+                        </div>
+                      </div>
+                      <div class="col d-flex align-items-start">
+                        <div>
+                          <h4 class="fw-bold mb-0">Box office earnings</h4>
+                          <p>{{ mongo.BoxOffice }}</p>
+                        </div>
+                      </div>
+                      <div class="col d-flex align-items-start">
+                        <div>
+                          <h4 class="fw-bold mb-0">imdb Rating</h4>
+                          <p>{{ mongo.imdbRating }}</p>
+                        </div>
+                      </div>
+                    </div>
                 <hr class="hr-50">
-                <h2>More intresting facts about {{ movie.title }}</h2>
-                
-                
-                
+                {% endfor %}
+            </div>
+              
+            <aside class="col-lg-4">
+              <section class="box-art">
+                <h3 class="">Add a movie to your collection</h3>
+                <a href="{{ url_for('add_movie') }}">Add Movie</a>
+                <hr>
+
+                <h3>Cover Art</h3>
+                <!-- Call to MongoDB to gather information -->
+                  {% for art in mongo_art [0:1] %}
+                  <img src="{{ art.Poster }}" alt="{{ art.Title }}"><br>
+                  <small clas="muted"><i>Image provided through 1MDB Data Searching api</i></small>
+                  {% endfor %}
                 <hr>
                 <a class="btn btn-m2a" href="{{ url_for('edit_movie', movie_id=movie.id) }}">Update Movie</a>
                 
@@ -69,17 +142,7 @@
                   </div>
                 </div>
                 <!-- end modal -->
-            </div>
-              
-            <aside class="col-lg-4">
-              <section class="box-art">
-                <h2>Cover Art</h2>
-                  <img src="{{ mongo.Poster }}" alt="{{ mongo.Title }}"><br>
-                  <small clas="muted"><i>Image provided through 1MDB Data Searching api</i></small>
-                {% endfor %}
 
-                <h3 class="">Add a movie to your collection</h3>
-                <a href="{{ url_for('add_movie') }}">Add Movie</a>
               </section>
             </aside>
         </div>
