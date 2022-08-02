@@ -1,5 +1,6 @@
 from flask import render_template, url_for, flash, redirect, request
-import requests, json
+import requests
+import json
 from bson.objectid import ObjectId
 from movie2archive import (
     app, db, mongo, bcrypt, access_key, movie_key, apiurl, headers)
