@@ -20,7 +20,9 @@ Movie2Archive helps users gather insight about their collection whilst giving th
     5.3 [Site owner](#site-owner)  
 6. [Design](#design)  
     6.1 [Structure of pages](#structure-of-pages)  
-    - [Nain content area](#main-content-area)  
+    - [Header section](#header-section)  
+    - [Main content area](#main-content-area)  
+    - [Admin dashboard](#admin-dashboard)  
     - [Footer section](#footer-section)   
     
     6.2 [Wireframes](#wireframes)  
@@ -35,11 +37,11 @@ Movie2Archive helps users gather insight about their collection whilst giving th
     6.3 [Colour palette](#colour-palette)  
     6.4 [Typography](#typography)  
     6.5 [Icons and imagery](#icons-and-imagery)  
-    6.6 [Sitemap and Databases](#sitemap-and-databases)  
-    6.7 [Features](#features)  
-    - [Existing features](#existing-features)  
-    - [Features to be implimented in future releases](#features-to-be-implimented-in-future-releases)  
-7. [Testing](#testing)  
+7. [Sitemap and Databases](#sitemap-and-databases)  
+8. [Features](#features)  
+    8.1 [Existing features](#existing-features)  
+    8.2[Features to be implimented in future releases](#features-to-be-implimented-in-future-releases)  
+9. [Testing](#testing)  
 
 ## Overview  
 The Movie2Archive application is a database application which catalogues media collections into an easy-to-understand interface which can be use by all ages.  
@@ -109,30 +111,51 @@ As a first-time user, I want to know how to log out of Movie2Archive.
 - As the site owner, I want visitors to find Movie2Archive approachable and know its purpose from the outset.  
 - As the site owner, I want visitors to gain more information and learn new facts about the movies they own.  
 - As the site owner, I want visitors to be able to easily add their movies.  
-- As the site owner, I want the site visitors to be able to see what they own and see their collection by type to promote recycling.  
+- As the site owner, I want the site visitors to be able to see what they own and see their collection by media type.  
+- As a site owner, I want to encourage recycling to the applications users.  
 
 ## Design  
-Movie2Archive was designed to be clean, clear and easily understood by all audiences using the application, header and footer sections persist throughout the web application to ensure navigation is kept consistent to provide easy navigation and a pleasant user experience (UX).  
-The application uses mainly solid colours which contrast each other, for example a darker grey against a orange giving the feeling of hard edges to reflect DVD, Blue Ray boxes and the boxy appearance of a media collection.  
-As a person with a visual impairment, the website has been designed with screen magnification and screen readers in mind.  
+Movie2Archive was designed to be clean, clear and easily understood by all audiences using the application, header and footer sections persist throughout the web application to ensure navigation is kept consistent, easy to navigate and provides a pleasant user experience (UX) throughout.  
+
+The application uses mainly solid colours which contrast each other well, for example a darker grey against orange gives the feeling of hard edges to reflect DVD, Blue Ray boxes and the boxy appearance of a media collection. .  
+As a person with a visual impairment, the web application has been designed with screen magnification and screen readers in mind.  
 
 ### Structure of pages  
-The website application uses a mobile first approach with the page having a maximum width of 1140px which centre aligns at higher resolutions these constraints were used to maintain the user’s focus, attention and aid sight lines.  
+The website application uses a mobile first approach with the page having a maximum width of 1320px at retina resolutions or a 1140px for most standard displays which centre aligns at higher resolutions.  
+These constraints were used to maintain the user’s focus, attention and aid with sight lines.  
 
 #### Header section  
 The application follows a universal approach which comprises of a left aligned logo for Mobile through to Desktop.  
 To the right is the applications main navigation, which is responsive, and full text links remain right aligned until tablet size and below where it will collapse to a right aligned Hamburger menu (toggle button).  
-On devices tablet and below the user will be able to expand/collapse this menu using the menu toggle button to access all available menu items dependant on logged in status.  
+On devices tablet and below the user will be able to expand/collapse this menu using the menu toggle button to access all available menu items dependant on their logged in status.  
 
 #### Main content area  
+The main content area is used to display content dynamically dependant on the user’s choice of action.  
+When arriving at the homepage, this main area is used to introduce the application, a large above the fold title and three tag lines summarise the benefits of using Mobie2archive, below this are simple instructions on how to ue the application.  
+This is followed by a complimentary section which encourages recycling through a trade for cash or free recycling service offered by the company Zapper.  
+
+For the main sections of the application, the My collection and Profile areas, these follow a well-defined and purposeful approach also.
+
+The My collection main area displays the added movies in a easy to understand list group, each list item contains the title, a snippet of the users note, and a view and edit link for easy editing and viewing of their archived movie title.  
+
+The Profile section was developed to be the hub for the end user, the page contains again a large above the fold section which on the left gives a friendly welcome message and suggestions on what to do.
+The right ide shows a large counter showing the total number of movies archived by the user.  
+Below this is the main area which contains large tap/click target list group buttons which are sectioned into two parts, what would you like to do and update user details.  
+These both contain a button with a text description summary of the buttons action, there are also extra information list items which are indicated by a ‘info’ tag.  
+
+This approach was used to ensure that the user felt comfortable within the web application, encompassing content within the header allows the user to become familiar with the site navigation and always know how to navigate away or too their chosen area. This is true with the design of the profile area as a user will always know all common actions can be started at this location, no matter the device Movie2archive is being used on.  
+
+#### Admin dashboard  
+As a site owner or admin, a unique dashboard will be available in the main area of the profile page. This area allows a site owner or admin to see a summary of the whole application and to also add, edit or delete the sites categories, Media type, edition type and location area.
 
 #### Footer section  
 The footer section was designed to be useful and useable; the footer is divided into two half page sections at tablet and above screen sizes.  
-The left side will shows Movie2Archive social media links and the right side displays a copyright notice when on the landing page and when within the application.  
+The right side will show the Movie2archive social media icon links with the left side displaying a copyright notice.    
 
 ### Wireframes  
 Wireframe designs show Mobile, Tablet and Desktop views of the main concept and parts of the application.  
 The application follows best practice and was developed using a mobile first approach.  
+
 #### Homepage  
 <details><summary>Mobile</summary>
 <img src="docs/wireframes/mobile/mobile_homepage.png" alt="wireframe screenshot of Movie2Archive Homepage on mobile"></details>
@@ -210,22 +233,20 @@ The application follows best practice and was developed using a mobile first app
 - Yellow Orange: #FFB341and Red Crayola: #ED254E were used to represent the certification colours for PG and 18.  
 - Silver Sand: #C4CAD0 was used to represent steel book covers of DVDs and Blue Rays and leans on a sci-fi feel.  
 - Magnolia: #FCF7FF was used to represent the home, a widely used colour in many homes.  
-- White: #FFFFFF and Black: 000000 were used for text and background colours as they are contrasting colours easily readable and have a feeling of sharp edges.  
-- Black and white were primarily used for text, as they carry a high contrast level and are easily readable colours.  
-I used a tool called Contrast Grid (colour palette) to determine the foreground and background combinations to ensure a minimum contrast ratio of 4.5:1 was maintained.  
+- White: #FFFFFF and Black: 000000 were used for text and background colours as they are contrasting colours easily readable and have a feeling of sharp edges.   
 
-I used a tool called Contrast Grid [view live colour palette](https://contrast-grid.eightshapes.com/?version=1.1.0&background-colors=&foreground-colors=%23ffffff%0D%0A%23000000%0D%0A%23565555%0D%0A%23FFB341%0D%0A%23FCF7FF%0D%0A%23C4CAD0%0D%0A%23ED254E&es-color-form__tile-size=regular&es-color-form__show-contrast=aaa&es-color-form__show-contrast=aa) to determine the foreground and background combinations to ensure a minimum contrast ratio of 4.5:1 was maintained.  
+I used a tool called Contrast Grid [view live colour palette](https://contrast-grid.eightshapes.com/?version=1.1.0&background-colors=&foreground-colors=%23ffffff%0D%0A%23000000%0D%0A%23565555%0D%0A%23FFB341%0D%0A%23FCF7FF%0D%0A%23C4CAD0%0D%0A%23ED254E&es-color-form__tile-size=regular&es-color-form__show-contrast=aaa&es-color-form__show-contrast=aa) to determine the foreground and background combinations to ensure a minimum contrast ratio of 4.5:1 was maintained throughout the application.  
 ![Accessible colour palette](docs/colours/accessible_colour_scheme_wcag_grid.png) 
 
 ### Typography
 Fonts used across the application were provided by Google fonts and were used in certain areas as to maintain readability.  
 The two font families used were, Big Shoulders Display and Poppins, the fonts have a default fall-back of Sans-Serif.  
-Heading elements of the application use: Big Shoulders Display, which gives a movie poster style to match the applications theme with Poppins being used across the remainder of the application elements, to ensure readability for users, the base font size was also set to 18px from the browser default 16px to aid magnification and all audience users.  
+Heading elements of the application use: Big Shoulders Display, which gives a movie poster style to match the applications theme with Poppins being used across the remainder of the application elements, to ensure good readability for all users.    
 
 ### Sitemap and databases  
-Sitemap routes showng a logged in/out user routes.  
+Sitemap route images showng a logged in and logged out user routes.  
 ![Sitemap route diagram](docs/wireframes/database_and_route_diagrams/sitemap_routes_diagram.png)  
-  
+
 Database structure diagram outlining data structuure across the applicatons non-relational and relational databases.  
 ![Database structure diagram](docs/wireframes/database_and_route_diagrams/database_diagram.png)  
 
