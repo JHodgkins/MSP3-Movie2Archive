@@ -99,7 +99,7 @@ footer {
     position: relative;
     min-height: 500px;
     /* Image source, Unsplash: https://unsplash.com/photos/BQTHOGNHo08 Author: https://unsplash.com/@tysonmoultrie */
-    background-image: url(../images/bg_homepage_tyson_moultrie_unsplash.jpg);
+    background-image: url(../images/bg_homepage_tyson_moultrie_unsplash_mobile.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     /* Stack overflow source for text shadow: https://stackoverflow.com/questions/34702477/add-a-dark-overlay-to-background-image */
@@ -175,7 +175,7 @@ footer {
 }
 
 .medium-icon i {
-    font-size: 20rem;
+    font-size: 10rem;
 }
 
 /* Profile page */
@@ -275,6 +275,11 @@ footer {
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
+
+    .home-page-image, .page-image-small {
+        background-image: url(../images/bg_homepage_tyson_moultrie_unsplash_desktop.jpg);
+    }
+
     .banner-taglines p {
         padding-left: 1rem;
     }
