@@ -311,7 +311,7 @@ def delete_movie(movie_id):
     movies = Movielookup.query.get_or_404(movie_id)  
     db.session.delete(movies)
     db.session.commit()
-    flash('Media type category was sucessfully deleted from the database!', 'info')
+    flash('Your movie was sucessfully deleted from your collection!', 'info')
     return redirect(url_for('collection_all'))
 
 
