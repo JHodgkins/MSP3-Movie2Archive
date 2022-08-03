@@ -38,7 +38,9 @@ Movie2Archive helps users gather insight about their collection whilst giving th
     6.3 [Colour palette](#colour-palette)  
     6.4 [Typography](#typography)  
     6.5 [Icons and imagery](#icons-and-imagery)  
-7. [Sitemap and Databases](#sitemap-and-databases)  
+7. [Databases and sitemaps](#databases-and-sitemaps)  
+    - [Api and databases](#api-and-databases)  
+    - [Sitemap and routes](#sitemap-and-routes)  
 8. [Features](#features)  
     8.1 [Existing features](#existing-features)  
     8.2[Features to be implimented in future releases](#features-to-be-implimented-in-future-releases)  
@@ -244,24 +246,41 @@ Fonts used across the application were provided by Google fonts and were used in
 The two font families used were, Big Shoulders Display and Poppins, the fonts have a default fall-back of Sans-Serif.  
 Heading elements of the application use: Big Shoulders Display, which gives a movie poster style to match the applications theme with Poppins being used across the remainder of the application elements, to ensure good readability for all users.    
 
-### Icons & Imagery  
+### Icons and Imagery  
 All icons used within the web application were provided by Font Awesome free icon set with the image of a selection of dvd film covers provided by Tyson Moultrie and the image of a collection of bare discs provided by Cameron Bunney, both of these images were supplied by Unsplash.com.  
 The icons used were selected to represent the section content or link that will be performed on the application.  
 These icons can be scaled to high magnification levels and remain clear and sharp.  
 The movie cover image was used as it sets the scene for the web applications overall theme, it also draws the eye to the main title which evolves the users understanding of what the application is about.  
 The image of bare discs was used to represent clutter or chais with media, again bringing the users feeling to take action and Movie2archive is a solution to that problem, the image also aids the content section contents when explaining how easy it is to organise a collection in 3 easy steps.  
 FontAwesome icon set:  
+
 ![Font Awesome icon set](docs/images/icon_sets/icon_set_font_awesome_movie2archive.jpg)  
 
 Unsplash images used within application:  
 ![Unplash image set](docs/images/images_on_site/unsplash_image_set.jpg)  
 
-### Sitemap and databases  
-Sitemap route images showng a logged in and logged out user routes.  
-![Sitemap route diagram](docs/wireframes/database_and_route_diagrams/sitemap_routes_diagram.png)  
+## Databases and sitemaps  
+Database structure diagram outlining data structure across the applications relational and non-relational databases.  
 
-Database structure diagram outlining data structuure across the applicatons non-relational and relational databases.  
 ![Database structure diagram](docs/wireframes/database_and_route_diagrams/database_diagram.png)  
+
+The PostgreSQL database has been setup as a highly normalised database, which will provide a good structure to organise the users, media types and locations through the use of relational tables, this approach has provided the flexibility to incorporate other databases whilst eliminating redundancy and any inconsistent dependencies.  
+
+Building on thr relational database, MongoDB a document based non-relational database has been built into the model to act as a standalone document store but also be relational through the structure within PostgreSQL, bringing together a relational but flexible database solution for the Movie2archive web application to use to deliver a structured but expandable solution for its users.  
+
+### Api and databases  
+MongoDB and PostgreSQL also work alongside a movie api provided by RapidApis which feeds in data through rules set up in the relational database to then populate both database to form the glue which provides extra information to the end user.  
+The api follows rule when adding data and takes a transactional approach checking if entries are present in a database as to reduce redundancy and improve efficiency for the application.  
+This image shows a high level overview of the api call and its intergration with the relational and non-relational database and how they are bought together.  
+![Api call and database outline diagram](docs/wireframes/database_and_route_diagrams/api_call_diagram.png)   
+
+### Sitemap and routes  
+Sitemap route images showing a logged in and logged out user routes. The first image is a concept image and the second is how Movie2archive appears to a user today.  
+
+![Sitemap concept route diagram](docs/wireframes/database_and_route_diagrams/sitemap_routes_diagram.png)  
+
+![Sitemap route diagram Movie2archive](docs/wireframes/database_and_route_diagrams/sitemap_movie2archive.png)   
+The light blue boxes represent available routes to an admin user.  
 
 ### Features  
 This section looks at features which were implemented and those that with further research and knowledge will add to the existing set of features.  
