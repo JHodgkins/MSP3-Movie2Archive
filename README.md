@@ -286,8 +286,25 @@ The light blue boxes represent available routes to an admin user.
 This section looks at features which were implemented into the MVP (minimum viable product) and those that with further research technical knowledge alongside user feedback will be added to the existing set of features and be released in future feature updates.  
 
 ### Existing features  
+- Responsive web application which reflows up to 500% zoom using browser zoom.  
+- Responsive navigation menu bar with off canvas slide in over content.  
+- Form validation with visual feedback given through on screen markers, surrounds including successful form submission flash messages.  
+- CSRF (cross site request forgery) prevention, encryption on all forms throughout the application.  
+- Api integration for providing additional information to a user’s movie entry.  
+- Filterable collection display by media type.  
+- Full CRUD functionality for a user with movie entries and user account settings.  
+- Intergrated admin management dashboard for managing media types, location areas and media editions.  
+- Simple logical layout.  
+- Accessible on all devices with an internet connection.  
+- Accessible to keyboard and assistive technologies.  
 
 ### Features to be implimented in future releases  
+- Intergrate a service worker and local storage feature to store entries until a connection online is made.  
+- Rating system so a user can rate the film and be sharable on  the main homepage.  
+- UPC scanning of barcodes to help with entering precise title data.  
+- Allow users to create their own unique locations.  
+- Swap or marketplace to sell/trade unwanted media through their collection.  
+- Third party affiliate scheme to offer an easy way to trade in and recycle.  
 
 ## Testing  
-Please see [TESTING](docs/testing/TESTING.md) document for full details of the testng carried out whilst and after development of the Movie2Archive application.  
+Please see the [TESTING](docs/testing/TESTING.md) document for a full breakdown of the testng carried out through development stages and after development of the Movie2Archive web application.  
