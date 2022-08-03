@@ -2,7 +2,8 @@
 ![Site image](docs/images/cover_image.png)  
 
 Movie2Archive is a media management system application which organises into types and gather data from your movie collection and retrieves additional information about the movie for the user to consume.  
-Movie2Archive helps users gather insight about their collection whilst giving them an easy and convenient way to keep their personal collection organised and up to date and potentially upcycle items they do not wish to keep.  
+Movie2Archive helps users gather insight about their collection whilst giving them an easy and convenient way to keep their personal collection organised and up to date and potentially recycle items they do not wish to keep.  
+[Live site preview link](https://movie2archive.herokuapp.com/)  
 
 ## Table of contents  
 1. [Overview](#overview)
@@ -242,6 +243,18 @@ I used a tool called Contrast Grid [view live colour palette](https://contrast-g
 Fonts used across the application were provided by Google fonts and were used in certain areas as to maintain readability.  
 The two font families used were, Big Shoulders Display and Poppins, the fonts have a default fall-back of Sans-Serif.  
 Heading elements of the application use: Big Shoulders Display, which gives a movie poster style to match the applications theme with Poppins being used across the remainder of the application elements, to ensure good readability for all users.    
+
+### Icons & Imagery  
+All icons used within the web application were provided by Font Awesome free icon set with the image of a selection of dvd film covers provided by Tyson Moultrie and the image of a collection of bare discs provided by Cameron Bunney, both of these images were supplied by Unsplash.com.  
+The icons used were selected to represent the section content or link that will be performed on the application.  
+These icons can be scaled to high magnification levels and remain clear and sharp.  
+The movie cover image was used as it sets the scene for the web applications overall theme, it also draws the eye to the main title which evolves the users understanding of what the application is about.  
+The image of bare discs was used to represent clutter or chais with media, again bringing the users feeling to take action and Movie2archive is a solution to that problem, the image also aids the content section contents when explaining how easy it is to organise a collection in 3 easy steps.  
+FontAwesome icon set:  
+![Font Awesome icon set](docs/images/icon_sets/icon_set_font_awesome_movie2archive.jpg)  
+
+Unsplash images used within application:  
+![Unplash image set](docs/images/images_on_site/unsplash_image_set.jpg)  
 
 ### Sitemap and databases  
 Sitemap route images showng a logged in and logged out user routes.  
