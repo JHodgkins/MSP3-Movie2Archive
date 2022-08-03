@@ -282,12 +282,12 @@ Sitemap route images showing a logged in and logged out user routes. The first i
 ![Sitemap route diagram Movie2archive](docs/wireframes/database_and_route_diagrams/sitemap_movie2archive.png)   
 The light blue boxes represent available routes to an admin user.  
 
-### Features  
-This section looks at features which were implemented and those that with further research and knowledge will add to the existing set of features.  
+## Features  
+This section looks at features which were implemented into the MVP (minimum viable product) and those that with further research technical knowledge alongside user feedback will be added to the existing set of features and be released in future feature updates.  
 
-#### Existing features  
+### Existing features  
 
-#### Features to be implimented in future releases  
+### Features to be implimented in future releases  
 
 ## Testing  
 Please see [TESTING](docs/testing/TESTING.md) document for full details of the testng carried out whilst and after development of the Movie2Archive application.  
