@@ -49,6 +49,10 @@ Movie2Archive helps users gather insight about their collection whilst giving th
     9.1 [Languages](#languages)  
     9.2 [Frameworks and libraries](#frameworks-and-libraries)  
     9.3 [Programs and online resources](#programs-and-online-resources)  
+11. [Deployments](#deployments)  
+    11.1 [Deploying the app to Heroku](#deploying-the-app-to-heroku)  
+    11.2 [Forking the GitHub Repository](#forking-the-github-repository)  
+    11.3 [Cloning to GitPod](#cloning-to-gitpod)  
 
 ## Overview  
 The Movie2Archive application is a database application which catalogues media collections into an easy-to-understand interface which can be use by all ages.  
@@ -343,3 +347,33 @@ A list of all technologies and software and online resources used to create the 
 -  [Am I Responsive](http://ami.responsivedesign.is/), used for generating the main README image.  
 -  [CSS Minifier](https://www.toptal.com/developers/cssminifier/), used to minify CSS.  
 - [Flask/JinJa documentation](https://flask.palletsprojects.com/en/1.1.x/templating/)  Used to trouble shoot some templating issues with rendering for loops.  
+
+## Deployments  
+Please find below the steps on how to Deploy, Fork and Clone.  
+### Deploying the app to Heroku    
+Please see this [DEPLOY](/docs/deployment/DEPLOY.md) document for full instructions on creating the Heroku a and the database.
+
+### Forking the GitHub repository  
+Forking a GitHub Repository will make a copy of the original repository on your GitHub account to view, edit or make changes without worrying about affecting the original repository.
+1.	Log in to GitHub and locate the GitHub Repository you wish to fork
+2.	At the top of the Repository, to the right above the "Settings" link on the menu, locate the "Fork" Button and select.
+3.	You should now have a copy of the original repository within your GitHub account.  
+
+### Cloning to Gitpod  
+1.	Go to [gitpod.io](https://gitpod.io)
+2.	Create an account or sign in
+3.	Open a new window and navigate to the extension store of your browser
+-   [Chromium browsers](https://chrome.google.com/webstore/detail/gitpod-online-ide/dodmmooeoklaejobgleioelladacbeki)
+-   [Firefox](https://addons.mozilla.org/firefox/addon/gitpod/)
+4.	Accept permissions for the extensions and then return to the repository you wish to clone.
+5.	There should be a green Gitpod button now located to the right, selecting this will open GitHub new repository screen.
+6.	Create a new repository and Gitpod will launch your new repository into the user interface.  
+### Making a local clone  
+1.	Log in to GitHub and locate the GitHub Repository  
+2.	Locate the Code button located to the right of the screen, click on this to reveal a sub menu, "Clone or download a zip file should be seen".  
+3.	To clone the repository using HTTPS, under "Clone with HTTPS title", copy the link to your clipboard.
+4.	Open Git Bash  
+5.	Change the current working directory to the location where you wish the cloned directory to be made.  
+6.	Type git clone, and then paste the URL you copied above. e.g., $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY 
+7.	Press Enter and your local clone will start to be created.  
+
