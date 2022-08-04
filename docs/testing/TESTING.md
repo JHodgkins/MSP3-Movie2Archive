@@ -20,6 +20,9 @@ Tests were carried out throughout development in an intergrated way, the tests w
     6.1 [Rendering in browser & Reflow test](#rendering-in-browser--reflow-test)  
     6.2 [Link testing](#link-testing)  
     6.3 [Tab order test](#tab-order-test)  
+    6.4 [Landmark test](#landmark-test)  
+    6.5 [Heading test](#heading-test)  
+    
 
 
 ## User stories testing from the UX section  
@@ -224,4 +227,12 @@ Accessibility insights extension was used to test tab order on all pages.
 The tab order was tested to ensure all focusable elements could receive focus for keyboard only users of the application, this also ensures that screen reader users assistive technology will be able to read these elements to.    
 No issues were found. Example page below:  
 ![Tab order test](/docs/testing/accessibility_testing_images/tab_order_test.png)  
-  
+
+### Landmark test  
+Screen reader users can use landmarks to navigate to sections within a page more qquickly than navigating through each element on the page, landmarks are ued as a form of navigation.    
+These landmarks have been implemented using HTML5 semantic markup and where appropriate such as tab able items, ARIA has also been used where an item would need a role to identify itself.    
+![Landmark test](/docs/testing/accessibility_testing_images/landmark_tet.png)  
+
+### Heading test  
+Heading structure was also checked and meets Wcag guidelines for headings appearing in a sequential order as to distinguish priority.  
+![Landmark test](/docs/testing/accessibility_testing_images/heading_test.png)   
