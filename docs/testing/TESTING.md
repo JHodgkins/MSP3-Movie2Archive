@@ -9,7 +9,7 @@ Tests were carried out throughout development in an intergrated way, the tests w
     2.2 [Returning user](#returning-user)  
     2.3 [Site owner](#site-owner)  
 
-## User stories testing from UX section  
+## User stories testing from the UX section  
 ### First time User
 - __As a first-time user, I want to understand what the applications purpose is so that I can decide if it meets my needs.__  
 Located on the homepage, above the fold banner Image describes Movie2archive’s purpose and the function of the application.  
@@ -79,6 +79,22 @@ PEP8 complience - models.py, routes.py - PASS
 PEP8 complience - routes.py used to connect and test insert, read and delete fnction - PASS  
 - Test oage created movies-mdbtest.html to render retrieved data from MongoDB - retrieved sucessfully.  
 - route.py, class movie_test created to test api call and print json data, new page movietest.html was used to test display output - retrievedand read sucessfully.  
+
+### Site Owner  
+- __As the site owner, I want visitors to find Movie2archive approachable and know its purpose from the outset.__  
+Located on the homepage are examples of what Movie2archive does and how to use the application.  
+
+- __As the site owner, I want visitors to gain more information and learn new facts about the movies they own.__  
+Located on the about page, a brief explanation of what inspired the creation of Movie2archive and its plans moving into the future.  
+
+- __As the site owner, I want visitors to be able to easily add their movies.__  
+A user is able once logged in to reach the add a movie page from either their profile or through the main navigation in 3 or less clicks, leaning on the set out target when developing the application.  
+
+- __As the site owner, I want the site visitors to be able to see what they own and see their collection by media type.__  
+When a user visits their collection, they are able to filter their collection by media type uch as DVD, Blue Ray or VHS.  
+
+- __As a site owner, I want to encourage recycling to the applications users.__  
+Located on the homepage, will be a third party integration in the future, until such time a random recycling provider baed in the UK is used in this case a informative piece about Zapper the merchants who are able to recycle physical media.  
 
 
 ## Development bugs
