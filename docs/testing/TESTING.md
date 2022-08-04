@@ -10,6 +10,8 @@ Tests were carried out throughout development in an intergrated way, the tests w
     1.3 [Site owner](#site-owner)  
 2. [Testing overview](#testing-overview)  
 3. [Test results overview](#test-results-overview)  
+4. [Validation Testing](#validation-testing)  
+    4.1 [HTML validation](#html-validation)  
 
 ## User stories testing from the UX section  
 ### First time User
@@ -99,6 +101,9 @@ CSS preloader tags were used to illiminate render blocking script flag within Li
 __Performance__  
 Due to experiance and the restrictions of the shared environment of Heroku for compiling and serving the application on the frontend, certain performance metrcs are affected as the shared hoting will sleep to conserve resources and wake when needed, a payed plan providing always on connection and more higher performance may yield faster performance.    
 
+__PEP8 complience__  
+PEP8 complience has been followed throughout the project, the project was developed using GitPod and the full template provided by Code Institute which includes Python linting to eansure complience.  
+
 __Accessibility extensions__  
 All results from accessibility extensions were verified using manual tests and where relevant were validated using real Screen Reader software using a human tester.  
 
@@ -119,6 +124,42 @@ Please find the [movie2archive test records.xlsx](movie2archive_test_records.xls
 | Landmark Regions | PASS     | PASS              | PASS |
 | Screen reader    | PASS     | PASS              | PASS |
 | Lighthoise - <br>Performance,<br>Accessibility,<br>Best practice,<br>SEO | PASS         | PASS         | PASS          |
+
+## Validation testing  
+### HTML validation  
+-  Homepage - PASS  
+![W3C HTML Validator result](/docs/testing/validator_testing_images/test_html_validator_homepage.png)  
+
+-  About - PASS  
+![W3C HTML Validator result](/docs/testing/validator_testing_images/test_html_validator_about_page.png) 
+
+-  Login - PASS  
+![W3C HTML Validator result](/docs/testing/validator_testing_images/test_html_validator_login_page.png) 
+
+-  Register - PASS  
+![W3C HTML Validator result](/docs/testing/validator_testing_images/test_html_validator_register_page.png) 
+
+-  My collection - PASS  
+![W3C HTML Validator result](/docs/testing/validator_testing_images/test_html_validator_collection_page.png) 
+
+-  Profile - PASS  
+![W3C HTML Validator result](/docs/testing/validator_testing_images/test_html_validator_profile_page.png) 
+
+-  Dashboard - PASS  
+![W3C HTML Validator result](/docs/testing/validator_testing_images/test_html_validator_dahboard_page.png) 
+
+__Add and Edit pages__  
+As the only thing that changes on these pages only 1 is needed to be validated as the content is filtered intoo a template file and the form is inserted.  
+
+-  Add/Edit - media type/location type/edition type - PASS  
+![W3C HTML Validator result](/docs/testing/validator_testing_images/test_html_validator_add_media_page.png) 
+
+-  Add/Edit - movie - PASS  
+![W3C HTML Validator result](/docs/testing/validator_testing_images/test_html_validator_add_movie_page.png) 
+
+-  Add/Edit - User details/Password - PASS  
+![W3C HTML Validator result](/docs/testing/validator_testing_images/test_html_validator_update_user_details_page.png) 
+
 
 ## Intergrated testing stages
 - Construct and render flask application to browser:  
