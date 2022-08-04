@@ -498,28 +498,3 @@ def delete_edition_cat(edition_type_id):
         db.session.commit()
         flash(f'Edition category was sucessfully deleted from the database!', 'info')
         return redirect(url_for('dashboard'))
-
-
-# Movie test area code
-@app.route("/movietest", methods=['GET', 'POST'])
-def movietest():
-    movie_name = 'The matrix'
-    querystring = {"t": movie_name}
-    # responses = []
-    response = requests.request("GET", apiurl, headers=headers, params=querystring)
-    data = [json.loads(response.text)]
-
-    print(json.dumps(data, indent=2))
-    for item in data:
-        print(item)
-        print(item['Title'])
-        print(item['imdbID'])
-        mid = item['imdbID']
-        mtitle = item['Title']
-        mplot = item['Plot']
-    print("this is the title:", mtitle)
-    print("this is the plot:", mplot)
-    movies = data
-    print(mtitle)
-
-    return render_template('movietest.html', title='movietest', movies=movies)
