@@ -127,7 +127,7 @@ NVDA and JAWS were used in some tests, this is software which I own and was run 
 
 ## Test results overview  
 Below is a table which represents an overview of the various tests undertaken duuring and through development, results of these tests and issues were collected and stored in an Excel document for functionality and accessibility reasons, the excel document contains 3 sheets of tests.  
-Please find the [movie2archive test records.xlsx](movie2archive_test_records.xlsx) file on the GitHub repository.  
+Please find the [movie2archive test records.xlsx](/docs/testing/movie2archive_test_records.xlsx) file on the GitHub repository.  
  
 | Test             | Logged out user | logged in user | Admin user |
 |------------------|----------|-------------------|------|
