@@ -200,3 +200,19 @@ Desktops
 Tablet and mobile
 -  Safari - PASS  
 I found that the web application and application reflowed and displayed correctly and as expected on different screen sizes and systems.  
+
+### Link testing  
+All links within the web application were tested to ensure that internal links behaved correctly, and external facing links such as social media links, third party links opened in a new tab.  
+A screen reader was used during these tests on PC and MAC to ensure that the Sr-Only CSS help text classes which have been applied were announced correctly by the screen reader software.  
+an example of the code is shown below:  
+```
+<li class="ms-3">
+        <a target="_blank" href="https://twitter.com/" rel="noopener">
+          <i class="fab fa-twitter" aria-hidden="true"></i>
+            <span class="sr-only">Find us on Twitter (opens in a new window)
+            </span>
+          </a>
+      </li>
+```  
+All pages were tested, and no issues were found.  
+
