@@ -105,7 +105,20 @@ All results from accessibility extensions were verified using manual tests and w
 __Screen Reader software__  
 NVDA and JAWS were used in some tests, this is software which I own and was run in real time and not simulated through an extension or virtual environment.  
 
-
+## Test results overview  
+Below is a table which represents an overview of the various tests undertaken duuring and through development, results of these tests and issues were collected and stored in an Excel document for functionality and accessibility reasons, the excel document contains 3 sheets of tests.  
+Please find the [movie2archive test records.xlsx](movie2archive_test_records.xlsx) file on the GitHub repository.  
+ 
+| Test             | Logged out user | logged in user | Admin user |
+|------------------|----------|-------------------|------|
+| Database connections  | PASS     | Pass              | PASS | 
+| HTML Validation  | PASS     | Pass              | PASS | 
+| CSS Validation   | PASS     | PASS               | PASS | 
+| JShint           | PASS     | PASS              | PASS | 
+| Links            | PASS     | PASS              | PASS | 
+| Landmark Regions | PASS     | PASS              | PASS |
+| Screen reader    | PASS     | PASS              | PASS |
+| Lighthoise - <br>Performance,<br>Accessibility,<br>Best practice,<br>SEO | PASS         | PASS         | PASS          |
 
 ## Intergrated testing stages
 - Construct and render flask application to browser:  
