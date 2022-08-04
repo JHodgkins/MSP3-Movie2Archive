@@ -45,6 +45,10 @@ Movie2Archive helps users gather insight about their collection whilst giving th
     8.1 [Existing features](#existing-features)  
     8.2[Features to be implimented in future releases](#features-to-be-implimented-in-future-releases)  
 9. [Testing](#testing)  
+10. [Technologies used](#technologies-used)  
+    9.1 [Languages](#languages)  
+    9.2 [Frameworks and libraries](#frameworks-and-libraries)  
+    9.3 [Programs and online resources](#programs-and-online-resources)  
 
 ## Overview  
 The Movie2Archive application is a database application which catalogues media collections into an easy-to-understand interface which can be use by all ages.  
@@ -308,3 +312,34 @@ This section looks at features which were implemented into the MVP (minimum viab
 
 ## Testing  
 Please see the [TESTING](docs/testing/TESTING.md) document for a full breakdown of the testng carried out through development stages and after development of the Movie2Archive web application.  
+
+## Technologies used  
+A list of all technologies and software and online resources used to create the Movie2archive web application.  
+### Languages  
+-  [HTML](https://en.wikipedia.org/wiki/HTML5)  
+-  [CSS](https://en.wikipedia.org/wiki/CSS)  
+-  [JS](https://en.wikipedia.org/wiki/JavaScript)  
+- [Python](https://en.wikipedia.org/wiki/Python_(programming_language))  
+- [JinJa](https://en.wikipedia.org/wiki/Jinja_(template_engine))  
+
+### Databases  
+- [PostgreSQL](https://en.wikipedia.org/wiki/PostgreSQL)  
+- [MongoDB Atlas](https://en.wikipedia.org/wiki/MongoDB)  
+
+### Frameworks and libraries  
+-  [Flask](https://flask.palletsprojects.com/en/2.2.x/)  
+-  [Bootstrap version 5.2.0](https://getbootstrap.com/)  
+-  [Font Awesome](https://fontawesome.com/), Icons used throughout the site.  
+-  [Google fonts](https://fonts.google.com/), Big Shoulders Display and Poppins fonts were used across the application.  
+
+### Programs and online resources  
+-  [favicon.io](https://favicon.io) used to create the favicon.
+-  [GitHub](https://github.io), was used to store committed files
+-  [Git](https://git-scm.com/) and [Gitpod](https://gitpod.io/), used in conjunction through Gitpod to commit and push files to GitHub
+-  [Photoshop 2022](https://adobe.com), used for editing of screenshots.  
+-  [Figma](https://www.figma.com/), used to create the wireframe designs of the applicaion.
+-  [Colour scheme](https://coolors.co/565555-ffb341-fcf7ff-c4cad0-ed254e), used to create a colour palette.  
+-  [Lighthouse](https://developers.google.com/web/tools/lighthouse), used to test performance, accessibility, best practices, and SEO within the Chrome browser.
+-  [Am I Responsive](http://ami.responsivedesign.is/), used for generating the main README image.  
+-  [CSS Minifier](https://www.toptal.com/developers/cssminifier/), used to minify CSS.  
+- [Flask/JinJa documentation](https://flask.palletsprojects.com/en/1.1.x/templating/)  Used to trouble shoot some templating issues with rendering for loops.  
