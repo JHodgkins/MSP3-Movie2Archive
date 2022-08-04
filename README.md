@@ -389,7 +389,7 @@ Forking a GitHub Repository will make a copy of the original repository on your 
 
 ### Images and icons  
 - Icons used within the application were Font Awesome free icon.  
-- Photo of a ollection of movie covers and photo of a pile of bare discs were sourced from [unsplash](https://unsplash.com)  
+- Photo of a collection of movie covers and photo of a pile of bare discs were sourced from [unsplash](https://unsplash.com)  
 
 ### Content  
 Movie information is supplied by RapidApi using the api [1mdb Data searching](https://rapidapi.com/standingapi-standingapi-default/api/1mdb-data-searching/).    
