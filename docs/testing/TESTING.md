@@ -12,6 +12,7 @@ Tests were carried out throughout development in an intergrated way, the tests w
 3. [Test results overview](#test-results-overview)  
 4. [Validation Testing](#validation-testing)  
     4.1 [HTML validation](#html-validation)  
+    4.2 [CSS validation](#css-validation)  
 
 ## User stories testing from the UX section  
 ### First time User
@@ -160,6 +161,12 @@ As the only thing that changes on these pages only 1 is needed to be validated a
 -  Add/Edit - User details/Password - PASS  
 ![W3C HTML Validator result](/docs/testing/validator_testing_images/test_html_validator_update_user_details_page.png) 
 
+### CSS validation  
+As the site uses one CSS style sheet, the stylesheet wa validated by pasing in the raw code to the validator.  
+
+-  CSS stylesheet - PASS  
+![W3C CSS Validator result](/docs/testing/validator_testing_images/test_css_validator.png)  
+
 
 ## Intergrated testing stages
 - Construct and render flask application to browser:  
@@ -172,8 +179,6 @@ PEP8 complience - models.py, routes.py - PASS
 PEP8 complience - routes.py used to connect and test insert, read and delete fnction - PASS  
 - Test oage created movies-mdbtest.html to render retrieved data from MongoDB - retrieved sucessfully.  
 - route.py, class movie_test created to test api call and print json data, new page movietest.html was used to test display output - retrievedand read sucessfully.  
-
-
 
 ## Development bugs
 - MovieLookup table renamed to Movielookup as second capital causes an _ to appear in postgresql database tables view - Fixed
