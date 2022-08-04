@@ -22,7 +22,8 @@ Tests were carried out throughout development in an intergrated way, the tests w
     6.3 [Tab order test](#tab-order-test)  
     6.4 [Landmark test](#landmark-test)  
     6.5 [Heading test](#heading-test)  
-    
+    6.6 [Screen reader test](#screen-reader-test)  
+
 
 
 ## User stories testing from the UX section  
@@ -236,3 +237,8 @@ These landmarks have been implemented using HTML5 semantic markup and where appr
 ### Heading test  
 Heading structure was also checked and meets Wcag guidelines for headings appearing in a sequential order as to distinguish priority.  
 ![Landmark test](/docs/testing/accessibility_testing_images/heading_test.png)   
+
+### Screen reader test  
+All areas of the web application behaved as expected and no keyboard traps or block points were found during testing.  
+Devices used: Windows 10 using NVDA 2022 and JAWS 2022, Mac using VoiceOver for Mac and iPhone X using VoiceOver.  
+
