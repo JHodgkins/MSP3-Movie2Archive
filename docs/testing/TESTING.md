@@ -23,6 +23,9 @@ Tests were carried out throughout development in an intergrated way, the tests w
     6.4 [Landmark test](#landmark-test)  
     6.5 [Heading test](#heading-test)  
     6.6 [Screen reader test](#screen-reader-test)  
+7. [Automated testing](#automated-testing)  
+    7.1 [Lighthouse](#lighthouse)  
+
 
 
 
@@ -241,4 +244,55 @@ Heading structure was also checked and meets Wcag guidelines for headings appear
 ### Screen reader test  
 All areas of the web application behaved as expected and no keyboard traps or block points were found during testing.  
 Devices used: Windows 10 using NVDA 2022 and JAWS 2022, Mac using VoiceOver for Mac and iPhone X using VoiceOver.  
+
+## Automated testing  
+### Lighthouse  
+Google Chrome DevTools was used to run the audit and test the Performance, Accessibility, Best practice, and SEO of each page within the web application.  
+- Homepage desktop  
+![Lighthouse test - Homepage desktop](/docs/testing/lighthouse_teting/desktop/lighthouse_test_homepage_desktop.png)  
+- Homepage mobile  
+![Lighthouse test - Homepage mobile]()  
+- About desktop  
+![Lighthouse test - About desktop](/docs/testing/lighthouse_teting/desktop/lighthouse_test_about_desktop.png)  
+- About mobile  
+![Lighthouse test - About mobile]()  
+- Login desktop  
+![Lighthouse test - Login desktop](/docs/testing/lighthouse_teting/desktop/lighthouse_test_login_desktop.png)  
+- Login mobile  
+![Lighthouse test - Login mobile]()  
+- Register desktop  
+![Lighthouse test - Register desktop](/docs/testing/lighthouse_teting/desktop/lighthouse_test_register_desktop.png)  
+- Register mobile  
+![Lighthouse test - Register mobile]()  
+- My collection desktop  
+![Lighthouse test - my collection desktop](/docs/testing/lighthouse_teting/desktop/lighthouse_test_collection_desktop.png)  
+- My collection mobile  
+![Lighthouse test - My collection mobile]()  
+- Profile desktop  
+![Lighthouse test - Profile desktop](/docs/testing/lighthouse_teting/desktop/lighthouse_test_profile_desktop.png)  
+- Profile mobile  
+![Lighthouse test - Profile mobile]()  
+- Dashboard desktop  
+![Lighthouse test - Dahboard desktop](/docs/testing/lighthouse_teting/desktop/lighthouse_test_dashboard_desktop.png)  
+- Dashboard mobile  
+![Lighthouse test - Dashboard mobile]()  
+- Movie details desktop  
+![Lighthouse test - Movie details desktop](/docs/testing/lighthouse_teting/desktop/lighthouse_test_movie_desktop.png)  
+- Movie details mobile  
+![Lighthouse test - Movie details mobile]()  
+
+As the only thing that changes on add/edit pages only a series is needed to be checked as the content is filtered intoo a template file and the form is inserted.  
+
+- Add/Edit media details desktop  
+![Lighthouse test - Add/Edit media details desktop](/docs/testing/lighthouse_teting/desktop/lighthouse_test_add_media_category_desktop.png)  
+- Add/Edit media details details mobile  
+![Lighthouse test - Add/Edit media details mobile]()  
+- Add/Edit movie desktop  
+![Lighthouse test - Add/Edit movie desktop](/docs/testing/lighthouse_teting/desktop/lighthouse_test_add_movie_desktop.png)  
+- Add/Edit movie mobile  
+![Lighthouse test - Add/Edit movie mobile]()  
+- Add/Edit user details/password desktop  
+![Lighthouse test - Add/Edit user details/password desktop](/docs/testing/lighthouse_teting/desktop/lighthouse_test_update_details_desktop.png)  
+- Add/Edit user details/password mobile  
+![Lighthouse test - Add/Edit user details/password mobile]()  
 
