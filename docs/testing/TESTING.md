@@ -16,7 +16,8 @@ Tests were carried out throughout development in an intergrated way, the tests w
     4.3 [JS validation](#js-validation)  
 5. [Database testing stages](#database-testing-stages)  
     5.1 [Database bug/fixes](#database-bugsfixes)  
-
+6. [Manual tests](#manual-tests)  
+    6.1 [Rendering in browser & Reflow test](#rendering-in-browser--reflow-test)  
 
 ## User stories testing from the UX section  
 ### First time User
@@ -190,4 +191,12 @@ PEP8 complience - routes.py used to connect and test insert, read and delete fnc
 ## Database bugs/fixes  
 - MovieLookup table renamed to Movielookup as second capital causes an _ to appear in postgresql database tables view - Fixed  
 
-
+## Manual testing  
+### Rendering in browser & Reflow test  
+Devices used: Windows 10 PC, Mac Studio, iPad Air 2, iPhone X  
+Desktops  
+-  Chrome, EDGE, Firefox on PC - PASS  
+-  Safari, Chrome on Mac - PASS  
+Tablet and mobile
+-  Safari - PASS  
+I found that the web application and application reflowed and displayed correctly and as expected on different screen sizes and systems.  
