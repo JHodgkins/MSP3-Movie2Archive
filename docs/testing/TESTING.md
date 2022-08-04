@@ -14,6 +14,9 @@ Tests were carried out throughout development in an intergrated way, the tests w
     4.1 [HTML validation](#html-validation)  
     4.2 [CSS validation](#css-validation)  
     4.3 [JS validation](#js-validation)  
+5. [Database testing stages](#database-testing-stages)  
+    5.1 [Database bug/fixes](#database-bugsfixes)  
+
 
 ## User stories testing from the UX section  
 ### First time User
@@ -170,10 +173,9 @@ As the site uses one CSS style sheet, the stylesheet wa validated by pasing in t
 
 ### JS validation  
 ![JShint Validator result](/docs/testing/validator_testing_images/test_jshint_validator.png)  
-Jhint was used and no errors were detected.
+Jhint was used and no errors were detected.  
 
-
-## Intergrated testing stages
+## Database testing stages
 - Construct and render flask application to browser:  
 PEP8 complience - Python, flask structure files - PASS  
 - Database tables User, MediaType and Location models created, postgres database initialised and tables created sucessfully.  
@@ -185,5 +187,7 @@ PEP8 complience - routes.py used to connect and test insert, read and delete fnc
 - Test oage created movies-mdbtest.html to render retrieved data from MongoDB - retrieved sucessfully.  
 - route.py, class movie_test created to test api call and print json data, new page movietest.html was used to test display output - retrievedand read sucessfully.  
 
-## Development bugs
-- MovieLookup table renamed to Movielookup as second capital causes an _ to appear in postgresql database tables view - Fixed
+## Database bugs/fixes  
+- MovieLookup table renamed to Movielookup as second capital causes an _ to appear in postgresql database tables view - Fixed  
+
+
