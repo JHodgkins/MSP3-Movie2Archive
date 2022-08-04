@@ -251,37 +251,38 @@ Google Chrome DevTools was used to run the audit and test the Performance, Acces
 - Homepage desktop  
 ![Lighthouse test - Homepage desktop](/docs/testing/lighthouse_teting/desktop/lighthouse_test_homepage_desktop.png)  
 - Homepage mobile  
-![Lighthouse test - Homepage mobile]()  
+![Lighthouse test - Homepage mobile](/docs/testing/lighthouse_teting/mobile/lighthouse_test_homepage_mobile.png)  
 - About desktop  
 ![Lighthouse test - About desktop](/docs/testing/lighthouse_teting/desktop/lighthouse_test_about_desktop.png)  
 - About mobile  
-![Lighthouse test - About mobile]()  
+![Lighthouse test - About mobile](/docs/testing/lighthouse_teting/mobile/lighthouse_test_about_mobile.png)  
 - Login desktop  
 ![Lighthouse test - Login desktop](/docs/testing/lighthouse_teting/desktop/lighthouse_test_login_desktop.png)  
 - Login mobile  
-![Lighthouse test - Login mobile]()  
+![Lighthouse test - Login mobile](/docs/testing/lighthouse_teting/mobile/lighthouse_test_login_mobile.png)  
 - Register desktop  
 ![Lighthouse test - Register desktop](/docs/testing/lighthouse_teting/desktop/lighthouse_test_register_desktop.png)  
 - Register mobile  
-![Lighthouse test - Register mobile]()  
+![Lighthouse test - Register mobile](/docs/testing/lighthouse_teting/mobile/lighthouse_test_register_mobile.png)  
 - My collection desktop  
 ![Lighthouse test - my collection desktop](/docs/testing/lighthouse_teting/desktop/lighthouse_test_collection_desktop.png)  
 - My collection mobile  
-![Lighthouse test - My collection mobile]()  
+![Lighthouse test - My collection mobile](/docs/testing/lighthouse_teting/mobile/lighthouse_test_collection_mobile.png)  
 - Profile desktop  
 ![Lighthouse test - Profile desktop](/docs/testing/lighthouse_teting/desktop/lighthouse_test_profile_desktop.png)  
 - Profile mobile  
-![Lighthouse test - Profile mobile]()  
+![Lighthouse test - Profile mobile](/docs/testing/lighthouse_teting/mobile/lighthouse_test_profile_mobile.png)  
 - Dashboard desktop  
-![Lighthouse test - Dahboard desktop](/docs/testing/lighthouse_teting/desktop/lighthouse_test_dashboard_desktop.png)  
+![Lighthouse test - Dashboard desktop](/docs/testing/lighthouse_teting/desktop/lighthouse_test_dashboard_desktop.png)  
 - Dashboard mobile  
-![Lighthouse test - Dashboard mobile]()  
+![Lighthouse test - Dashboard mobile](/docs/testing/lighthouse_teting/mobile/lighthouse_test_dashboard_mobile.png)  
 - Movie details desktop  
 ![Lighthouse test - Movie details desktop](/docs/testing/lighthouse_teting/desktop/lighthouse_test_movie_desktop.png)  
 - Movie details mobile  
-![Lighthouse test - Movie details mobile]()  
+![Lighthouse test - Movie details mobile](/docs/testing/lighthouse_teting/mobile/lighthouse_test_movie_mobile.png)  
 
 As the only thing that changes on add/edit pages only a series is needed to be checked as the content is filtered intoo a template file and the form is inserted.  
+Also note: pages which are retrieving information from the database so a user can edit will have a lower performance score as lighthouse refreshes the page to start its test and as uch, lighthouse is waiting on the database to retrieve before it scores the firt paint on screen, as Heroku is used and s a shared server, performance is slowed to reduce overheads on Herokus side.
 
 - Add/Edit media details desktop  
 ![Lighthouse test - Add/Edit media details desktop](/docs/testing/lighthouse_teting/desktop/lighthouse_test_add_media_category_desktop.png)  
@@ -290,9 +291,9 @@ As the only thing that changes on add/edit pages only a series is needed to be c
 - Add/Edit movie desktop  
 ![Lighthouse test - Add/Edit movie desktop](/docs/testing/lighthouse_teting/desktop/lighthouse_test_add_movie_desktop.png)  
 - Add/Edit movie mobile  
-![Lighthouse test - Add/Edit movie mobile]()  
+![Lighthouse test - Add/Edit movie mobile](/docs/testing/lighthouse_teting/mobile/lighthouse_test_edit_movie_mobile.png)  
 - Add/Edit user details/password desktop  
 ![Lighthouse test - Add/Edit user details/password desktop](/docs/testing/lighthouse_teting/desktop/lighthouse_test_update_details_desktop.png)  
 - Add/Edit user details/password mobile  
-![Lighthouse test - Add/Edit user details/password mobile]()  
+![Lighthouse test - Add/Edit user details/password mobile](/docs/testing/lighthouse_teting/mobile/lighthouse_test_update_details_mobile.png)  
 
