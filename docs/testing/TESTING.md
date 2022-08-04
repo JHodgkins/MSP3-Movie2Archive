@@ -39,6 +39,34 @@ Located within the profile page within the section what would you like to do are
 Located on the main navigation bar when a user is logged in will be a Logout link which when activated will end their aession and return them to the homepage as a non logged in user.  
 ![User stories - First time user q7](/docs/testing/user_stories_teting_images/q7_user_stories_first_time_user.png)  
 
+### Returning user  
+- __As a returning user, I want to be able to easily navigate to the login page.__  
+Located across all pages on the main navigation bar will be a link to the login page when a user is not authenticate on the site.  
+![User stories - Returning user q1](/docs/testing/user_stories_teting_images/q1_user_stories_returning_user.png)  
+
+- __As a returning user, I want to be able to edit a movie entry I have in my collection.__  
+When a user selects view my collection within their profile or my collection from the main navigation bar, they are taken to their collection page, under every item is an edit button to edit that entry.  
+A user can edit every part of their original entry including media type, edition and location.  
+![User stories - Returning user q2](/docs/testing/user_stories_teting_images/q2_user_stories_returning_user.png)  
+
+- __As a returning user, I want to be able to see how many movies are in my collection.__  
+Located within their profile the main banner above the fold section displays clearly how many items are within a users total collection.  
+![User stories - Returning user q3](/docs/testing/user_stories_teting_images/q3_user_stories_returning_user.png)  
+
+- __As a returning user, I want to be able to change my password.__  
+Located within a user’s profile page under section edit your user account details is a link to update the users password if they feel it may have been compromised.  
+![User stories - Returning user q4](/docs/testing/user_stories_teting_images/q4_user_stories_returning_user.png)  
+
+- __As a returning user, I want to be able to move my collection to another room location.__  
+Located within my collection the user can select edit to edit the movie entry they have added.  
+The user can edit any movie within their collection individually, bulk moving location is not present at this time as this would not be the case for an average user.  
+![User stories - Returning user q5](/docs/testing/user_stories_teting_images/q5_user_stories_returning_user.png)  
+
+- __As a returning user, I want to be able to update my account login details.__  
+Located within the profile page under update my account details is a link to update user details, this information includes username and email address.  
+![User stories - Returning user q6](/docs/testing/user_stories_teting_images/q6_user_stories_returning_user.png)  
+
+
 
 ## Intergrated testing stages
 - Construct and render flask application to browser:  
