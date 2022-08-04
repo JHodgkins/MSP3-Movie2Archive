@@ -13,6 +13,7 @@ Tests were carried out throughout development in an intergrated way, the tests w
 4. [Validation Testing](#validation-testing)  
     4.1 [HTML validation](#html-validation)  
     4.2 [CSS validation](#css-validation)  
+    4.3 [JS validation](#js-validation)  
 
 ## User stories testing from the UX section  
 ### First time User
@@ -166,6 +167,10 @@ As the site uses one CSS style sheet, the stylesheet wa validated by pasing in t
 
 -  CSS stylesheet - PASS  
 ![W3C CSS Validator result](/docs/testing/validator_testing_images/test_css_validator.png)  
+
+### JS validation  
+![JShint Validator result](/docs/testing/validator_testing_images/test_jshint_validator.png)  
+Jhint was used and no errors were detected.
 
 
 ## Intergrated testing stages
