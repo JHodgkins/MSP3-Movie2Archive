@@ -66,20 +66,6 @@ The user can edit any movie within their collection individually, bulk moving lo
 Located within the profile page under update my account details is a link to update user details, this information includes username and email address.  
 ![User stories - Returning user q6](/docs/testing/user_stories_teting_images/q6_user_stories_returning_user.png)  
 
-
-
-## Intergrated testing stages
-- Construct and render flask application to browser:  
-PEP8 complience - Python, flask structure files - PASS  
-- Database tables User, MediaType and Location models created, postgres database initialised and tables created sucessfully.  
-PEP8 complience - models.py - PASS  
-- Database tables Edition and Movielookup added to database.  
-PEP8 complience - models.py, routes.py - PASS  
-- Database mediaArchive setup and deployed in MongoDB Atlas.  
-PEP8 complience - routes.py used to connect and test insert, read and delete fnction - PASS  
-- Test oage created movies-mdbtest.html to render retrieved data from MongoDB - retrieved sucessfully.  
-- route.py, class movie_test created to test api call and print json data, new page movietest.html was used to test display output - retrievedand read sucessfully.  
-
 ### Site Owner  
 - __As the site owner, I want visitors to find Movie2archive approachable and know its purpose from the outset.__  
 Located on the homepage are examples of what Movie2archive does and how to use the application.  
@@ -95,6 +81,20 @@ When a user visits their collection, they are able to filter their collection by
 
 - __As a site owner, I want to encourage recycling to the applications users.__  
 Located on the homepage, will be a third party integration in the future, until such time a random recycling provider baed in the UK is used in this case a informative piece about Zapper the merchants who are able to recycle physical media.  
+
+
+## Intergrated testing stages
+- Construct and render flask application to browser:  
+PEP8 complience - Python, flask structure files - PASS  
+- Database tables User, MediaType and Location models created, postgres database initialised and tables created sucessfully.  
+PEP8 complience - models.py - PASS  
+- Database tables Edition and Movielookup added to database.  
+PEP8 complience - models.py, routes.py - PASS  
+- Database mediaArchive setup and deployed in MongoDB Atlas.  
+PEP8 complience - routes.py used to connect and test insert, read and delete fnction - PASS  
+- Test oage created movies-mdbtest.html to render retrieved data from MongoDB - retrieved sucessfully.  
+- route.py, class movie_test created to test api call and print json data, new page movietest.html was used to test display output - retrievedand read sucessfully.  
+
 
 
 ## Development bugs
