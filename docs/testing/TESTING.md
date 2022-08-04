@@ -4,10 +4,12 @@ Tests were carried out throughout development in an intergrated way, the tests w
 
 ## Table of contents
  
-1. [User stories testing from the UX section](#user-stories-testing-from-the-ux-section)  
-    2.1 [First time user](#first-time-user)  
-    2.2 [Returning user](#returning-user)  
-    2.3 [Site owner](#site-owner)  
+1. [User stories](#user-stories)  
+    1.1[First time user](#first-time-user)  
+    1.2 [Returning user](#returning-user)  
+    1.3 [Site owner](#site-owner)  
+2. [Testing overview](#testing-overview)  
+3. [Test results overview](#test-results-overview)  
 
 ## User stories testing from the UX section  
 ### First time User
@@ -81,6 +83,28 @@ When a user visits their collection, they are able to filter their collection by
 
 - __As a site owner, I want to encourage recycling to the applications users.__  
 Located on the homepage, will be a third party integration in the future, until such time a random recycling provider baed in the UK is used in this case a informative piece about Zapper the merchants who are able to recycle physical media.  
+
+## Testing Overview  
+__Automated testing__
+All automated tests were carried out using incognito mode to eliminate extension conflicts or false positives or errors due to the extension requests.  
+
+__Manual testing__  
+All manual testing was carried out in standard mode to simulate a standard users experience of the web application.
+
+__Libraries__  
+As the project technologies used the Bootatrap framework and Font Awesome for icons there is a possible effect on performance audit scored.  
+CDN's were used to provide a minified cached version of both frameworks but this can still be a larger file when page loads.
+CSS preloader tags were used to illiminate render blocking script flag within Lighthouse and defering of scripts where necessairy was used on Javascript libraries and scripts.    
+
+__Performance__  
+Due to experiance and the restrictions of the shared environment of Heroku for compiling and serving the application on the frontend, certain performance metrcs are affected as the shared hoting will sleep to conserve resources and wake when needed, a payed plan providing always on connection and more higher performance may yield faster performance.    
+
+__Accessibility extensions__  
+All results from accessibility extensions were verified using manual tests and where relevant were validated using real Screen Reader software using a human tester.  
+
+__Screen Reader software__  
+NVDA and JAWS were used in some tests, this is software which I own and was run in real time and not simulated through an extension or virtual environment.  
+
 
 
 ## Intergrated testing stages
