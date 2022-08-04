@@ -1,4 +1,4 @@
-# Testing  
+# Testing  document
 This document details how the Movie2Archive web application was tested to ensure that complience, a good user experiance was achieved and to make the application as accessible to all its users.  
 Tests were carried out throughout development in an intergrated way, the tests were carried out at each main application development stage or when a new feature addition was being developed to ensure PEP8 complence within Python code was maintained and ensure when developng fromtend elements that, HTML, CSS and JS complience was maintained also.
 
@@ -25,9 +25,8 @@ Tests were carried out throughout development in an intergrated way, the tests w
     6.6 [Screen reader test](#screen-reader-test)  
 7. [Automated testing](#automated-testing)  
     7.1 [Lighthouse](#lighthouse)  
-
-
-
+    7.2 [Simulated devices test](#simulated-devives-test)  
+8. [User journey testing](#user-journey-testing)  
 
 ## User stories testing from the UX section  
 ### First time User
@@ -297,3 +296,13 @@ Also note: pages which are retrieving information from the database so a user ca
 - Add/Edit user details/password mobile  
 ![Lighthouse test - Add/Edit user details/password mobile](/docs/testing/lighthouse_teting/mobile/lighthouse_test_update_details_mobile.png)  
 
+### Simulated devives test  
+Chromes built in device simulator which covers many different device sizes was used to simulate the application on a variety of device screen sizes.  
+All simulated screen sizes rendered the application correctly and as expected.  
+A slight shift of about 10px was discovered when testing, the problem was that the grid layout had expanded the container on the navigation bar and some icon images has overflowed their container. This issue has been fixed, all other tests showed no other issues.  
+
+## User journey testing  
+A diagram showing the user journeys tested when the application was deployed to Heroku and development moved to staging and push to deployment.  
+![User journey testing](/docs/testing/user_journeys/user_journeys_movie2archive.png)  
+
+[Back to Repository](https://github.com/JHodgkins/MSP3-Movie2Archive)  
