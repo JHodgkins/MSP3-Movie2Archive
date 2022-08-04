@@ -53,6 +53,11 @@ Movie2Archive helps users gather insight about their collection whilst giving th
     11.1 [Deploying the app to Heroku](#deploying-the-app-to-heroku)  
     11.2 [Forking the GitHub Repository](#forking-the-github-repository)  
     11.3 [Cloning to GitPod](#cloning-to-gitpod)  
+12. [Credits and resources used](#credits-and-resources-used)  
+    12.1 [Code snippets and tutorials](#code-snippets-and-tutorials)  
+    12.2 [Images and icons](#images-and-icons)  
+    12.3 [Content](#content)  
+13. [Acknowledgments](#acknowledgments)  
 
 ## Overview  
 The Movie2Archive application is a database application which catalogues media collections into an easy-to-understand interface which can be use by all ages.  
@@ -377,3 +382,19 @@ Forking a GitHub Repository will make a copy of the original repository on your 
 6.	Type git clone, and then paste the URL you copied above. e.g., $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY 
 7.	Press Enter and your local clone will start to be created.  
 
+## Credits and resources used  
+### Code snippets and tutorials    
+- [Implimentation of WTForms](https://flask-wtf.readthedocs.io/en/1.0.x/), used for enuring that the forms were set out correctly and were ecure.  
+- [stack overflow count()](https://stackoverflow.com/questions/34692571/how-to-use-count-in-flask-sqlalchemy) method ued across the site to taly movies and media types.  
+
+### Images and icons  
+- Icons used within the application were Font Awesome free icon.  
+- Photo of a ollection of movie covers and photo of a pile of bare discs were sourced from [unsplash](https://unsplash.com)  
+
+### Content  
+Movie information is supplied by RapidApi using the api [1mdb Data searching](https://rapidapi.com/standingapi-standingapi-default/api/1mdb-data-searching/).    
+
+## Acknowledgments  
+Thank you to my Tutor Philip Morris, my mentor Chris Quinn and my a huge thank you to my wife Jeanmarie and my children for allowing me to take on these new challenges and for giving me so much support and understanding through the tougher times.  
+Everyone at Code Institute and Harlow College for all their help and support.
+This project and the concept behind Movie2archive is dedicated to my late father Tony Hodgkins xx 
