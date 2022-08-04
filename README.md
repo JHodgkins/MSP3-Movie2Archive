@@ -61,10 +61,10 @@ Movie2Archive helps users gather insight about their collection whilst giving th
 
 ## Overview  
 The Movie2Archive application is a database application which catalogues media collections into an easy-to-understand interface which can be use by all ages.  
-The Movie2Archive application has been developed with a main goal to help organise, catalogue and provide an intrusive way to educate the end user about their or their families current media collection.  
+The Movie2Archive application has been developed with a main goal to help organise, catalogue and provide an interactive way to educate the end user about their or their families current media collection.  
 The business purpose of Movie2Archive is to provide an easy and effective way of cataloguing and promote recycling aspects by easily allowing the user to see what they own and decide if duplicates or media is still needed or can be donated.  
 The sites expected audience will be to anyone looking to archive a small to large collection of media, the sites audience would be any user who owns or has acquired a collection and is looking to evaluate its value or recycling potential.  
-The application will provide to new users a reassurance and positive feeling by providing a simple intrusive interface which is clean and simple to use, the applications purpose is maintained throughout its interface and helps educate and promote curiously about the media they own through information provided back to the user after each media submission.  
+The application will provide to new users a reassurance and positive feeling by providing a simple interactive interface which is clean and simple to use, the applications purpose is maintained throughout its interface and helps educate and promote curiously about the media they own through information provided back to the user after each media submission.  
 
 ## Design brief  
 Plan, design and build a data driven application for users who have a personal media collection and wish to organise their collection or collections into a single structured manageable interface.  
@@ -76,10 +76,10 @@ Please view the [research](docs/research/RESEARCH.md) document for details of us
 
 ## Goals and Target audience  
 ### Project goals  
-- The project will provide a platform where anyone interested in cataloguing and archiving their personal film media collection can done so with minimal effort.  
+- The project will provide a platform where anyone interested in cataloguing and archiving their personal film media collection can be done so with minimal effort.  
 - The application will enable users to learn new details about their media collection through the application.  
 - The project will help users organise their collection and decide what to keep or donate back to the community.  
-- The users collection will be viewable and editable able using any browser.  
+- The users collection will be viewable and editable using any device with a browser.  
 
 ### User Goals
 - Find information about what Movie2Archive is all about.  
@@ -91,21 +91,21 @@ Please view the [research](docs/research/RESEARCH.md) document for details of us
 ### Site owners goals  
 - The Movie2Archive site owner would like to promote the pick-up and use approach of the application.  
 - It is also important that users can see if duplicate copies are in their collection and promote recycling or donating.  
-- Bild trust with its users so recommendations help grow the platform as a useful resource.  
+- Build trust with its users so recommendations help grow the platform as a useful resource.  
 
 ### Target audience  
 - The application will be able to be usable by all ages.  
 - Those looking for an application to catalogue their movie collection.  
 - Relatives or a user who has acquired a collection and wishing to understand what the collection contains.  
 - Movie enthusiasts who want to discover information about a movie whilst also creating a catalogue of their items.  
-- Charities or small establishments wising to keep a record of media held in stock.  
+- Charities or small establishments wishing to keep a record of media held in stock.  
 
 ## User experiance (UX)  
 During project planning, it was set out that the user interface should be easily understood to provide an overall good user experience and provide a positive feeling when navigating and interacting with the application.  
 As the application is aimed at all ages, logical placement of buttons and understandable form fields will all be clearly tagged to ensure no barriers are present or experienced whilst using the application.  
 Keyboard and screen reader navigation has also been considered and all elements can be reached using a keyboard to ensure the application is as accessible as possible to all users of the application.  
 
-### User storues  
+### User stories  
 #### First time user  
 As a first-time user, I want to understand what the applications purpose is so that I can decide if it meets my needs.  
 As a first-time user, I want to be able to easily navigate to the registration page.  
@@ -133,7 +133,7 @@ As a first-time user, I want to know how to log out of Movie2Archive.
 ## Design  
 Movie2Archive was designed to be clean, clear and easily understood by all audiences using the application, header and footer sections persist throughout the web application to ensure navigation is kept consistent, easy to navigate and provides a pleasant user experience (UX) throughout.  
 
-The application uses mainly solid colours which contrast each other well, for example a darker grey against orange gives the feeling of hard edges to reflect DVD, Blue Ray boxes and the boxy appearance of a media collection. .  
+The application uses mainly solid colours which contrast each other well, for example a darker grey against orange gives the feeling of hard edges to reflect DVD, Blue Ray boxes and the boxy appearance of a media collection.   
 As a person with a visual impairment, the web application has been designed with screen magnification and screen readers in mind.  
 
 ### Structure of pages  
@@ -147,7 +147,7 @@ On devices tablet and below the user will be able to expand/collapse this menu u
 
 #### Main content area  
 The main content area is used to display content dynamically dependant on the user’s choice of action.  
-When arriving at the homepage, this main area is used to introduce the application, a large above the fold title and three tag lines summarise the benefits of using Mobie2archive, below this are simple instructions on how to ue the application.  
+When arriving at the homepage, this main area is used to introduce the application, a large above the fold title and three tag lines summarise the benefits of using Movie2archive, below this are simple instructions on how to use the application.  
 This is followed by a complimentary section which encourages recycling through a trade for cash or free recycling service offered by the company Zapper.  
 
 For the main sections of the application, the My collection and Profile areas, these follow a well-defined and purposeful approach also.
@@ -155,7 +155,7 @@ For the main sections of the application, the My collection and Profile areas, t
 The My collection main area displays the added movies in a easy to understand list group, each list item contains the title, a snippet of the users note, and a view and edit link for easy editing and viewing of their archived movie title.  
 
 The Profile section was developed to be the hub for the end user, the page contains again a large above the fold section which on the left gives a friendly welcome message and suggestions on what to do.
-The right ide shows a large counter showing the total number of movies archived by the user.  
+The right side shows a large counter showing the total number of movies archived by the user.  
 Below this is the main area which contains large tap/click target list group buttons which are sectioned into two parts, what would you like to do and update user details.  
 These both contain a button with a text description summary of the buttons action, there are also extra information list items which are indicated by a ‘info’ tag.  
 
@@ -246,7 +246,7 @@ The application follows best practice and was developed using a mobile first app
 ![colour palette](docs/colours/accessible_colour_scheme.png)   
 
 - Davys Grey: #565555 was used as to represents the darkness of a theatre.  
-- Yellow Orange: #FFB341and Red Crayola: #ED254E were used to represent the certification colours for PG and 18.  
+- Yellow Orange: #FFB341 and Red Crayola: #ED254E were used to represent the certification colours for PG and 18.  
 - Silver Sand: #C4CAD0 was used to represent steel book covers of DVDs and Blue Rays and leans on a sci-fi feel.  
 - Magnolia: #FCF7FF was used to represent the home, a widely used colour in many homes.  
 - White: #FFFFFF and Black: 000000 were used for text and background colours as they are contrasting colours easily readable and have a feeling of sharp edges.   
@@ -356,7 +356,7 @@ A list of all technologies and software and online resources used to create the 
 ## Deployments  
 Please find below the steps on how to Deploy, Fork and Clone.  
 ### Deploying the app to Heroku    
-Please see this [DEPLOY](/docs/deployment/DEPLOY.md) document for full instructions on creating the Heroku a and the database.
+Please see this [DEPLOY](/docs/deployment/DEPLOY.md) document for full instructions on creating the Heroku app and the database.
 
 ### Forking the GitHub repository  
 Forking a GitHub Repository will make a copy of the original repository on your GitHub account to view, edit or make changes without worrying about affecting the original repository.
@@ -384,8 +384,8 @@ Forking a GitHub Repository will make a copy of the original repository on your 
 
 ## Credits and resources used  
 ### Code snippets and tutorials    
-- [Implimentation of WTForms](https://flask-wtf.readthedocs.io/en/1.0.x/), used for enuring that the forms were set out correctly and were ecure.  
-- [stack overflow count()](https://stackoverflow.com/questions/34692571/how-to-use-count-in-flask-sqlalchemy) method ued across the site to taly movies and media types.  
+- [Implimentation of WTForms](https://flask-wtf.readthedocs.io/en/1.0.x/), used for enuring that the forms were set out correctly and were secure.  
+- [stack overflow count()](https://stackoverflow.com/questions/34692571/how-to-use-count-in-flask-sqlalchemy) method used across the site to taly movies and media types.  
 
 ### Images and icons  
 - Icons used within the application were Font Awesome free icon.  
@@ -395,6 +395,6 @@ Forking a GitHub Repository will make a copy of the original repository on your 
 Movie information is supplied by RapidApi using the api [1mdb Data searching](https://rapidapi.com/standingapi-standingapi-default/api/1mdb-data-searching/).    
 
 ## Acknowledgments  
-Thank you to my Tutor Philip Morris, my mentor Chris Quinn and my a huge thank you to my wife Jeanmarie and my children for allowing me to take on these new challenges and for giving me so much support and understanding through the tougher times.  
+Thank you to my Tutor Philip Morris, my mentor Chris Quinn and a huge thank you to my wife Jeanmarie and my children for allowing me to take on these new challenges and for giving me so much support and understanding through the tougher times.  
 Everyone at Code Institute and Harlow College for all their help and support.
 This project and the concept behind Movie2archive is dedicated to my late father Tony Hodgkins xx 

@@ -28,7 +28,7 @@ Note: Heroku allows 5 apps without verifying adding details and 100 if details a
 
 Will be redirected to the deploy screen.
 
-Do not upload our localdb, create one in Heroku instead to avoid personal data breaches, covered further on.
+Do not upload our local database, create a new one in Heroku instead to avoid personal data breaches, covered further on.
 
 1. Select the Resources tab then under add-ons search for Heroku Postgres and when found select.
 2. A Popup will ask for the account type, select hobby dev – free and then Submit order

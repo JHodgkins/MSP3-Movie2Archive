@@ -43,7 +43,7 @@ Located on the homepage are 3 simple steps outlining how to  get started using M
 ![User stories - First time user q3](/docs/testing/user_stories_teting_images/q3_user_stories_first_time_user.png)  
 
 - __As a first-time user, I want to view my collection.__  
-When a user has logged in, they will be directed to their profile page, within this page under section what would you like to do I a direct link to view a collection, alternatively a user can select my collection located on the main navigation bar.  
+When a user has logged in, they will be directed to their profile page, within this page under section what would you like to do, there is a direct link to view my collection, alternatively a user can select my collection located on the main navigation bar.  
 ![User stories - First time user q4](/docs/testing/user_stories_teting_images/q4_user_stories_first_time_user.png)  
 
 - __As a first-time user, I want to find out more information about a movie I have added.__  
@@ -55,7 +55,7 @@ Located within the profile page within the section what would you like to do are
 ![User stories - First time user q6](/docs/testing/user_stories_teting_images/q6_user_stories_first_time_user.png)  
 
 - __As a first-time user, I want to know how to log out of Movie2archive.__  
-Located on the main navigation bar when a user is logged in will be a Logout link which when activated will end their aession and return them to the homepage as a non logged in user.  
+Located on the main navigation bar when a user is logged in will be a Logout link which when activated will end their session and return them to the homepage as a non logged in user.  
 ![User stories - First time user q7](/docs/testing/user_stories_teting_images/q7_user_stories_first_time_user.png)  
 
 ### Returning user  
@@ -96,10 +96,10 @@ Located on the about page, a brief explanation of what inspired the creation of 
 A user is able once logged in to reach the add a movie page from either their profile or through the main navigation in 3 or less clicks, leaning on the set out target when developing the application.  
 
 - __As the site owner, I want the site visitors to be able to see what they own and see their collection by media type.__  
-When a user visits their collection, they are able to filter their collection by media type uch as DVD, Blue Ray or VHS.  
+When a user visits their collection, they are able to filter their collection by media type such as DVD, Blue Ray or VHS.  
 
 - __As a site owner, I want to encourage recycling to the applications users.__  
-Located on the homepage, will be a third party integration in the future, until such time a random recycling provider baed in the UK is used in this case a informative piece about Zapper the merchants who are able to recycle physical media.  
+Located on the homepage, will be a third party integration in the future, until such time a random recycling provider based in the UK is used in this case a informative piece about Zapper the merchants who are able to recycle physical media.  
 
 ## Testing Overview  
 __Automated testing__
@@ -109,12 +109,12 @@ __Manual testing__
 All manual testing was carried out in standard mode to simulate a standard users experience of the web application.
 
 __Libraries__  
-As the project technologies used the Bootatrap framework and Font Awesome for icons there is a possible effect on performance audit scored.  
+As the project technologies used the Bootstrap framework and Font Awesome for icons there is a possible effect on performance audit scored.  
 CDN's were used to provide a minified cached version of both frameworks but this can still be a larger file when page loads.
 CSS preloader tags were used to illiminate render blocking script flag within Lighthouse and defering of scripts where necessairy was used on Javascript libraries and scripts.    
 
 __Performance__  
-Due to experiance and the restrictions of the shared environment of Heroku for compiling and serving the application on the frontend, certain performance metrcs are affected as the shared hoting will sleep to conserve resources and wake when needed, a payed plan providing always on connection and more higher performance may yield faster performance.    
+Due to experiance and the restrictions of the shared environment of Heroku for compiling and serving the application on the frontend, certain performance metrics are affected as the shared hosting will sleep to conserve resources and wake when needed, a payed plan providing always on connection and more higher performance may yield faster performance.    
 
 __PEP8 complience__  
 PEP8 complience has been followed throughout the project, the project was developed using GitPod and the full template provided by Code Institute which includes Python linting to eansure complience.  
@@ -126,7 +126,7 @@ __Screen Reader software__
 NVDA and JAWS were used in some tests, this is software which I own and was run in real time and not simulated through an extension or virtual environment.  
 
 ## Test results overview  
-Below is a table which represents an overview of the various tests undertaken duuring and through development, results of these tests and issues were collected and stored in an Excel document for functionality and accessibility reasons, the excel document contains 3 sheets of tests.  
+Below is a table which represents an overview of the various tests undertaken during and through development, results of these tests and issues were collected and stored in an Excel document for functionality and accessibility reasons, the excel document contains 3 sheets of tests.  
 Please find the [movie2archive test records.xlsx](/docs/testing/movie2archive_test_records.xlsx) file on the GitHub repository.  
  
 | Test             | Logged out user | logged in user | Admin user |
@@ -164,7 +164,7 @@ Please find the [movie2archive test records.xlsx](/docs/testing/movie2archive_te
 ![W3C HTML Validator result](/docs/testing/validator_testing_images/test_html_validator_dahboard_page.png) 
 
 __Add and Edit pages__  
-As the only thing that changes on these pages only 1 is needed to be validated as the content is filtered intoo a template file and the form is inserted.  
+As the only thing that changes on these pages only 1 is needed to be validated as the content is filtered into a template file and the form is inserted.  
 
 -  Add/Edit - media type/location type/edition type - PASS  
 ![W3C HTML Validator result](/docs/testing/validator_testing_images/test_html_validator_add_media_page.png) 
@@ -176,7 +176,7 @@ As the only thing that changes on these pages only 1 is needed to be validated a
 ![W3C HTML Validator result](/docs/testing/validator_testing_images/test_html_validator_update_user_details_page.png) 
 
 ### CSS validation  
-As the site uses one CSS style sheet, the stylesheet wa validated by pasing in the raw code to the validator.  
+As the site uses one CSS style sheet, the style sheet was validated by pasing in the raw code to the validator.  
 
 -  CSS stylesheet - PASS  
 ![W3C CSS Validator result](/docs/testing/validator_testing_images/test_css_validator.png)  
@@ -232,8 +232,8 @@ No issues were found. Example page below:
 ![Tab order test](/docs/testing/accessibility_testing_images/tab_order_test.png)  
 
 ### Landmark test  
-Screen reader users can use landmarks to navigate to sections within a page more qquickly than navigating through each element on the page, landmarks are ued as a form of navigation.    
-These landmarks have been implemented using HTML5 semantic markup and where appropriate such as tab able items, ARIA has also been used where an item would need a role to identify itself.    
+Screen reader users can use landmarks to navigate to sections within a page more quickly than navigating through each element on the page, landmarks are used as a form of navigation.    
+These landmarks have been implemented using HTML5 semantic markup and where appropriate such as tabbable items, ARIA has also been used where an item would need a role to identify itself.    
 ![Landmark test](/docs/testing/accessibility_testing_images/landmark_tet.png)  
 
 ### Heading test  
@@ -280,8 +280,8 @@ Google Chrome DevTools was used to run the audit and test the Performance, Acces
 - Movie details mobile  
 ![Lighthouse test - Movie details mobile](/docs/testing/lighthouse_teting/mobile/lighthouse_test_movie_mobile.png)  
 
-As the only thing that changes on add/edit pages only a series is needed to be checked as the content is filtered intoo a template file and the form is inserted.  
-Also note: pages which are retrieving information from the database so a user can edit will have a lower performance score as lighthouse refreshes the page to start its test and as uch, lighthouse is waiting on the database to retrieve before it scores the firt paint on screen, as Heroku is used and s a shared server, performance is slowed to reduce overheads on Herokus side.
+As the only thing that changes on add/edit pages only a series is needed to be checked as the content is filtered into a template file and the form is inserted.  
+Also note: pages which are retrieving information from the database so a user can edit will have a lower performance score as lighthouse refreshes the page to start its test and as such, lighthouse is waiting on the database to retrieve before it scores the fisrt paint on screen, as Heroku is used and is a shared server, performance is slowed to reduce overheads on Herokus side.
 
 - Add/Edit media details desktop  
 ![Lighthouse test - Add/Edit media details desktop](/docs/testing/lighthouse_teting/desktop/lighthouse_test_add_media_category_desktop.png)  

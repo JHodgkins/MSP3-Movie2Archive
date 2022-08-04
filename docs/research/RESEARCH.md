@@ -6,12 +6,12 @@ I have also taken into consideration the ease of use as a factor as the applicat
 I found that there were available apps that shared many features including:  
 - Selection of catalogue-based apps with varying features which expanded upon just cataloguing a collection.  
 - Integration into online resources to show data relating to media entered.  
-- Options to exprt media collection to alternative formats.  
+- Options to export media collection to alternative formats.  
 
 I did notice a pattern when comparing paid apps to freeware apps which were:  
 - Free apps may offer a limited capacity or restrict online lookup until a token or upgrade is made.  
 - Paid apps offer capacity but also combine features beyond cataloguing which to some users may be unnecessary.  
-- Large scale cataloguing apps seemed to focus on the deskyop environment or would bridge the gap by using an app to pass data to the desktop application.  
+- Large scale cataloguing apps seemed to focus on the desktop environment or would bridge the gap by using an app to pass data to the desktop application.  
 
 I have also found that there are some larger developers have separated their apps out into individual applications focused on specific areas such as DVD, CD, Books and offered them as bundles to reduce per app price, which is useful to some who require this but unnecessary for all audiences.  
 
@@ -24,7 +24,7 @@ Responses have been condensed for consistency
 
 ### Initial questions asked  
 **Question.** Have you had to catalogue media or something else before?  
-**User.** _‘Yes, many years ago I was left loads if books and had to go through one by one just to know what was there.’_  
+**User.** _‘Yes, many years ago I was left loads of books and had to go through one by one just to know what was there.’_  
 **User.** _‘Mo but we do have a large amount of books and media which to be honest we are not too sure what exactly is there.’_  
 
 **Question.** Do you buy applications to solve a problem/task that needs doing?  
@@ -37,11 +37,11 @@ Responses have been condensed for consistency
 
 **Question.** Would a record of the media you own or have acquired help with things like insurance?  
 **User.** _‘I think it would, they are material things but would not want to lose them, so knowing what exactly is there means I could ask my insurer about these things.’_  
-**User.** _‘Not sure about insurance but would help me find those films I tell my kids about but seems such an effory to dig around in the boxes just for one film.’_  
+**User.** _‘Not sure about insurance but would help me find those films I tell my kids about but seems such an effort to dig around in the boxes just for one film.’_  
 
 Focusing on the user interface, features, ease of use people were asked:  
 
-### Additional questions aked  
+### Additional questions asked  
 **Question.** Is ease of use or features important to you?
 **User.** _‘Easy to use and gets the job done quickly without complicated stuff getting in the way.’_  
 **User.** _‘I like having features, but they need to be easy to get too and understandable.’_  
@@ -53,11 +53,11 @@ Focusing on the user interface, features, ease of use people were asked:
 ## Summary
 The research proved interesting and raised some points surrounding features which outlined the importance of an easy-to-use interface can to some outweigh a heavy feature set.  
 The area around recycling was also pleasing to see that users do not always know what they own and often want to give back to the community, friends or family.  
-It also became clear also that those with a large collection were completely unaware of the extent of their collection and this may mean that if lost they would not be able to gain back their collection in full.  
+It also became clear that those with a large collection were completely unaware of the extent of their collection and this may mean that if lost they would not be able to gain back their collection in full.  
 Looking at the proposed application, research showed that other offerings can indeed offer more features, but the projects strengths are that it can offer a positive and pleasing offering which meets the business and target audience goals and aligns with feedback.  
 
 ## Conclusion
-The project meets its goals and can help by offering a suitable resource when managing media to archive and a catalogue.  
+The project meets its goals and can help by offering a suitable resource when managing media to archive using a catalogue.  
 The application will provide a simple to use accessible application, provide a positive experience throughout using a clean and clear user interface which will allow it to be used independently by the target audience of varying ages and align with the business goals to recycle and donate if they wish.  
 
 [Back to Repository](https://github.com/JHodgkins/MSP3-Movie2Archive)  
