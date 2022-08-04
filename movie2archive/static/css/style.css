@@ -266,6 +266,13 @@ footer {
     color: var(--black);
 }
 
+/* Error pages */
+
+.error-heading {
+    font-size: 3rem;
+    color: var(--red);
+}
+
 /* Media queries */
 
 /* Medium devices (tablets, 768px and up) */
