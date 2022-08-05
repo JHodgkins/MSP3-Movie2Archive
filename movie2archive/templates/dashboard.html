@@ -38,7 +38,7 @@
                   {% for media_type in media_types %}
                       <li class="list-group-item d-flex justify-content-between align-items-center">{{ media_type.type }}
                         <div class="btn-group">
-                          <a href="{{ url_for('edit_media_cat', media_type_id=media_type.id) }}" class="btn btn-primary mx-1">Edit</a>
+                          <a href="{{ url_for('edit_media_cat', media_type_id=media_type.id) }}" class="btn btn-m2a-alt mx-1">Edit</a>
                           <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete_modal-{{ media_type.id }}">Delete</button>
                         </div>
                       </li>
@@ -77,7 +77,7 @@
                   {% for location_type in location_types %}
                       <li class="list-group-item d-flex justify-content-between align-items-center">{{ location_type.location }}
                         <div class="btn-group">
-                          <a href="{{ url_for('edit_location_cat', location_type_id=location_type.id) }}" class="btn btn-primary mx-1">Edit</a>
+                          <a href="{{ url_for('edit_location_cat', location_type_id=location_type.id) }}" class="btn btn-m2a-alt mx-1">Edit</a>
                           <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete_modal_loc-{{ location_type.id }}">Delete</button>
                         </div>
                       </li>
@@ -116,7 +116,7 @@
                   {% for edition_type in edition_types %}
                       <li class="list-group-item d-flex justify-content-between align-items-center">{{ edition_type.edition }}
                         <div class="btn-group">
-                          <a href="{{ url_for('edit_edition_cat', edition_type_id=edition_type.id) }}" class="btn btn-primary mx-1">Edit</a>
+                          <a href="{{ url_for('edit_edition_cat', edition_type_id=edition_type.id) }}" class="btn btn-m2a-alt mx-1">Edit</a>
                           <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete_modal_ed-{{ edition_type.id }}">Delete</button>
                         </div>
                       </li>
