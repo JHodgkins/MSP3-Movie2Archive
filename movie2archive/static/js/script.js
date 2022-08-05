@@ -1,5 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
-
+// Calls to the textarea located on the add movie page
 // Text area countdown to show characters left to enter
 function textareaLengthCheck(el) {
   let textArea = el.value.length;
@@ -8,6 +7,7 @@ function textareaLengthCheck(el) {
   count.innerHTML = "Remaining characters: " + charactersLeft;
 }
 
+// Calculates the date
 // Show date on footer
 let date = new Date();
 document.getElementById("copyright").innerHTML = date.getFullYear();
