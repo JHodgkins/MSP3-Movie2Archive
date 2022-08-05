@@ -63,8 +63,8 @@
                       <a href="{{ url_for('movie_details', movie_id=movie.id,) }}"><strong
                           class="text-gray-dark">{{movie.title}}</strong>
                       </a>
-                      <a class="btn btn-primary btn-sm collection-button-group" href="{{ url_for('edit_movie', movie_id=movie.id) }}">Edit</a>
-                      <a class="btn btn-primary btn-sm" href="{{ url_for('movie_details', movie_id=movie.id) }}">View</a>
+                      <a class="btn btn-m2a-alt btn-sm collection-button-group" href="{{ url_for('edit_movie', movie_id=movie.id) }}">Edit</a>
+                      <a class="btn btn-m2a btn-sm" href="{{ url_for('movie_details', movie_id=movie.id) }}">View</a>
                     </div>
                     <span class="d-block">{{ movie.notes }}</span>
                   </div>
