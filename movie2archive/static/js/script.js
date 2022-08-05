@@ -1,8 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Navbar initialization
-      let sidenav = document.querySelectorAll('.sidenav');
-      M.Sidenav.init(sidenav);
-});
 
 // Text area countdown to show characters left to enter
 function textareaLengthCheck(el) {
