@@ -118,6 +118,8 @@ Due to experiance and the restrictions of the shared environment of Heroku for c
 
 __PEP8 complience__  
 PEP8 complience has been followed throughout the project, the project was developed using GitPod and the full template provided by Code Institute which includes Python linting to eansure complience.  
+There are some string too long lints, the tuition we have been taught is only how to expand to two lines, after research it is also worth noting that dependant on operating system, expanding to multiple lines can introduve incompatable code and may fail to run.  
+The lint and PEP8 line too long is also a guide and this varies from 80 characters uto 150 characters dependant on the technology industry the application is rrunning within, it is also similar to a warning in CSS, HTML validators or WCAG guidelines and is not an actual error but a visual cue to aim for a written best practice standard.  
 
 __Accessibility extensions__  
 All results from accessibility extensions were verified using manual tests and where relevant were validated using real Screen Reader software using a human tester.  
