@@ -345,13 +345,16 @@ A list of all technologies and software and online resources used to create the 
 -  [favicon.io](https://favicon.io) used to create the favicon.
 -  [GitHub](https://github.io), was used to store committed files
 -  [Git](https://git-scm.com/) and [Gitpod](https://gitpod.io/), used in conjunction through Gitpod to commit and push files to GitHub
--  [Photoshop 2022](https://adobe.com), used for editing of screenshots.  
+-  [Photoshop 2022](https://adobe.com), used for editing of screenshots and saving into WebP format.   
 -  [Figma](https://www.figma.com/), used to create the wireframe designs of the applicaion.
 -  [Colour scheme](https://coolors.co/565555-ffb341-fcf7ff-c4cad0-ed254e), used to create a colour palette.  
 -  [Lighthouse](https://developers.google.com/web/tools/lighthouse), used to test performance, accessibility, best practices, and SEO within the Chrome browser.
 -  [Am I Responsive](http://ami.responsivedesign.is/), used for generating the main README image.  
 -  [CSS Minifier](https://www.toptal.com/developers/cssminifier/), used to minify CSS.  
 - [Flask/JinJa documentation](https://flask.palletsprojects.com/en/1.1.x/templating/)  Used to trouble shoot some templating issues with rendering for loops.  
+- [Black](https://black.readthedocs.io/en/stable/getting_started.html) Python code formatter, used to solve PEP8 issues and ensure code is readable.   
+- [Gloomaps](https://www.gloomaps.com/) used to create the site map and user stories storyboards.  
+- [Lucid](https://lucid.app) which was used to create the database models diagram.  
 
 ## Deployments  
 Please find below the steps on how to Deploy, Fork and Clone.  
@@ -385,7 +388,11 @@ Forking a GitHub Repository will make a copy of the original repository on your 
 ## Credits and resources used  
 ### Code snippets and tutorials    
 - [Implimentation of WTForms](https://flask-wtf.readthedocs.io/en/1.0.x/), used for enuring that the forms were set out correctly and were secure.  
-- [stack overflow count()](https://stackoverflow.com/questions/34692571/how-to-use-count-in-flask-sqlalchemy) method used across the site to taly movies and media types.  
+- [stack overflow count()](https://stackoverflow.com/questions/34692571/how-to-use-count-in-flask-sqlalchemy) method used across the site to tally movies and media types.  
+- [stack overflow](https:stackoverflow) for general coding queries.  
+- [YouTube Tutorial (error handling)](https://www.youtube.com/watch?v=mBKKZN1MMBM) was used to understand error handling.  
+- [http error codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) was used as a reource to select which codes to target.  
+[imdb]() was used as inspiration for how to structure movie information.  
 
 ### Images and icons  
 - Icons used within the application were Font Awesome free icon.  
@@ -393,6 +400,7 @@ Forking a GitHub Repository will make a copy of the original repository on your 
 
 ### Content  
 Movie information is supplied by RapidApi using the api [1mdb Data searching](https://rapidapi.com/standingapi-standingapi-default/api/1mdb-data-searching/).    
+The movie poster images are also supplied through the api, as such quality and clarity of images cannot be certain, through testing most images are satisfactory.  
 
 ## Acknowledgments  
 Thank you to my Tutor Philip Morris, my mentor Chris Quinn and a huge thank you to my wife Jeanmarie and my children for allowing me to take on these new challenges and for giving me so much support and understanding through the tougher times.  
