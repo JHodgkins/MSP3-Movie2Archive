@@ -1,5 +1,8 @@
 """
-Import db so database models can be setup and use by postgresql
+datetime is used when time and date need to be captured.
+db is so database models can be setup and used by postgresql.
+login_manager is a flask_login module which keeps track of active logged in user.
+UserMixin contains data on current uer and can be used to access the users data from the models table.
 """
 from datetime import datetime
 from movie2archive import db, login_manager
@@ -8,6 +11,9 @@ from flask_login import UserMixin
 
 @login_manager.user_loader
 def load_user(user_id):
+    """
+    Get and store current logged in user data
+    """
     return User.query.get(int(user_id))
 
 
@@ -41,6 +47,9 @@ class Movielookup(db.Model, UserMixin):
     edition_id = db.Column(db.Integer, db.ForeignKey('edition.id', ondelete='CASCADE'), nullable=False)
 
     def __repr__(self):
+        """
+        Represent each item as a string
+        """
         return f"Movie('{self.title}', '{self.notes}', '{self.date_posted}', '{self.imdbID}')"
 
 

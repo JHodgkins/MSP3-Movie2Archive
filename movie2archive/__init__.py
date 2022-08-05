@@ -1,5 +1,12 @@
 """
 Import required files to initialise the Movie2Archive application
+os so the app can talk to the operating syste.
+re  is for regular expression, used when targeting postgreSQL string in Heroku.
+Flak framework import into application.
+PyMongo so the app can talk to the Mongo database
+SQLAlchemy for the database queries.
+bcrypt is for hahing strings.
+login manager to keep track of logged in session user.
 """
 import os
 import re
@@ -39,6 +46,7 @@ login_manager = LoginManager(app)
 login_manager.login_view = 'login'
 login_manager.login_message_category = 'info'
 
+# admin stored key for access across site and api key, url and headers for api call
 access_key = os.environ.get("ACCKEY")
 movie_key = os.environ.get("APIKEY")
 apiurl = os.environ.get("APIURL")

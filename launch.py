@@ -1,5 +1,6 @@
 """
-Import os to gather os variables so app is able to launch
+Import os to gather os variables so app is able to launch.
+app is the applications instance
 """
 import os
 from movie2archive import app
