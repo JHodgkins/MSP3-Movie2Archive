@@ -54,6 +54,10 @@
     font-size: 3rem;
 }
 
+.form-control, .form-select, .form-check-input[type=checkbox] {
+    border: 1px solid var(--grey);
+}
+
 .btn-m2a {
     background-color: var(--orange);
     color: var(--black);
