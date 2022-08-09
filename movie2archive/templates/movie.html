@@ -25,9 +25,9 @@
             <div class="col-lg-8">
               <h2 class="">Movie: {{ movie.title }}</h2>
               <h2>My notes about the movie</h2>
-                {{movie.notes}}<br>
+                <p>{{movie.notes}}</p>
               <h2>Media type and edition owned</h2>
-                {{movie.media}}, {{movie.edition}}<br>
+                <p>{{movie.media}}, {{movie.edition}}</p>
               <h2>Location of movie</h2>
                 <p>Your movie is located in your <strong>{{movie.location.location}}</strong> collection.</p>
 
@@ -37,62 +37,62 @@
                 {% for mongo in mongo_movies [0:1]%}
                   <h2>Some intresting facts about {{ movie.title }}</h2>
                 
-                    <h2>Movie plot</h2>
-                    {{ mongo.Plot }}
+                    <h3>Movie plot</h3>
+                      <p>{{ mongo.Plot }}</p>
 
                     <div class="row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-2  py-5">
                       <div class="col d-flex align-items-start">
                         <div>
                           <h4 class="fw-bold mb-0">Director(s)</h4>
-                          <p>{{ mongo.Director }}</p>
+                            <p>{{ mongo.Director }}</p>
                         </div>
                       </div>
                       <div class="col d-flex align-items-start">
                         <div>
                           <h4 class="fw-bold mb-0">Writer(s)</h4>
-                          <p>{{ mongo.Writer }}</p>
+                            <p>{{ mongo.Writer }}</p>
                         </div>
                       </div>
                       <div class="col d-flex align-items-start">
                         <div>
                           <h4 class="fw-bold mb-0">Actor(s)</h4>
-                          <p>{{ mongo.Actors }}</p>
+                            <p>{{ mongo.Actors }}</p>
                         </div>
                       </div>
                       <div class="col d-flex align-items-start">
                         <div>
                           <h4 class="fw-bold mb-0">Genre(s)</h4>
-                          <p>{{ mongo.Genre }}</p>
+                            <p>{{ mongo.Genre }}</p>
                         </div>
                       </div>
                       <div class="col d-flex align-items-start">
                         <div>
                           <h4 class="fw-bold mb-0">Release date</h4>
-                          <p>{{ mongo.Released }}</p>
+                            <p>{{ mongo.Released }}</p>
                         </div>
                       </div>
                       <div class="col d-flex align-items-start">
                         <div>
                           <h4 class="fw-bold mb-0">Run time</h4>
-                          <p>{{ mongo.Runtime }}</p>
+                            <p>{{ mongo.Runtime }}</p>
                         </div>
                       </div>
                       <div class="col d-flex align-items-start">
                         <div>
                           <h4 class="fw-bold mb-0">Award(s)</h4>
-                          <p>{{ mongo.Awards }}</p>
+                            <p>{{ mongo.Awards }}</p>
                         </div>
                       </div>
                       <div class="col d-flex align-items-start">
                         <div>
                           <h4 class="fw-bold mb-0">Box office earnings</h4>
-                          <p>{{ mongo.BoxOffice }}</p>
+                            <p>{{ mongo.BoxOffice }}</p>
                         </div>
                       </div>
                       <div class="col d-flex align-items-start">
                         <div>
                           <h4 class="fw-bold mb-0">imdb Rating</h4>
-                          <p>{{ mongo.imdbRating }}</p>
+                            <p>{{ mongo.imdbRating }}</p>
                         </div>
                       </div>
                     </div>
