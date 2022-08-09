@@ -20,7 +20,8 @@
     <div class="container add-movie-page-main-inner">
         <div class="row justify-content-center">
             <div class="col-lg-8">
-                <h2>{{ title }}</h2>     
+                <h2>{{ title }}</h2>
+                <p><small>All fields marked with a * are required</small></p>     
                 <form action="" method="post" novalidate>
                     {# CSR token #}
                     {{ form.hidden_tag() }}

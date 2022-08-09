@@ -28,14 +28,14 @@ class RegistrationForm(FlaskForm):
     """
 
     username = StringField(
-        "Username", validators=[DataRequired(), Length(min=2, max=20)]
+        "Username *", validators=[DataRequired(), Length(min=2, max=20)]
     )
-    email = StringField("Email", validators=[DataRequired(), Email()])
+    email = StringField("Email *", validators=[DataRequired(), Email()])
     password = PasswordField(
-        "Password", validators=[DataRequired(), Length(min=8, max=20)]
+        "Password *", validators=[DataRequired(), Length(min=8, max=20)]
     )
     password2 = PasswordField(
-        "Confirm Password", validators=[DataRequired(), EqualTo("password")]
+        "Confirm Password *", validators=[DataRequired(), EqualTo("password")]
     )
     submit = SubmitField("Register")
 
@@ -67,9 +67,9 @@ class UpdateUserForm(FlaskForm):
     """
 
     username = StringField(
-        "Username", validators=[DataRequired(), Length(min=2, max=20)]
+        "Username *", validators=[DataRequired(), Length(min=2, max=20)]
     )
-    email = StringField("Email", validators=[DataRequired(), Email()])
+    email = StringField("Email *", validators=[DataRequired(), Email()])
     submit = SubmitField("Update your details")
 
     def validate_username(self, username):
@@ -100,10 +100,10 @@ class ChangePasswordForm(FlaskForm):
     """
 
     password = PasswordField(
-        "New Password", validators=[DataRequired(), Length(min=8, max=20)]
+        "New Password *", validators=[DataRequired(), Length(min=8, max=20)]
     )
     password2 = PasswordField(
-        "Confirm Password", validators=[DataRequired(), EqualTo("password")]
+        "Confirm Password *", validators=[DataRequired(), EqualTo("password")]
     )
     submit = SubmitField("Change password")
 
@@ -124,7 +124,7 @@ class MediaCatForm(FlaskForm):
     Admin area, add media category form
     """
 
-    type = StringField("Media type", validators=[DataRequired(
+    type = StringField("Media type *", validators=[DataRequired(
         ), Length(min=2, max=20)])
     submit = SubmitField("Add media type")
 
@@ -135,7 +135,7 @@ class EditMediaCatForm(FlaskForm):
     """
 
     type = StringField(
-        "Edit media type", validators=[DataRequired(), Length(min=2, max=20)]
+        "Media type *", validators=[DataRequired(), Length(min=2, max=20)]
     )
     submit = SubmitField("Update media type")
 
@@ -146,7 +146,7 @@ class LocationCatForm(FlaskForm):
     """
 
     location = StringField(
-        "Location", validators=[DataRequired(), Length(min=2, max=20)]
+        "Location *", validators=[DataRequired(), Length(min=2, max=20)]
     )
     submit = SubmitField("Add location area")
 
@@ -157,7 +157,7 @@ class EditLocationCatForm(FlaskForm):
     """
 
     location = StringField(
-        "Location", validators=[DataRequired(), Length(min=2, max=20)]
+        "Location *", validators=[DataRequired(), Length(min=2, max=20)]
     )
     submit = SubmitField("Update location area")
 
@@ -168,7 +168,7 @@ class EditionCatForm(FlaskForm):
     """
 
     edition = StringField(
-        "Edition type", validators=[DataRequired(), Length(min=2, max=50)]
+        "Edition type *", validators=[DataRequired(), Length(min=2, max=50)]
     )
     submit = SubmitField("Add edition type")
 
@@ -179,7 +179,7 @@ class EditEditionCatForm(FlaskForm):
     """
 
     edition = StringField(
-        "Edition type", validators=[DataRequired(), Length(min=2, max=50)]
+        "Edition type *", validators=[DataRequired(), Length(min=2, max=50)]
     )
     submit = SubmitField("Update edition type")
 
@@ -190,12 +190,12 @@ class MovieForm(FlaskForm):
     """
 
     title = StringField(
-        "Movie title", validators=[DataRequired(), Length(min=2, max=100)]
+        "Movie title *", validators=[DataRequired(), Length(min=2, max=100)]
     )
-    notes = TextAreaField("Notes about the movie", validators=[DataRequired()])
-    media_id = SelectField("Media type", coerce=int)
-    location_id = SelectField("Location of collection", coerce=int)
-    edition_id = SelectField("Media edition type", coerce=int)
+    notes = TextAreaField("Notes about the movie *", validators=[DataRequired(), Length(max=100)])
+    media_id = SelectField("Media type *", coerce=int)
+    location_id = SelectField("Location of collection *", coerce=int)
+    edition_id = SelectField("Media edition type *", coerce=int)
     submit = SubmitField("Add movie to collection")
 
 
@@ -205,12 +205,12 @@ class EditMovieForm(FlaskForm):
     """
 
     title = StringField(
-        "Movie title", validators=[DataRequired(), Length(min=2, max=100)]
+        "Movie title *", validators=[DataRequired(), Length(min=2, max=100)]
     )
     notes = TextAreaField(
-        "Update your notes about the movie", validators=[DataRequired()]
+        "Update your notes about the movie *", validators=[DataRequired(), Length(max=100)]
     )
-    media_id = SelectField("Media type", coerce=int)
-    location_id = SelectField("Location of collection", coerce=int)
-    edition_id = SelectField("Media edition type", coerce=int)
+    media_id = SelectField("Media type *", coerce=int)
+    location_id = SelectField("Location of collection *", coerce=int)
+    edition_id = SelectField("Media edition type *", coerce=int)
     submit = SubmitField("Update movie details")
