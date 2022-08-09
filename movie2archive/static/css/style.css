@@ -239,6 +239,17 @@ footer {
     padding-top: 0;
 }
 
+.recently-added-badge {
+    text-decoration: none;
+    margin-left: 10px;
+    max-height: 1.125rem;
+}
+
+.notes-area {
+    word-break: break-word;
+    padding: 10px 10px 5px 5px;
+}
+
 .collection-button-group {
     margin-left: auto;
     margin-right: 1rem;
@@ -287,6 +298,11 @@ footer {
 .site-footer {
     margin-bottom: 0;
 }
+
+.copyright-text {
+    text-align: center;
+}
+
 .social-icons i {
     font-size: 2rem;
     color: var(--grey);
@@ -339,5 +355,9 @@ footer {
 
     .back-link {
         margin-top: -20px;
+    }
+
+    .copyright-text {
+        text-align: left;
     }
 }

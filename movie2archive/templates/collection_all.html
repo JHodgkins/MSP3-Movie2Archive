@@ -54,19 +54,17 @@
 
                 <div class="d-flex text-muted pt-3">
 
-                  {% for mongo in mongo_movies %}
-                    <img src="{{ mongo.Poster }}" alt="" width="32" height="64">
-                  {% endfor %}
-
                   <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
                     <div class="d-flex justify-content-between">
+                    
                       <a href="{{ url_for('movie_details', movie_id=movie.id,) }}"><strong
                           class="text-gray-dark">{{movie.title}}</strong>
                       </a>
+                      <span class="badge text-bg-dark recently-added-badge">{{ movie.media.type }}</span>
                       <a class="btn btn-m2a-alt btn-sm collection-button-group" href="{{ url_for('edit_movie', movie_id=movie.id) }}">Edit</a>
                       <a class="btn btn-m2a btn-sm" href="{{ url_for('movie_details', movie_id=movie.id) }}">View</a>
                     </div>
-                    <span class="d-block">{{ movie.notes }}</span>
+                    <span class="d-block notes-area">{{ movie.notes }}</span>
                   </div>
                 </div>
                 {% endfor %}
