@@ -54,8 +54,16 @@
     font-size: 3rem;
 }
 
-.form-control, .form-select, .form-check-input[type=checkbox] {
+.form-control, .form-select, .form-check-input[type=checkbox], .navbar-toggler.filter-control {
     border: 1px solid var(--grey);
+}
+
+.navbar-toggler.main-control {
+    border: 1px solid var(--silver);
+}
+
+#navbar_filter ul li a:hover {
+    color: var(--black);
 }
 
 .btn-m2a {
@@ -252,6 +260,7 @@ footer {
 .movie_anchor-title {
     margin-top: 10px;
     margin-left: 5px;
+    max-height: 1.125rem;
     text-decoration: none;
     color: var(--grey);
 }

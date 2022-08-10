@@ -36,7 +36,7 @@
         <div class="container">
           <a class="navbar-brand" href="{{ url_for('home') }}"><i class="fas fa-box-open"></i> Movie2Archive</a>
           <button
-            class="navbar-toggler"
+            class="navbar-toggler main-control"
             type="button"
             data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasNavbar"
@@ -148,7 +148,7 @@
     <!-- compiled Bootstrap JS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous" defer></script>
 
-    <!-- Custom JS -->
-    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+    <!-- Custom minified JS -->
+    <script src="{{ url_for('static', filename='js/script.min.js') }}" defer></script>
 </body>
 </html>

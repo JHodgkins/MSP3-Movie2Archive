@@ -24,7 +24,7 @@
 
               <nav class="navbar navbar-expand-lg bg-light rounded" aria-label="Twelfth navbar example">
                 <div class="container-fluid">
-                  <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                  <button class="navbar-toggler collapsed filter-control" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbar_filter" aria-controls="navbar_filter" aria-expanded="false"
                     aria-label="Toggle navigation">Filter by:
                     <span class="navbar-toggler-icon"></span>
@@ -38,7 +38,7 @@
                       </li>
                       {% for movie_type in movie_types %}
                       <li class="nav-item">
-                        <a class="nav-link" aria-current="page"
+                        <a class="nav-link" 
                           href="{{ url_for('collection_cat', media_type_id=movie_type.id) }}">{{ movie_type.type}}</a>
                       </li>
                       {% endfor %}
@@ -59,7 +59,7 @@
                   <span class="badge text-bg-dark recently-added-badge">{{ movie.media.type }}</span>
                     <div class="d-flex justify-content-between">
                     <br>
-                      <a class=" movie_anchor-title" href="{{ url_for('movie_details', movie_id=movie.id,) }}"><strong
+                      <a class="movie_anchor-title" href="{{ url_for('movie_details', movie_id=movie.id,) }}"><strong
                           class="text-gray-dark">{{movie.title}}</strong>
                       </a>
                       
