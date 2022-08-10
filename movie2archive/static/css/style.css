@@ -245,13 +245,26 @@ footer {
 
 .recently-added-badge {
     text-decoration: none;
-    margin-left: 10px;
+    margin-left: 5px;
     max-height: 1.125rem;
+}
+
+.movie_anchor-title {
+    margin-top: 10px;
+    margin-left: 5px;
+    text-decoration: none;
+    color: var(--grey);
+}
+
+.movie_anchor-title:hover {
+    color: var(--grey);
+    border-bottom: 2px solid var(--orange);
 }
 
 .notes-area {
     word-break: break-word;
     padding: 10px 10px 5px 5px;
+    max-width: 75%;
 }
 
 .collection-button-group {
