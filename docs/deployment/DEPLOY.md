@@ -12,7 +12,7 @@ In the terminal window enter:
 
 If any new packages are added, this file must be updated and added to Heroku.
 
-1. echo web: python run.py \&gt; Procfile generates a Proc file for Heroku
+1. echo web: python run.py > Procfile generates a Proc file for Heroku
 
 Note: Using echo may cause the Proc file to add an extra line at end of the file, delete the extra line to avoid problems.
 
@@ -147,15 +147,15 @@ Wait a few minutes to allow Heroku to rebuild the app
  in the field, select run or hit enter
 4. Then in the console window enter:
 
-from <database name> import db Press enter
+from __database name__ import db, Press enter
 
-Note: (<database name> is the name of the database in this case but will be whatever your db is called)
+Note: __database name__ is the name of the database in this case but will be whatever your db is called)
 
 1. Then enter:
 
 db.create\_all() Press enter
 
-When a new line shows \&gt;\&gt;\&gt;\&gt;\&gt;
+When a new line shows >>>>>
 
 1. enter: exit() Press enter and then use the &quot;X&quot; to the right to close the console window.
 2. With everything setup:
