@@ -48,21 +48,28 @@
               </nav>
               {% block collection %}
               <div class="my-3 p-3 bg-body rounded shadow-sm">
-                <h2 class="border-bottom pb-2 mb-0">Recently added to collection</h2>
-                
-                {% for movie in movies[0:10] if current_user.id == movie.user_id %}
+                <h2 class="border-bottom pb-2 mb-0">Recently added to your collection</h2>
+                <span class="small">Showing {{ movies[0:10]|length }} out of 10 of your most recently added movies</span>
 
+                {% for movie in movies[0:10] if current_user.id == movie.user_id %}
+                
                 <div class="d-flex text-muted pt-3">
 
                   <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
+                  <span class="badge text-bg-dark recently-added-badge">{{ movie.media.type }}</span>
                     <div class="d-flex justify-content-between">
-                    
-                      <a href="{{ url_for('movie_details', movie_id=movie.id,) }}"><strong
+                    <br>
+                      <a class=" movie_anchor-title" href="{{ url_for('movie_details', movie_id=movie.id,) }}"><strong
                           class="text-gray-dark">{{movie.title}}</strong>
                       </a>
-                      <span class="badge text-bg-dark recently-added-badge">{{ movie.media.type }}</span>
-                      <a class="btn btn-m2a-alt btn-sm collection-button-group" href="{{ url_for('edit_movie', movie_id=movie.id) }}">Edit</a>
-                      <a class="btn btn-m2a btn-sm" href="{{ url_for('movie_details', movie_id=movie.id) }}">View</a>
+                      
+                      <a class="btn btn-m2a-alt btn-sm collection-button-group" href="{{ url_for('edit_movie', movie_id=movie.id) }}">Edit
+                      <span class="sr-only">{{ movie.title }}, (opens the edit movie form)</span>
+                      </a>
+
+                      <a class="btn btn-m2a btn-sm" href="{{ url_for('movie_details', movie_id=movie.id) }}">View
+                      <span class="sr-only">{{ movie.title }}, (opens the movie details page)</span>
+                      </a>
                     </div>
                     <span class="d-block notes-area">{{ movie.notes }}</span>
                   </div>
