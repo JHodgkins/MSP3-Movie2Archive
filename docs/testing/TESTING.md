@@ -287,8 +287,8 @@ Also note: pages which are retrieving information from the database so a user ca
 
 - Add/Edit media details desktop  
 ![Lighthouse test - Add/Edit media details desktop](/docs/testing/lighthouse_teting/desktop/lighthouse_test_add_media_category_desktop.png)  
-- Add/Edit media details details mobile  
-![Lighthouse test - Add/Edit media details mobile]()  
+- Add/Edit media details mobile  
+![Lighthouse test - Add/Edit media details mobile](/docs/testing/lighthouse_teting/mobile/lighthouse_test_edit_media_category_mobile.png)  
 - Add/Edit movie desktop  
 ![Lighthouse test - Add/Edit movie desktop](/docs/testing/lighthouse_teting/desktop/lighthouse_test_add_movie_desktop.png)  
 - Add/Edit movie mobile  
