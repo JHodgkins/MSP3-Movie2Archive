@@ -133,7 +133,7 @@ As a first-time user, I want to know how to log out of Movie2Archive.
 ## Design  
 Movie2Archive was designed to be clean, clear and easily understood by all audiences using the application, header and footer sections persist throughout the web application to ensure navigation is kept consistent, easy to navigate and provides a pleasant user experience (UX) throughout.  
 
-The application uses mainly solid colours which contrast each other well, for example a darker grey against orange gives the feeling of hard edges to reflect DVD, Blue Ray boxes and the boxy appearance of a media collection.   
+The application uses mainly solid colours which contrast each other well, for example a darker grey against orange gives the feeling of hard edges to reflect DVD, Blu-ray boxes and the boxy appearance of a media collection.   
 As a person with a visual impairment, the web application has been designed with screen magnification and screen readers in mind.  
 
 ### Structure of pages  
@@ -247,7 +247,7 @@ The application follows best practice and was developed using a mobile first app
 
 - Davys Grey: #565555 was used as to represents the darkness of a theatre.  
 - Yellow Orange: #FFB341 and Red Crayola: #ED254E were used to represent the certification colours for PG and 18.  
-- Silver Sand: #C4CAD0 was used to represent steel book covers of DVDs and Blue Rays and leans on a sci-fi feel.  
+- Silver Sand: #C4CAD0 was used to represent steel book covers of DVDs and Blu-rays and leans on a sci-fi feel.  
 - Magnolia: #FCF7FF was used to represent the home, a widely used colour in many homes.  
 - White: #FFFFFF and Black: 000000 were used for text and background colours as they are contrasting colours easily readable and have a feeling of sharp edges.   
 

@@ -96,7 +96,7 @@ Located on the about page, a brief explanation of what inspired the creation of 
 A user is able once logged in to reach the add a movie page from either their profile or through the main navigation in 3 or less clicks, leaning on the set out target when developing the application.  
 
 - __As the site owner, I want the site visitors to be able to see what they own and see their collection by media type.__  
-When a user visits their collection, they are able to filter their collection by media type such as DVD, Blue Ray or VHS.  
+When a user visits their collection, they are able to filter their collection by media type such as DVD, Blu-ray or VHS.  
 
 - __As a site owner, I want to encourage recycling to the applications users.__  
 Located on the homepage, will be a third party integration in the future, until such time a random recycling provider based in the UK is used in this case a informative piece about Zapper the merchants who are able to recycle physical media.  
