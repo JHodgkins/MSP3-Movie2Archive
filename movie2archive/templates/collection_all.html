@@ -49,7 +49,6 @@
               {% block collection %}
               <div class="my-3 p-3 bg-body rounded shadow-sm">
                 <h2 class="border-bottom pb-2 mb-0">Recently added to your collection</h2>
-                <span class="small">Showing {{ movies[0:10]|length }} out of 10 of your most recently added movies</span>
 
                 {% for movie in movies[0:10] if current_user.id == movie.user_id %}
                 
